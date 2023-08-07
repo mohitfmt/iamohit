@@ -8,7 +8,7 @@ const Web3Block = () => {
       <div className="flex flex-wrap">
         <div className="lg:w-1/2 md:w-full flex justify-center items-center self-center">
           <Image
-            src="/web3.webp"
+            src="/web3-block.webp"
             alt="Web3.0 Blockchain"
             width={2392}
             height={1342}
