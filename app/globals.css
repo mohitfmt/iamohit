@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --yellow-rgb: 245, 245, 67;
+  --green-rgb: 158, 245, 67;
+  --pink-rgb: 245, 67, 245;
+  --purple-rgb: 156, 67, 245;
+  --blue-rgb: 67, 67, 245;
+}
+/* 
+--yellow-rgb: 245, 245, 67; //f5f543
+--green-rgb: 158, 245, 67; //9ef543
+--pink-rgb: 245, 67, 245; //f543f5
+--purple-rgb: 156, 67, 245; //9c43f5
+--blue-rgb: 67, 67, 245; //4343f5
+*/
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 18, 18, 18;
+    --background-end-rgb: 18, 18, 18;
+    --yellow-rgb: 245, 245, 67;
+    --green-rgb: 158, 245, 67;
+    --pink-rgb: 245, 67, 245;
+    --purple-rgb: 156, 67, 245;
+    --blue-rgb: 67, 67, 245;
+    --logo-gradient: linear-gradient(
+      to 45deg,
+      rgb(var(--yellow-rgb)),
+      rgb(var(--green-rgb)),
+      rgb(var(--pink-rgb)),
+      rgb(var(--purple-rgb)),
+      rgb(var(--blue-rgb))
+    );
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+.blue-glassmorphism {
+  background: rgba(var(--background-start-rgb), 0.4);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(var(--yellow-rgb), 0.5);
+}
