@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import "./globals.css";
 import { Inter, Handlee } from "next/font/google";
 import Footer from "@/components/Footer";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const handlee = Handlee({
@@ -15,21 +16,21 @@ export const metadata = {
   openGraph: {
     title: "iAMohit | Mohit Shrivastava's Web 3.0 & Full Stack Portfolio",
     description:
-      "Welcome to Mohit's Portfolio! an Innovative Technocrat with a passion for driving Digital Transformation. Explore my impactful projects and extensive skillset in Full Stack, Web 3.0, and more. Let's create the future together! ",
+      "Welcome to Mohit's Portfolio! an Innovative Technocrat with Full Stack Excellence! Craft Engaging Frontends, Embrace Blockchain Innovations, Architect Backends with Precision.",
     url: "https://iamohit.com",
     siteName: "iamohit.com",
     images: [
       {
-        url: "https://iamohit.com/og.png",
+        url: "https://iamohit.com/twitter-og.png",
         width: 800,
-        height: 600,
-        alt: "Small OpenGraph Image for Mohit",
+        height: 800,
+        alt: "Square OpenGraph Image for Mohit",
       },
       {
-        url: "https://iamohit.com/og-alt.png",
-        width: 1800,
-        height: 1600,
-        alt: "Big OpenGraph Image for Mohit",
+        url: "https://iamohit.com/og.png",
+        width: 1200,
+        height: 630,
+        alt: "OpenGraph Image for Mohit",
       },
     ],
     locale: "en_US",
@@ -55,7 +56,8 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "iAMohit",
-    description: "iAMohit | Mohit Shrivastava's Web 3.0 & Full Stack Portfolio",
+    description:
+      "Welcome to Mohit's Portfolio! an Innovative Technocrat with Full Stack Excellence! Craft Engaging Frontends, Embrace Blockchain Innovations, Architect Backends with Precision.",
     siteId: "iamohit",
     creator: "@mohit5783",
     creatorId: "iamohit",
@@ -175,7 +177,7 @@ export const metadata = {
   },
   title: "iAMohit | Mohit Shrivastava's Web 3.0 & Full Stack Portfolio",
   description:
-    "Welcome to Mohit's Portfolio! an Innovative Technocrat with a passion for driving Digital Transformation. Explore my impactful projects and extensive skillset in Full Stack, Web 3.0, and more. Let's create the future together! ",
+    "Welcome to Mohit's Portfolio! an Innovative Technocrat with Full Stack Excellence! Craft Engaging Frontends, Embrace Blockchain Innovations, Architect Backends with Precision.",
 };
 
 export default function RootLayout({ children }) {
@@ -186,6 +188,17 @@ export default function RootLayout({ children }) {
         <main className="w-full">{children}</main>
         <Footer />
       </body>
+
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-JD9T6QJM69" />
+      <Script id="google-analytics">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+ 
+          gtag('config', 'G-JD9T6QJM69');
+        `}
+      </Script>
     </html>
   );
 }

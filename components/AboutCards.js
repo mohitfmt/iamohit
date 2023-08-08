@@ -14,10 +14,10 @@ const AboutCards = () => {
                 {item.AvatarIcon}
               </div>
               <div className="p-5">
-                <h3 className="text-2xl lg:text-xl xl:text-2xl capitalize text-[#f5f543] font-semibold">
+                <h2 className="text-2xl lg:text-xl xl:text-2xl capitalize text-[#f5f543] font-semibold">
                   {item.CardTitle}
-                </h3>
-                <p className="py-4">{item.HighlightText}</p>
+                </h2>
+                <p className="py-4 text-white">{item.HighlightText}</p>
                 <div className="flex justify-end">
                   <Link
                     href="/about"
