@@ -20,9 +20,7 @@ const Web3Hero = () => {
         </div>
         <div className="w-full gap-3 justify-center flex flex-wrap py-10 text-center">
           <Link
-            target="_blank"
-            href="/mohit-resume.pdf"
-            download={true}
+            href="/projects"
             className="flex items-center bg-lime-400 text-black p-2.5 px-6 rounded-lg text-lg font-semibold hover:bg-black hover:text-white border border-solid border-transparent hover:border-lime-400"
           >
             View Projects

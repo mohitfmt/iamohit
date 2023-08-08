@@ -24,7 +24,7 @@ const SkillsCards = () => {
                       className="flex py-2 gap-3 items-center"
                     >
                       {tech.icon}
-                      <span className="text-xl sm:text-lg font-normal leading-tight text-gray-500 dark:text-gray-400">
+                      <span className="text-xl sm:text-lg font-normal leading-tight text-gray-100">
                         {tech.name}
                       </span>
                     </li>

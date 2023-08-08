@@ -66,7 +66,7 @@ export const metadata = {
   viewport: {
     width: "device-width",
     initialScale: 1,
-    maximumScale: 1,
+    maximumScale: 2.1,
   },
   verification: {
     google: "3kX8SgptSvdF5fGJMtyEQ7aCWMER-RPtF_qxMPnSBQk",
