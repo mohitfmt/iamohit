@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { PiCodeBlockFill } from "react-icons/pi";
+import web3 from "../public/web3-block.webp";
 
 const Web3Block = () => {
   return (
@@ -8,12 +9,9 @@ const Web3Block = () => {
       <div className="flex flex-wrap">
         <div className="lg:w-1/2 md:w-full flex justify-center items-center self-center">
           <Image
-            src="/web3-block.webp"
+            src={web3}
             alt="Web3.0 Blockchain"
-            width={2392}
-            height={1342}
-            placeholder="empty"
-            loading="lazy"
+            style={{ maxWidth: "100%", height: "auto" }}
           />
         </div>
         <div className="lg:w-1/2 md:pl-5 sm:pl-0 self-center leading-relaxed">

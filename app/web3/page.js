@@ -1,7 +1,11 @@
 import Web3Hero from "@/components/Web3Hero";
 import Image from "next/image";
 import Link from "next/link";
-
+import blockchainImg from "../../public/blockchain.webp";
+import smartContractImg from "../../public/smart-contract.webp";
+import ethereumImg from "../../public/ethereum.webp";
+import rpcImg from "../../public/rpc.webp";
+import ThreeDImg from "../../public/3d.webp";
 const Web3Blockchain = () => {
   return (
     <section>
@@ -10,12 +14,9 @@ const Web3Blockchain = () => {
         <div className="flex flex-wrap">
           <div className="md:w-1/2 w-full flex justify-center items-center self-center">
             <Image
-              src="/blockchain.webp"
+              src={blockchainImg}
               alt="Web3.0 Blockchain"
-              width={1200}
-              height={580}
-              placeholder="empty"
-              loading="lazy"
+              style={{ maxWidth: "100%", height: "auto" }}
             />
           </div>
           <div className="md:w-1/2 w-full md:pl-5 pl-0 self-center leading-relaxed">
@@ -39,12 +40,9 @@ const Web3Blockchain = () => {
             <div class="bg-[#212121] border-2 border-[#292929] border-solid rounded-2xl">
               <Image
                 className="object-cover w-full rounded-t-2xl"
-                src="/smart-contract.webp"
+                src={smartContractImg}
                 alt="Web3.0 Blockchain"
-                width={2880}
-                height={1800}
-                placeholder="empty"
-                loading="lazy"
+                style={{ maxWidth: "100%", height: "auto" }}
               />
 
               <div className="p-5">
@@ -63,12 +61,9 @@ const Web3Blockchain = () => {
             <div class="bg-[#212121] border-2 border-[#292929] border-solid rounded-2xl">
               <Image
                 className="object-cover w-full rounded-t-2xl"
-                src="/3d.webp"
+                src={ThreeDImg}
                 alt="3D web applications"
-                width={2880}
-                height={1800}
-                placeholder="empty"
-                loading="lazy"
+                style={{ maxWidth: "100%", height: "auto" }}
               />
 
               <div className="p-5">
@@ -89,11 +84,8 @@ const Web3Blockchain = () => {
             <div class="bg-[#212121] border-2 border-[#292929] border-solid rounded-2xl">
               <Image
                 className="object-cover w-full rounded-t-2xl"
-                src="/ethereum.webp"
-                width={1200}
-                height={800}
-                placeholder="empty"
-                loading="lazy"
+                src={ethereumImg}
+                style={{ maxWidth: "100%", height: "auto" }}
                 alt="Ethereum"
               />
 
@@ -133,11 +125,8 @@ const Web3Blockchain = () => {
             <div class="bg-[#212121] border-2 border-[#292929] border-solid rounded-2xl">
               <Image
                 className="object-cover w-full rounded-t-2xl"
-                src="/rpc.webp"
-                width={1200}
-                height={800}
-                placeholder="empty"
-                loading="lazy"
+                src={rpcImg}
+                style={{ maxWidth: "100%", height: "auto" }}
                 alt="RPCs: Infura, Alchemy, Moralis"
               />
 
@@ -223,12 +212,12 @@ const Web3Blockchain = () => {
             </div>
           </div>
         </div>
-        <div className="flex text-center justify-center items-center text-2xl py-10 font-semibold flex-col">
+        <div className="flex text-center justify-center items-center text-2xl py-20 font-semibold flex-col font-handlee">
           Ready to make an impact in the Web3 world? Let's connect and
           collaborate on the next groundbreaking project.
           <Link
             href="/contact"
-            className="flex items-center bg-lime-400 text-black p-2.5 mt-5 px-6 rounded-lg text-lg font-semibold hover:bg-black hover:text-white border border-solid border-transparent hover:border-lime-400"
+            className="flex items-center bg-lime-400 text-black p-2.5 mt-5 px-6 rounded-lg text-lg font-semibold hover:bg-black hover:text-white border border-solid border-transparent hover:border-lime-400 font-inter"
           >
             Contact Me
           </Link>

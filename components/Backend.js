@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { PiCodeBold } from "react-icons/pi";
+import beImg from "../public/be.webp";
 
 const Backend = () => {
   return (
@@ -8,12 +9,9 @@ const Backend = () => {
       <div className="flex flex-wrap">
         <div className="lg:w-1/2 md:w-full flex justify-center items-center self-center">
           <Image
-            src="/be.webp"
+            src={beImg}
             alt="Architecting Digital Foundations: Backends that Power Possibilities"
-            width={735}
-            height={394}
-            placeholder="empty"
-            loading="lazy"
+            style={{ maxWidth: "100%", height: "auto" }}
           />
         </div>
         <div className="lg:w-1/2 md:pl-5 sm:pl-0 self-center leading-relaxed">

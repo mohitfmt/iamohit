@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { GiArmoredBoomerang } from "react-icons/gi";
 import { AllSkills } from "./data/skillsData";
 
 const SkillsCards = () => {

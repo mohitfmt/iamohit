@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FaDatabase } from "react-icons/fa";
+import dbImage from "../public/db.webp";
 
 const Databases = () => {
   return (
@@ -45,12 +46,9 @@ const Databases = () => {
         </div>
         <div className="lg:w-1/2 md:w-full flex justify-center items-center self-center">
           <Image
-            src="/db.webp"
+            src={dbImage}
             alt="Next, React, Angular"
-            width={1024}
-            height={622}
-            placeholder="empty"
-            loading="lazy"
+            style={{ maxWidth: "100%", height: "auto" }}
           />
         </div>
       </div>

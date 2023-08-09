@@ -1,19 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import { GiGearHammer } from "react-icons/gi";
-
+import devTools from "../public/dev-tools.webp";
 const DevTools = () => {
   return (
     <section className="p-10">
       <div className="flex flex-wrap">
         <div className="lg:w-1/2 md:w-full flex justify-center items-center self-center">
           <Image
-            src="/dev-tools.webp"
+            src={devTools}
             alt="Empowering Digital Excellence through Tools & DevOps Mastery"
-            width={618}
-            height={571}
-            placeholder="empty"
-            loading="lazy"
+            style={{ maxWidth: "100%", height: "auto" }}
           />
         </div>
         <div className="lg:w-1/2 md:pl-5 sm:pl-0 self-center leading-relaxed">

@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { PiDevices } from "react-icons/pi";
+import fe from "../public/fe.webp";
 
 const Frontend = () => {
   return (
@@ -44,12 +45,9 @@ const Frontend = () => {
         </div>
         <div className="lg:w-1/2 md:w-full flex justify-center items-center self-center">
           <Image
-            src="/fe.webp"
+            src={fe}
             alt="Next, React, Angular"
-            width={1024}
-            height={622}
-            placeholder="empty"
-            loading="lazy"
+            style={{ maxWidth: "100%", height: "auto" }}
           />
         </div>
       </div>

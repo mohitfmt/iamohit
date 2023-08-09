@@ -10,12 +10,11 @@ import {
   FaGithub,
   FaTwitter,
   FaFacebookF,
-  FaWhatsapp,
   FaInstagram,
-  FaYoutube,
-  FaPinterestP,
 } from "react-icons/fa";
 import { MdAlternateEmail } from "react-icons/md";
+import fullLogo from "../public/full-logo.svg";
+import logo from "../public/logo.svg";
 
 const NavLinks = [
   {
@@ -57,16 +56,14 @@ const Navbar = () => {
         <Link href="/">
           <Image
             className="md:flex hidden"
-            src="full-logo.svg"
-            width={192}
-            height={48}
+            src={fullLogo}
+            style={{ maxWidth: 192, height: "auto" }}
             alt="iAMohit Full Logo"
           />
           <Image
             className="md:hidden"
-            src="logo.svg"
-            width={48}
-            height={48}
+            src={logo}
+            style={{ maxWidth: 48, height: "auto" }}
             alt="iAMohit Logo"
           />
         </Link>
