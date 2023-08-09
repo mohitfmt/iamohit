@@ -9,10 +9,10 @@ const Hero = () => {
           Pixel Perfectionist
         </h1>
         <div className="text-xl md:text-2xl lg:text-3xl xl:text-4xl capitalize text-[#f5f543] py-8 px-2 text-center leading-loose">
-          <h2 className="font-semibold font-handlee">
+          <h2 className="font-semibold">
             Crafting Engaging Frontend Experiences
           </h2>
-          <p className="text-base md:text-lg lg:text-xl xl:text-2xl py-5 text-white font-inter">
+          <p className="text-base md:text-lg lg:text-xl xl:text-2xl py-5 text-lime-400 font-handlee">
             Weaving innovation into every pixel, crafting dynamic and responsive
             frontends that engage and inspire.
           </p>
@@ -22,16 +22,17 @@ const Hero = () => {
             target="_blank"
             href="/mohit-resume.pdf"
             download={true}
+            rel="nofollow"
             className="flex font-inter items-center bg-lime-400 text-black p-2.5 px-6 rounded-lg text-lg font-semibold hover:bg-black hover:text-white border border-solid border-transparent hover:border-lime-400"
           >
             Download Resume
             <FaRegFilePdf className="ml-2" />
           </Link>
           <Link
-            href="/"
-            className="flex font-handlee items-center bg-white text-black p-2.5 px-6 rounded-lg text-lg font-semibold hover:bg-black hover:text-white border border-solid hover:border-white"
+            href="/frontend"
+            className="flex items-center bg-white text-black p-2.5 px-6 rounded-lg text-lg font-semibold hover:bg-black hover:text-white border border-solid hover:border-white"
           >
-            Learn More
+            Explore Frontend
           </Link>
         </div>
       </div>

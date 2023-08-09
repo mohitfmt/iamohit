@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { GiArmoredBoomerang } from "react-icons/gi";
+import { PiCodeBlockFill } from "react-icons/pi";
 
 const Web3Block = () => {
   return (
@@ -41,8 +41,8 @@ const Web3Block = () => {
               href="/web3"
               className="flex justify-center items-center bg-lime-400 text-black p-2.5 px-6 rounded-lg text-lg font-semibold hover:bg-black hover:text-white border border-solid border-transparent hover:border-lime-400"
             >
-              Read More
-              <GiArmoredBoomerang className="ml-2" />
+              My Web3.0 Journey
+              <PiCodeBlockFill className="ml-2 text-2xl" />
             </Link>
           </div>
         </div>

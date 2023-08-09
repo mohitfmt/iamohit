@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { GiArmoredBoomerang } from "react-icons/gi";
+import { PiDevices } from "react-icons/pi";
 
 const Frontend = () => {
   return (
@@ -34,11 +34,11 @@ const Frontend = () => {
           <div className="flex justify-end px-6">
             <Link
               target="_blank"
-              href="/"
+              href="/frontend"
               className="flex justify-center items-center bg-lime-400 text-black p-2.5 px-6 rounded-lg text-lg font-semibold hover:bg-black hover:text-white border border-solid border-transparent hover:border-lime-400"
             >
-              Read More
-              <GiArmoredBoomerang className="ml-2" />
+              Frontend Artistry Revealed
+              <PiDevices className="ml-2 text-2xl" />
             </Link>
           </div>
         </div>

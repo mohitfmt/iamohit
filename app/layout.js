@@ -21,13 +21,7 @@ export const metadata = {
     siteName: "iamohit.com",
     images: [
       {
-        url: "https://iamohit.com/twitter-og.png",
-        width: 800,
-        height: 800,
-        alt: "Square OpenGraph Image for Mohit",
-      },
-      {
-        url: "https://iamohit.com/og.png",
+        url: "/og.png",
         width: 1200,
         height: 630,
         alt: "OpenGraph Image for Mohit",
@@ -61,7 +55,7 @@ export const metadata = {
     siteId: "iamohit",
     creator: "@mohit5783",
     creatorId: "iamohit",
-    images: ["https://iamohit.com/twitter-og.png"],
+    images: ["/twitter-og.png"],
   },
   viewport: {
     width: "device-width",
@@ -177,7 +171,7 @@ export const metadata = {
   },
   title: "iAMohit | Mohit Shrivastava's Web 3.0 & Full Stack Portfolio",
   description:
-    "Welcome to Mohit's Portfolio! an Innovative Technocrat with Full Stack Excellence! Craft Engaging Frontends, Embrace Blockchain Innovations, Architect Backends with Precision.",
+    "Welcome to Mohit's Portfolio! An Innovative Technocrat with Full Stack Excellence! Craft Engaging Frontends, Embrace Web 3.0, Architecting Backends",
 };
 
 export default function RootLayout({ children }) {

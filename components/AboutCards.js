@@ -10,20 +10,20 @@ const AboutCards = () => {
         {aboutMohit.highlightsData.map((item, index) => (
           <div key={item.RibbonText + index} className="w-full lg:w-1/2 p-3">
             <div className="min-h-full bg-[#212121] border-2 border-[#292929] border-solid rounded-lg shadow flex-none sm:flex items-center">
-              <div className="p-2 justify-center flex text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+              <div className="p-2 justify-center flex">
                 {item.AvatarIcon}
               </div>
               <div className="p-5">
-                <h2 className="text-2xl lg:text-xl xl:text-2xl capitalize text-[#f5f543] font-semibold">
+                <h2 className="text-2xl lg:text-xl xl:text-2xl capitalize text-white font-bold font-inter">
                   {item.CardTitle}
                 </h2>
                 <p className="py-4 text-white">{item.HighlightText}</p>
                 <div className="flex justify-end">
                   <Link
                     href="/about"
-                    className="flex justify-center items-center bg-lime-400 text-black p-1 px-3 rounded-lg text-base font-semibold hover:bg-black hover:text-white border border-solid border-transparent hover:border-lime-400"
+                    className="flex justify-center items-center hover:bg-lime-400 hover:text-[#121212] capitalize p-1 px-3 rounded-lg text-base font-semibold bg-white text-black border border-solid border-transparent hover:border-lime-400"
                   >
-                    Read more...
+                    {item.MetaTitle}
                   </Link>
                 </div>
               </div>

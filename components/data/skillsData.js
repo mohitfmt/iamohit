@@ -95,6 +95,8 @@ export const AllSkills = [
         icon: <SiWebpack size="100%" className="w-8" />,
       },
     ],
+    url: "/frontend",
+    displayName: "Frontend Insights",
   },
   {
     techName: "CSS (UI/UX)",
@@ -116,6 +118,8 @@ export const AllSkills = [
         icon: <SiMui size="100%" className="w-8" />,
       },
     ],
+    url: "/frontend",
+    displayName: "UI Libraries",
   },
   {
     techName: "Backend",
@@ -149,6 +153,8 @@ export const AllSkills = [
         icon: <FaAws size="100%" className="w-8" />,
       },
     ],
+    url: "/backend",
+    displayName: "Backend Insights",
   },
   {
     techName: "Web 3.0",
@@ -182,6 +188,8 @@ export const AllSkills = [
         icon: <TbBrandThreejs size="100%" className="w-8" />,
       },
     ],
+    url: "/web3",
+    displayName: "Web 3.0 Insights",
   },
   {
     techName: "DevOps & Tools",
@@ -235,6 +243,8 @@ export const AllSkills = [
         icon: <SiArcgis size="100%" className="w-8" />,
       },
     ],
+    url: "/projects",
+    displayName: "Tools Insights",
   },
   {
     techName: "Languages",
@@ -285,6 +295,8 @@ export const AllSkills = [
         icon: <TbBrandWindows size="100%" className="w-8" />,
       },
     ],
+    url: "/projects",
+    displayName: "Languages Insights",
   },
   {
     techName: "Databases",
@@ -318,5 +330,7 @@ export const AllSkills = [
         icon: <SiFirebase size="100%" className="w-8" />,
       },
     ],
+    url: "/experience",
+    displayName: "Databases Insights",
   },
 ];

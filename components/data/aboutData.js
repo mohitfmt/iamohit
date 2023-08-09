@@ -18,66 +18,56 @@ export const aboutMohit = {
       CardTitle: "Extensive Experience",
       AvatarIcon: <FcBiotech size="100%" className="p-3" />,
       MetaTitle: "Almost two decades",
-      HighlightText: `My experiences over the last ${YrsOfExp} years have shaped how I view software, 
-        and have led me to believe that I am still learning.`,
+      HighlightText: `Over the course of my illustrious ${YrsOfExp}-year journey, I've honed a profound understanding of software development. Each project has been a stepping stone in my continuous pursuit of knowledge and growth.`,
     },
     {
       RibbonText: "Effective Communication",
       CardTitle: "Communication Skills",
       AvatarIcon: <FcVoicePresentation size="100%" className="p-3" />,
       MetaTitle: "Tactful Speaker",
-      HighlightText: `Listening carefully to answer, Quality over quantity without losing the impactful point of the message.`,
+      HighlightText: `Communication is the cornerstone of my success. By attentively listening and articulating ideas with precision, I ensure that every message carries weight and impact.`,
     },
     {
       RibbonText: "Clean Code",
       CardTitle: "Clean Coding",
       AvatarIcon: <FcEngineering size="100%" className="p-3" />,
       MetaTitle: "Beyond formatting",
-      HighlightText: `Writing easily understandable, modifiable, testable code
-        to create concise and elegant solutions.`,
+      HighlightText: `The art of clean coding is second nature to me. With meticulous attention to detail, I architect elegant and maintainable solutions that stand the test of time.`,
     },
     {
       RibbonText: "Delivered 100+ Solutions",
       CardTitle: "Varied Skills",
       AvatarIcon: <FcMultipleDevices size="100%" className="p-3" />,
       MetaTitle: "Fresh Perspective",
-      HighlightText: `Working with variety of industries increases broader
-        experience, skills and ability to bring in fresh
-        prespective.`,
+      HighlightText: `Venturing into diverse industries has enriched my expertise, fostering adaptability and the ability to offer fresh perspectives on every project.`,
     },
     {
       RibbonText: "Problem Solver",
       CardTitle: "Can-do attitude",
       AvatarIcon: <FcIdea size="100%" className="p-3" />,
       MetaTitle: "Problem-solving skills",
-      HighlightText: `With the right tools, algorithms, and excellent analytical
-        skills, I can come up with innovative solutions.`,
+      HighlightText: `With a vast array of tools, algorithms, and analytical prowess at my disposal, I approach every challenge with unwavering determination, delivering innovative solutions that transcend expectations.`,
     },
     {
       RibbonText: "Optimized Code",
       CardTitle: "Optimization",
       AvatarIcon: <FcBullish size="100%" className="p-3" />,
       MetaTitle: "Improvement for Perfection",
-      HighlightText: ` Enhancing SQL query, caching, response optimization, SEO,
-        accessibility, UI/UX that impacts the success an
-        application.`,
+      HighlightText: `I leave no stone unturned when it comes to optimizing applications. From crafting efficient SQL queries to enhancing SEO and accessibility, I relentlessly pursue perfection.`,
     },
     {
       RibbonText: "Smart",
       CardTitle: "Fast self learner",
       AvatarIcon: <FcPortraitMode size="100%" className="p-3" />,
       MetaTitle: "High Learning Curve",
-      HighlightText: `Learning latest tools ranked myself ahead of other peers
-        and accomplished greater efficiency, flexibility and
-        accuracy.`,
+      HighlightText: `In a rapidly evolving tech landscape, staying ahead is essential. By embracing the latest tools and technologies, I propel myself and my projects towards unmatched efficiency and accuracy.`,
     },
     {
       RibbonText: "Effective Planner",
       CardTitle: "Task Management",
       AvatarIcon: <FcAlarmClock size="100%" className="p-3" />,
       MetaTitle: "Time and Task Management",
-      HighlightText: `Managing expectations from stakeholders, estimating the
-        amount of time needed to complete tasks.`,
+      HighlightText: `Managing expectations is an art I've mastered. With meticulous planning and estimating, I ensure projects flow seamlessly, delivering on time and exceeding goals.`,
     },
   ],
 };
