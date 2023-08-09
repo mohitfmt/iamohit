@@ -18,7 +18,7 @@ const Hero = () => {
           </p>
         </div>
         <div className="w-full gap-3 justify-center flex flex-wrap py-10 text-center">
-          <Link
+          <a
             target="_blank"
             href="/mohit-resume.pdf"
             download={true}
@@ -27,7 +27,7 @@ const Hero = () => {
           >
             Download Resume
             <FaRegFilePdf className="ml-2" />
-          </Link>
+          </a>
           <Link
             href="/frontend"
             className="flex items-center bg-white text-black p-2.5 px-6 rounded-lg text-lg font-semibold hover:bg-black hover:text-white border border-solid hover:border-white"
