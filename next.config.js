@@ -9,7 +9,7 @@ const nextConfig = {
           value: "index",
         },
       ],
-      source: "/",
+      source: "/:path*",
     });
     return headers;
   },
