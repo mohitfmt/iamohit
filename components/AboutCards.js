@@ -31,13 +31,6 @@ const AboutCards = () => {
           </div>
         ))}
       </div>
-      <svg width="0" height="0">
-        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop stopColor="#indigo" offset="0%" />
-          <stop stopColor="#purple" offset="50%" />
-          <stop stopColor="#pink" offset="100%" />
-        </linearGradient>
-      </svg>
     </section>
   );
 };

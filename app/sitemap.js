@@ -20,6 +20,18 @@ const sitemap = () => {
       url: "https://iamohit.com/projects",
       lastModified: new Date(),
     },
+    {
+      url: "https://iamohit.com/backend",
+      lastModified: new Date(),
+    },
+    {
+      url: "https://iamohit.com/frontend",
+      lastModified: new Date(),
+    },
+    {
+      url: "https://iamohit.com/web3",
+      lastModified: new Date(),
+    },
   ];
 };
 

@@ -73,6 +73,7 @@ const Navbar = () => {
               className="flex items-center gap-2"
               href={link.href}
               key={link.key}
+              aria-label={link.label}
             >
               {link.icon}
               <span className="relative group">

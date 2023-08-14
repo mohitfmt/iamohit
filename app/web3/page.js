@@ -1,4 +1,3 @@
-import Web3Hero from "@/components/Web3Hero";
 import Image from "next/image";
 import Link from "next/link";
 import blockchainImg from "../../public/blockchain.webp";
@@ -6,6 +5,13 @@ import smartContractImg from "../../public/smart-contract.webp";
 import ethereumImg from "../../public/ethereum.webp";
 import rpcImg from "../../public/rpc.webp";
 import ThreeDImg from "../../public/3d.webp";
+import dynamic from "next/dynamic";
+
+const Web3Hero = dynamic(() => import("@/components/Web3Hero"), {
+  loading: () => (
+    <p className="h-[700px] justify-center items-center flex">Loading...</p>
+  ),
+});
 const Web3Blockchain = () => {
   return (
     <section>
