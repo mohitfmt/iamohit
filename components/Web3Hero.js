@@ -3,16 +3,16 @@ import { TbBrandGit } from "react-icons/tb";
 
 const Web3Hero = () => {
   return (
-    <section className="w-full my-5 flex items-center justify-center bg-[url('/hero-web3.webp')] bg-no-repeat bg-cover bg-top h-[700px]">
+    <section className="w-full my-5 flex items-center justify-center bg-[url('/eth.webp')] bg-no-repeat bg-cover bg-top h-[900px] 2xl:h-[1400px]">
       <div className="w-full">
-        <h1 className="text-dark flex font-bold uppercase text-center text-3xl md:text-4xl lg:text-6xl xl:text-8xl items-center justify-center mt-0">
+        <h1 className="text-white flex font-bold uppercase text-center text-3xl md:text-4xl lg:text-6xl xl:text-8xl items-center justify-center mt-0">
           Navigating the Future
         </h1>
         <div className="text-xl md:text-2xl lg:text-3xl xl:text-4xl capitalize text-[#f5f543] py-8 px-2 text-center leading-loose">
-          <h2 className="font-semibold">
+          <h2 className="font-semibold text-stroke-black">
             Unleashing the Power of Web 3.0 & Blockchain
           </h2>
-          <p className="text-base md:text-lg lg:text-xl xl:text-2xl py-5 text-white">
+          <p className="text-base md:text-lg lg:text-xl xl:text-2xl py-5 text-white text-stroke-black">
             Dive into the cutting-edge realm of Web 3.0 and blockchain with a
             seasoned technologist captivating 3D Web Applications that push the
             boundaries of user experience

@@ -76,6 +76,7 @@ import {
 } from "react-icons/tb";
 import { MetaMaskIcon } from "../Logos";
 import { MdReduceCapacity } from "react-icons/md";
+import { PiEggCrack } from "react-icons/pi";
 
 export const AllSkills = [
   {
@@ -144,7 +145,7 @@ export const AllSkills = [
       {
         skillsId: 13,
         name: "Craco",
-        icon: <SiBabel size="100%" className="w-8" />,
+        icon: <PiEggCrack size="100%" className="w-8" />,
       },
       {
         skillsId: 14,
@@ -220,12 +221,12 @@ export const AllSkills = [
       },
       {
         skillsId: 27,
-        name: "Active Directory Authentication",
+        name: "AD Auth",
         icon: <SiWebauthn size="100%" className="w-8" />,
       },
       {
         skillsId: 28,
-        name: "Nebular Auth & Security",
+        name: "Nebular Auth",
         icon: <SiAuthy size="100%" className="w-8" />,
       },
       {

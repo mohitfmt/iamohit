@@ -8,7 +8,7 @@ const About = () => {
   const YrsOfExp = new Date().getFullYear() - 2006;
   return (
     <section>
-      <div className="w-full my-5 flex items-center justify-center bg-[url('/AboutHero.webp')] bg-no-repeat bg-cover bg-top 2xl:bg-center h-[700px]" />
+      <div className="w-full my-5 flex items-center justify-center bg-[url('/AboutHero.webp')] bg-no-repeat bg-cover bg-top h-[900px] 2xl:h-[1400px]" />
       <h1 className="flex items-center justify-center sm:text-5xl text-3xl font-handlee font-bold">
         About&nbsp;
         <span className="text-[#f5f543]">Mohit</span>

@@ -32,9 +32,9 @@ const ExperienceCard = (props) => {
                 {exp.Company.Location}
               </div>
               <div className="text-base font-mono text-gray-200">
-                {new Date(exp.StartDate).toLocaleDateString("en-us", options) +
+                {new Date(exp.startDate).toLocaleDateString("en-us", options) +
                   " - " +
-                  new Date(exp.EndDate).toLocaleDateString("en-us", options)}
+                  new Date(exp.endDate).toLocaleDateString("en-us", options)}
               </div>
               <div className="py-5 justify-center md:flex hidden">
                 <Link
@@ -87,9 +87,9 @@ const ExperienceCard = (props) => {
                 {exp.Company.Location}
               </div>
               <div className="text-base font-mono text-gray-200">
-                {new Date(exp.StartDate).toLocaleDateString("en-us", options) +
+                {new Date(exp.startDate).toLocaleDateString("en-us", options) +
                   " - " +
-                  new Date(exp.EndDate).toLocaleDateString("en-us", options)}
+                  new Date(exp.endDate).toLocaleDateString("en-us", options)}
               </div>
             </div>
           </div>
@@ -110,12 +110,12 @@ const ExperienceCard = (props) => {
                         {expAcc.ClientCompany.Location}
                       </div>
                       <div className="text-base font-mono text-gray-200">
-                        {new Date(exp.StartDate).toLocaleDateString(
+                        {new Date(exp.startDate).toLocaleDateString(
                           "en-us",
                           options
                         ) +
                           " - " +
-                          new Date(exp.EndDate).toLocaleDateString(
+                          new Date(exp.endDate).toLocaleDateString(
                             "en-us",
                             options
                           )}

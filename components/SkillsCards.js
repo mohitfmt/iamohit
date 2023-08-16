@@ -17,9 +17,9 @@ const SkillsCards = () => {
             className="justify-center mt-5 sm:mt-0 w-full sm:w-1/2 lg:w-1/3 p-5 hover:shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
           >
             <div className="flex flex-col p-8 bg-[#212121] border-2 border-[#292929] border-solid rounded-lg shadow h-full">
-              <h3 className="text-3xl lg:text-2xl xl:text-3xl text-center capitalize text-white font-semibold">
+              <h2 className="text-3xl lg:text-2xl xl:text-3xl text-center capitalize text-white font-semibold">
                 {skill.techName}
-              </h3>
+              </h2>
               <ul role="list" className="py-7">
                 {skill.techList.map((tech, i) => (
                   <li

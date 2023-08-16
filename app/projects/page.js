@@ -1,5 +1,11 @@
 import ProjectCards from "@/components/ProjectCards";
-import ProjectHero from "@/components/ProjectHero";
+import dynamic from "next/dynamic";
+
+const ProjectHero = dynamic(() => import("@/components/ProjectHero"), {
+  loading: () => (
+    <p className="h-[900px] justify-center items-center flex">Loading...</p>
+  ),
+});
 
 const Projects = () => {
   return (

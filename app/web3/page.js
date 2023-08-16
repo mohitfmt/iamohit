@@ -9,7 +9,7 @@ import dynamic from "next/dynamic";
 
 const Web3Hero = dynamic(() => import("@/components/Web3Hero"), {
   loading: () => (
-    <p className="h-[700px] justify-center items-center flex">Loading...</p>
+    <p className="h-[900px] justify-center items-center flex">Loading...</p>
   ),
 });
 const Web3Blockchain = () => {
@@ -43,7 +43,7 @@ const Web3Blockchain = () => {
         </div>
         <div className="flex flex-wrap mt-10">
           <div className="md:w-1/2 p-2">
-            <div class="bg-[#212121] border-2 border-[#292929] border-solid rounded-2xl">
+            <div className="bg-[#212121] border-2 border-[#292929] border-solid rounded-2xl">
               <Image
                 className="object-cover w-full rounded-t-2xl"
                 src={smartContractImg}
@@ -64,7 +64,7 @@ const Web3Blockchain = () => {
             </div>
           </div>
           <div className="md:w-1/2 p-2">
-            <div class="bg-[#212121] border-2 border-[#292929] border-solid rounded-2xl">
+            <div className="bg-[#212121] border-2 border-[#292929] border-solid rounded-2xl">
               <Image
                 className="object-cover w-full rounded-t-2xl"
                 src={ThreeDImg}
@@ -87,7 +87,7 @@ const Web3Blockchain = () => {
         </div>
         <div className="flex flex-wrap mt-10">
           <div className="md:w-1/2 p-2">
-            <div class="bg-[#212121] border-2 border-[#292929] border-solid rounded-2xl">
+            <div className="bg-[#212121] border-2 border-[#292929] border-solid rounded-2xl">
               <Image
                 className="object-cover w-full rounded-t-2xl"
                 src={ethereumImg}
@@ -128,7 +128,7 @@ const Web3Blockchain = () => {
             </div>
           </div>
           <div className="md:w-1/2 p-2">
-            <div class="bg-[#212121] border-2 border-[#292929] border-solid rounded-2xl">
+            <div className="bg-[#212121] border-2 border-[#292929] border-solid rounded-2xl">
               <Image
                 className="object-cover w-full rounded-t-2xl"
                 src={rpcImg}

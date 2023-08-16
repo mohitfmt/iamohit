@@ -35,7 +35,6 @@ const Databases = () => {
           </p>
           <div className="flex justify-end px-6">
             <Link
-              target="_blank"
               href="/experience"
               className="flex justify-center items-center bg-lime-400 text-black p-2.5 px-6 rounded-lg text-lg font-semibold hover:bg-black hover:text-white border border-solid border-transparent hover:border-lime-400"
             >
