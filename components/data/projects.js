@@ -9,7 +9,7 @@ import kwms from "../../public/projImages/kwms.webp";
 import aia from "../../public/projImages/aia.webp";
 import geotime from "../../public/projImages/geoTime.webp";
 import urlShortner from "../../public/projImages/urlShortner.webp";
-import orderMgmt from "../../public/projImages/orderMgmt.webp";
+import orderMgmt from "../../public/projImages/order-Mgmt.webp";
 import iamohit from "../../public/projImages/iamohit.webp";
 import bnd from "../../public/projImages/bnd.webp";
 import benzmint from "../../public/projImages/benzmint.webp";
