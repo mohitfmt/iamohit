@@ -103,7 +103,7 @@ export default function RootLayout({ children }) {
         async
         defer
         fetchpriority="low"
-        src="https://www.googletagmanager.com/gtag/js?id=G-JD9T6QJM69"
+        src="https://www.googletagmanager.com/gtag/js?id=G-EMXKKVZRCB"
       />
       <Script type="text/partytown" id="google-analytics">
         {`
@@ -111,7 +111,7 @@ export default function RootLayout({ children }) {
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
  
-          gtag('config', 'G-JD9T6QJM69');
+          gtag('config', 'G-EMXKKVZRCB');
         `}
       </Script>
       <Script
