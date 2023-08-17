@@ -3,7 +3,7 @@ import { TbBrandGit } from "react-icons/tb";
 
 const ContactHero = () => {
   return (
-    <section className="w-full my-5 flex items-center justify-center bg-[url('/FEHero.webp')] bg-no-repeat bg-cover bg-top h-[900px] 2xl:h-[1400px]">
+    <section className="w-full my-5 flex items-center justify-center bg-[url('/contactMeHero.webp')] bg-no-repeat bg-cover bg-top h-[900px] 2xl:h-[1400px]">
       <div className="w-full">
         <h1 className="text-white flex font-bold uppercase text-center text-3xl md:text-4xl lg:text-6xl xl:text-8xl items-center justify-center mt-0">
           Get in Touch

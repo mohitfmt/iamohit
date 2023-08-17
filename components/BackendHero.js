@@ -3,9 +3,9 @@ import { TbBrandGit } from "react-icons/tb";
 
 const BackendHero = () => {
   return (
-    <section className="w-full my-5 flex items-center justify-center bg-[url('/FEHero.webp')] bg-no-repeat bg-cover bg-top h-[900px] 2xl:h-[1400px]">
+    <section className="w-full my-5 flex items-center justify-center bg-[url('/beHero.webp')] bg-no-repeat bg-cover bg-top h-[900px] 2xl:h-[1400px]">
       <div className="w-full">
-        <h1 className="text-white flex font-bold uppercase text-center text-3xl md:text-4xl lg:text-6xl xl:text-8xl items-center justify-center mt-0">
+        <h1 className="text-white flex font-bold uppercase text-center text-3xl md:text-4xl lg:text-6xl xl:text-8xl items-center justify-center mt-0 text-stroke-black">
           MASTERING Backend
         </h1>
         <div className="text-xl md:text-2xl lg:text-3xl xl:text-4xl capitalize text-[#f5f543] py-8 px-2 text-center leading-loose">
