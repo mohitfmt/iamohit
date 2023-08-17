@@ -11,8 +11,16 @@ const handlee = Handlee({
   variable: "--font-handlee",
   display: "swap",
 });
-
+const jsonLd = {
+  "@context": "http://schema.org/",
+  "@type": "Person",
+  name: "Mohit Shrivastava",
+  jobTitle: "Full Stack Engineer",
+  telephone: "(601) 8355-3290",
+  url: "https://iamohit.com",
+};
 export const metadata = {
+  metadataBase: new URL("https://iamohit.com"),
   openGraph: {
     title: "iAMohit | Mohit Shrivastava's Web 3.0 & Full Stack Portfolio",
     description:
@@ -68,90 +76,6 @@ export const metadata = {
   generator: "iamohit.com",
   applicationName: "iAMohit",
   referrer: "origin-when-cross-origin",
-  keywords: [
-    "Web3.0",
-    "Blockchain",
-    "Smart Contracts",
-    "Ethereum",
-    "Three.js",
-    "3D Web Applications",
-    "Solidity",
-    "Metamask",
-    "remix",
-    "web3js",
-    "ethers.js",
-    "OpenZeppelin",
-    "Decentralized",
-    "Innovation",
-    "Frontend",
-    "UI/UX",
-    "React",
-    "Angular",
-    "Node.js",
-    "TypeScript",
-    "JavaScript",
-    "Backend Development",
-    "SQL",
-    "NoSQL",
-    "DevOps",
-    "Continuous Integration",
-    "Continuous Deployment",
-    "CI/CD",
-    "AWS",
-    "Azure",
-    "Git",
-    "Bitbucket",
-    "TFS",
-    "Kubernetes",
-    "Docker",
-    "Scalability",
-    "Digital Excellence",
-    "Communication Skills",
-    "Clean Coding",
-    "Problem Solver",
-    "Optimization",
-    "Fast Learner",
-    "Task Management",
-    "CSS",
-    "Bootstrap",
-    "Tailwind CSS",
-    "Material UI",
-    "MongoDB",
-    "Firebase",
-    "GraphQL",
-    "NestJS",
-    "AppSync",
-    "NextJS",
-    "Gatsby",
-    "React Redux",
-    "Babel",
-    "Web Technologies",
-    "Cryptocurrency",
-    "NFTs",
-    "DAO",
-    "DeFi",
-    "DApp Development",
-    "Digital Transformation",
-    "User-Centric Design",
-    "Pixel Perfection",
-    "User Experience",
-    "Technical Stacks",
-    "Crypto Solutions",
-    "Blockchain Projects",
-    "Innovative Developer",
-    "Ethereum Development",
-    "Blockchain Expertise",
-    "Backend Mastery",
-    "Databases",
-    "Cloud Computing",
-    "Creative Developer",
-    "Tools & DevOps",
-    "Digital Innovation",
-    "Data Ecosystems",
-    "Data Manipulation",
-    "Solidity Programming",
-    "Ethereum Ecosystem",
-  ],
   authors: [
     { name: "Mohit" },
     { name: "Mohit Shrivastava", url: "https://iamohit.com" },
@@ -164,11 +88,7 @@ export const metadata = {
     address: false,
     telephone: true,
   },
-  title: "iAMohit | Mohit Shrivastava's Web 3.0 & Full Stack Portfolio",
-  description:
-    "Welcome to Mohit's Portfolio! An Innovative Technocrat with Full Stack Excellence! Craft Engaging Frontends, Embrace Web 3.0, Architecting Backends",
 };
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
@@ -194,6 +114,13 @@ export default function RootLayout({ children }) {
           gtag('config', 'G-JD9T6QJM69');
         `}
       </Script>
+      <Script
+        async
+        defer
+        fetchpriority="low"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
     </html>
   );
 }

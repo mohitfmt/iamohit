@@ -63,7 +63,7 @@ const ProjectCard = (props, selectedFilters) => {
             {projectSkills.map((skill, index) => {
               return (
                 <div
-                  key={index}
+                  key={skill.name + index}
                   className={`flex gap-3 text-xs items-center leading-sm pr-2 py-1 bg-[#f5f543] text-black rounded-full`}
                 >
                   <div className="h-4 w-4">{skill.icon}</div>

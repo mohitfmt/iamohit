@@ -7,11 +7,42 @@ import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa";
 import { FiPhoneOutgoing } from "react-icons/fi";
 
-const ContactHero = dynamic(() => import("@/components/ContactHero"), {
+const ContactHero = dynamic(() => import("@/components/Heros/ContactHero"), {
   loading: () => (
     <p className="h-[900px] justify-center items-center flex">Loading...</p>
   ),
 });
+export const metadata = {
+  keywords: [
+    "Contact",
+    "Collaboration",
+    "Digital Experiences",
+    "Frontend",
+    "Backend",
+    "Full Stack",
+    "User Interfaces",
+    "Responsive Layouts",
+    "Freelance",
+    "Collaborations",
+    "Consultations",
+    "Privacy",
+    "Communication",
+    "Data Handling",
+    "Privacy Policy",
+    "Email",
+    "Phone",
+    "LinkedIn",
+    "GitHub",
+    "Social Media",
+    "Web Development",
+    "Projects",
+    "Magic of Code",
+    "Tech Spells",
+  ],
+  title: "Get In Touch | Connect, Collaborate, Create",
+  description:
+    "Reach Out And Let's Start A Conversation. Let's Work Together To Craft Exceptional Digital Experiences That Make A Lasting Impact. Looking Forward To Hearing From You!",
+};
 
 const Contact = () => {
   return (

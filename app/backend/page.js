@@ -10,12 +10,40 @@ import graphqlAppSync from "../../public/graphqlAppSync.webp";
 import integration from "../../public/integration.webp";
 import BusinessGrowth from "../../public/BusinessGrowth.webp";
 
-const BackendHero = dynamic(() => import("@/components/BackendHero"), {
+const BackendHero = dynamic(() => import("@/components/Heros/BackendHero"), {
   loading: () => (
     <p className="h-[900px] justify-center items-center flex">Loading...</p>
   ),
 });
-//update the alt tags
+export const metadata = {
+  keywords: [
+    "Backend",
+    "Backend Development",
+    "Programming Languages",
+    "C# / C-Sharp",
+    "Node.js",
+    "PHP",
+    "Web Frameworks",
+    "Express.js",
+    "Nest.js",
+    "ASP.Net Core",
+    "Microservices Architecture",
+    "Entity Framework Core",
+    "EF Core",
+    "GraphQL",
+    "AppSync",
+    "Integration",
+    "Frontend",
+    "Mobile",
+    "Business Growth",
+    "Digital Interactions",
+    "Data Management",
+  ],
+  title: "Mastering Backend | Crafting Immersive Web Experiences",
+  description:
+    "Immerse Yourself In The World Of Modern Web Technologies And User-Centric Design. Unlock The Potential Of Seamless User Experiences And Engaging Interfaces Crafted By A Skilled Backend Developer.",
+};
+
 const Backend = () => {
   return (
     <section>
@@ -74,7 +102,7 @@ const Backend = () => {
           <div className="md:w-1/2 w-full flex justify-center items-center self-center">
             <Image
               src={prog}
-              alt="Web Technologies: HTML, CSS, JavaScript, TypeScript"
+              alt="Programming Languages: C# / C-Sharp, Node.js, PHP"
               style={{ maxWidth: "100%", height: "auto" }}
             />
           </div>
@@ -83,7 +111,7 @@ const Backend = () => {
           <div className="md:w-1/2 w-full flex justify-center items-center self-center">
             <Image
               src={ExNest}
-              alt="Frontend: Elevating Digital Experiences"
+              alt="Web Frameworks: Express.Js, Nest.Js, ASP.Net Core"
               style={{ maxWidth: "100%", height: "auto" }}
             />
           </div>
@@ -120,7 +148,7 @@ const Backend = () => {
           <div className="md:w-1/2 w-full flex justify-center items-center self-center">
             <Image
               src={ms}
-              alt="Web Technologies: HTML, CSS, JavaScript, TypeScript"
+              alt="Microservices Architecture"
               style={{ maxWidth: "100%", height: "auto" }}
             />
           </div>
@@ -129,7 +157,7 @@ const Backend = () => {
           <div className="md:w-1/2 w-full flex justify-center items-center self-center">
             <Image
               src={efCore}
-              alt="Frontend: Elevating Digital Experiences"
+              alt="Entity Framework Core (EF Core)"
               style={{ maxWidth: "100%", height: "auto" }}
             />
           </div>
@@ -161,7 +189,7 @@ const Backend = () => {
           <div className="md:w-1/2 w-full flex justify-center items-center self-center">
             <Image
               src={graphqlAppSync}
-              alt="Web Technologies: HTML, CSS, JavaScript, TypeScript"
+              alt="GraphQL With AppSync"
               style={{ maxWidth: "100%", height: "auto" }}
             />
           </div>
@@ -170,7 +198,7 @@ const Backend = () => {
           <div className="md:w-1/2 w-full flex justify-center items-center self-center">
             <Image
               src={integration}
-              alt="Frontend: Elevating Digital Experiences"
+              alt="Integration: Connecting Frontend And Mobile"
               style={{ maxWidth: "100%", height: "auto" }}
             />
           </div>
@@ -205,7 +233,7 @@ const Backend = () => {
           <div className="md:w-1/2 w-full flex justify-center items-center self-center">
             <Image
               src={BusinessGrowth}
-              alt="Web Technologies: HTML, CSS, JavaScript, TypeScript"
+              alt="Business Growth"
               style={{ maxWidth: "100%", height: "auto" }}
             />
           </div>
