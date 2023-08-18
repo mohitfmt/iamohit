@@ -18,6 +18,17 @@ const jsonLd = {
   jobTitle: "Full Stack Engineer",
   telephone: "(601) 8355-3290",
   url: "https://iamohit.com",
+  sameAs: [
+    "https://stackoverflow.com/users/3796048/mohit-shrivastava",
+    "https://www.linkedin.com/in/mohit5783",
+    "https://github.com/mohit5783/",
+    "https://twitter.com/mohit5783",
+    "https://www.facebook.com/mohit.shrivastava.technocrat",
+    "https://wa.link/yx7qep",
+    "https://www.instagram.com/mohit5783/",
+    "https://www.youtube.com/c/MohitShrivastavaMohit",
+    "https://www.pinterest.com/mohit5783",
+  ],
 };
 export const metadata = {
   metadataBase: new URL("https://iamohit.com"),
@@ -67,7 +78,7 @@ export const metadata = {
   },
   verification: {
     google: "3kX8SgptSvdF5fGJMtyEQ7aCWMER-RPtF_qxMPnSBQk",
-    yandex: "yandex",
+    yandex: "272368ba1073970f",
     yahoo: "yahoo",
   },
   alternates: {

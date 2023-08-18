@@ -49,9 +49,9 @@ const Backend = () => {
     <section>
       <BackendHero />
       <section className="p-10">
-        <h1 className="text-5xl lg:text-3xl xl:text-4xl 2xl:text-5xl text-center capitalize text-[#f5f543] py-4 font-semibold">
+        <h3 className="text-5xl lg:text-3xl xl:text-4xl 2xl:text-5xl text-center capitalize text-[#f5f543] py-4 font-semibold">
           Discover My Backend Skills
-        </h1>
+        </h3>
         <p className="text-2xl font-handlee">
           Let's delve into the realm of backend skills and explore how they form
           the rock-solid foundation for businesses in the digital landscape. As
@@ -68,10 +68,10 @@ const Backend = () => {
             />
           </div>
           <div className="md:w-1/2 w-full md:pl-5 pl-0 self-center leading-relaxed">
-            <h1 className="text-4xl lg:text-3xl xl:text-4xl text-center capitalize text-[#f5f543] py-4">
+            <h4 className="text-4xl lg:text-3xl xl:text-4xl text-center capitalize text-[#f5f543] py-4">
               <span className="font-bold">Backend Development:</span> The Pillar
               of Digital Success
-            </h1>
+            </h4>
             <p className="py-2">
               Behind every exceptional user interface lies a powerful backend
               that orchestrates data, processes, and business logic. The backend
@@ -85,10 +85,10 @@ const Backend = () => {
         </div>
         <div className="flex flex-wrap py-4">
           <div className="md:w-1/2 w-full md:pr-5 pl-0 self-center leading-relaxed">
-            <h1 className="text-4xl lg:text-3xl xl:text-4xl text-center capitalize text-[#f5f543] py-4">
+            <h4 className="text-4xl lg:text-3xl xl:text-4xl text-center capitalize text-[#f5f543] py-4">
               <span className="font-bold">Programming Languages:</span> C# /
               C-Sharp, Node.js, PHP
-            </h1>
+            </h4>
             <p className="py-2">
               Programming languages are the languages of backend development.
               Whether it's the versatility of C# / C-Sharp, the asynchronous
@@ -116,10 +116,10 @@ const Backend = () => {
             />
           </div>
           <div className="md:w-1/2 w-full md:pl-5 pl-0 self-center leading-relaxed">
-            <h1 className="text-4xl lg:text-3xl xl:text-4xl text-center capitalize text-[#f5f543] py-4">
+            <h4 className="text-4xl lg:text-3xl xl:text-4xl text-center capitalize text-[#f5f543] py-4">
               <span className="font-bold">Web Frameworks:</span> Express.js,
               Nest.js, ASP.Net Core
-            </h1>
+            </h4>
             <p className="py-2">
               Web frameworks are the tools that streamline backend development.
               Express.js offers minimalistic, robust capabilities for Node.js
@@ -133,9 +133,9 @@ const Backend = () => {
         </div>
         <div className="flex flex-wrap py-4">
           <div className="md:w-1/2 w-full md:pr-5 pl-0 self-center leading-relaxed">
-            <h1 className="text-4xl lg:text-3xl xl:text-4xl text-center capitalize text-[#f5f543] py-4">
+            <h4 className="text-4xl lg:text-3xl xl:text-4xl text-center capitalize text-[#f5f543] py-4">
               <span className="font-bold">Microservices</span> Architecture
-            </h1>
+            </h4>
             <p className="py-2">
               Microservices architecture revolutionizes backend design by
               breaking down applications into smaller, manageable services. This
@@ -162,9 +162,9 @@ const Backend = () => {
             />
           </div>
           <div className="md:w-1/2 w-full md:pl-5 pl-0 self-center leading-relaxed">
-            <h1 className="text-4xl lg:text-3xl xl:text-4xl text-center capitalize text-[#f5f543] py-4">
+            <h4 className="text-4xl lg:text-3xl xl:text-4xl text-center capitalize text-[#f5f543] py-4">
               <span className="font-bold">Entity</span> Framework Core (EF Core)
-            </h1>
+            </h4>
             <p className="py-2">
               Entity Framework Core simplifies data access by providing an
               object-relational mapping (ORM) framework. It allows me to work
@@ -176,9 +176,9 @@ const Backend = () => {
         </div>
         <div className="flex flex-wrap py-4">
           <div className="md:w-1/2 w-full md:pr-5 pl-0 self-center leading-relaxed">
-            <h1 className="text-4xl lg:text-3xl xl:text-4xl text-center capitalize text-[#f5f543] py-4">
+            <h4 className="text-4xl lg:text-3xl xl:text-4xl text-center capitalize text-[#f5f543] py-4">
               <span className="font-bold">GraphQL</span> with AppSync
-            </h1>
+            </h4>
             <p className="py-2">
               GraphQL enables efficient data fetching by allowing clients to
               request exactly what they need. With AppSync, I build scalable
@@ -203,10 +203,10 @@ const Backend = () => {
             />
           </div>
           <div className="md:w-1/2 w-full md:pl-5 pl-0 self-center leading-relaxed">
-            <h1 className="text-4xl lg:text-3xl xl:text-4xl text-center capitalize text-[#f5f543] py-4">
+            <h4 className="text-4xl lg:text-3xl xl:text-4xl text-center capitalize text-[#f5f543] py-4">
               The Backbone of <span className="font-bold">Integration:</span>{" "}
               Connecting Frontend and Mobile
-            </h1>
+            </h4>
             <p className="py-2">
               A robust backend serves as the bridge that connects frontend
               interfaces and mobile applications. Its data orchestration
@@ -219,9 +219,9 @@ const Backend = () => {
         </div>
         <div className="flex flex-wrap py-4">
           <div className="md:w-1/2 w-full md:pr-5 pl-0 self-center leading-relaxed">
-            <h1 className="text-4xl lg:text-3xl xl:text-4xl text-center capitalize text-[#f5f543] py-4">
+            <h4 className="text-4xl lg:text-3xl xl:text-4xl text-center capitalize text-[#f5f543] py-4">
               Catalyst for <span className="font-bold">Business</span> Growth
-            </h1>
+            </h4>
             <p className="py-2">
               A powerful backend is the cornerstone of a successful digital
               presence. It enables seamless interactions, robust data

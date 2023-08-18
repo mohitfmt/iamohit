@@ -15,119 +15,31 @@ const FrontendHero = dynamic(() => import("@/components/Heros/FrontendHero"), {
 export const metadata = {
   keywords: [
     "Frontend",
-    "Bootstrap",
-    "Ant Design",
-    "Tailwind CSS",
-    "NextJS",
-    "React",
-    "Angular",
-    "AWS-Amplify",
-    "Gatsby",
-    "React Redux",
-    "Redux Reducer",
-    "Redux Saga",
-    "Babel",
-    "Craco",
-    "Webpack",
-    "Material UI",
-    "ASP Razor Pages",
-    "Nebular Theme",
-    "jQuery",
-    "Backend",
-    "NodeJS",
-    "ExpressJS",
-    "GraphQL",
-    "NestJS",
-    "AppSync",
-    "Entity Framework",
-    "ASP.Net Web API",
-    "SOAP API",
-    "AD Auth",
-    "Nebular Auth",
-    "WCF",
-    "Web 3.0",
-    "Solidity",
-    "Web3.js",
-    "Hardhat",
-    "Ethers.js",
-    "Metamask",
-    "OpenZeppelin",
-    "DevOps & Tools",
-    "Confluence",
-    "Docker",
-    "Kubernetes",
-    "Salesforce",
-    "AJAX",
-    "MapObjects",
-    "AWS",
-    "Jenkins",
-    "Git",
-    "GitLab",
-    "Bitbucket",
-    "JIRA",
-    "Trello",
-    "SonarQube",
-    "Figma",
-    "ArcGIS",
-    "Microservices",
-    "Languages",
-    "JavaScript",
-    "TypeScript",
+    "Frontend Development",
+    "Web Technologies",
     "HTML",
     "CSS",
-    "C# / C-Sharp",
-    "ASP.Net",
-    "DotNet Core",
-    "PHP",
-    "WPF / XAML",
-    "Visual Basic 6.0",
-    "Databases",
-    "MySQL",
-    "MS Access",
-    "SQL Server",
-    "MongoDB",
-    "DynamoDB",
-    "XML",
-    "JSON",
-    "Aircraft 360°",
-    "Marketing eXperiment Platform 2.0",
-    "RTO Automation System",
-    "Edify School Software",
-    "Kerla Land Records GIS",
-    "Help PC Online",
-    "IoT Middleware platform",
-    "Kerry Warehouse Management System",
-    "AIA Biometric Web Application",
-    "geoTIME: Workforce Management",
-    "URL Shortner",
-    "Order Management",
-    "iAMohit: Mohit's Portfolio",
-    "Birth ’n’ Death Automation System",
-    "Arm License Automation System",
-    "Tandem (HeroHonda Workshop Management)",
-    "DinBhar News Automation",
-    "SADA (Special Area Development Authority)",
-    "Petronas Fire Alarm",
-    "Smart Training : train the trainers",
-    "Live Pricing Stocks Trading",
-    "Mastroify: An Astrology App",
-    "Insurance Frontend",
-    "Cloud Digitize",
-    "Averis Dashboard",
-    "Movie Cinema Films",
-    "Vehicle Parking System",
-    "Virtualify Softwares & Consultancy",
-    "Nakshatra Speaks : Astrology",
-    "Tanjong Golden Village - TGV Cinemas",
-    "Softec (Smart Conference)",
-    "California University of Business and Technology",
-    "SportsToto: Sports Betting",
-    "Benz Minting NFTs",
+    "JavaScript",
+    "TypeScript",
+    "JavaScript Frameworks",
+    "React",
+    "Angular",
+    "NextJS",
+    "Gatsby",
+    "UI Libraries",
+    "jQuery",
+    "Bootstrap",
+    "Tailwind",
+    "Ant-Design",
+    "User-Centric Design",
+    "Immersive Web Experiences",
+    "Business Growth",
+    "Digital Presence",
+    "User Engagement",
   ],
-  title:
-    "Innovative Projects | Crafting Future Through Digital Innovations And Tech Evolution",
+  title: "Mastering Frontend | Crafting Immersive Web Experiences",
   description:
-    "Unveiling A Gallery Of Cutting-Edge Endeavors That Define Tomorrow's Possibilities.",
+    "Immerse Yourself In The World Of Modern Web Technologies And User-Centric Design. Unlock The Potential Of Seamless User Experiences And Engaging Interfaces Crafted By A Skilled Frontend Developer.",
 };
 
 const Frontend = () => {
@@ -135,9 +47,9 @@ const Frontend = () => {
     <section>
       <FrontendHero />
       <section className="p-10">
-        <h1 className="text-5xl lg:text-3xl xl:text-4xl 2xl:text-5xl text-center capitalize text-[#f5f543] py-4 font-semibold">
+        <h3 className="text-5xl lg:text-3xl xl:text-4xl 2xl:text-5xl text-center capitalize text-[#f5f543] py-4 font-semibold">
           Frontend Artistry
-        </h1>
+        </h3>
         <p className="text-2xl font-handlee">
           I'd be thrilled to dive into the world of frontend skills and how they
           can invigorate businesses! As a seasoned frontend developer, I'm here
@@ -153,10 +65,10 @@ const Frontend = () => {
             />
           </div>
           <div className="md:w-1/2 w-full md:pl-5 pl-0 self-center leading-relaxed">
-            <h1 className="text-4xl lg:text-3xl xl:text-4xl text-center capitalize text-[#f5f543] py-4">
+            <h4 className="text-4xl lg:text-3xl xl:text-4xl text-center capitalize text-[#f5f543] py-4">
               <span className="font-bold">Frontend:</span> Elevating Digital
               Experiences
-            </h1>
+            </h4>
             <p className="py-2">
               In today's fast-paced digital world, the frontend is more than
               just a visual layer – it's the gateway to captivating user
@@ -168,10 +80,10 @@ const Frontend = () => {
         </div>
         <div className="flex flex-wrap py-4">
           <div className="md:w-1/2 w-full md:pr-5 pl-0 self-center leading-relaxed">
-            <h1 className="text-4xl lg:text-3xl xl:text-4xl text-center capitalize text-[#f5f543] py-4">
+            <h4 className="text-4xl lg:text-3xl xl:text-4xl text-center capitalize text-[#f5f543] py-4">
               <span className="font-bold">Web Technologies:</span> HTML, CSS,
               JavaScript, TypeScript
-            </h1>
+            </h4>
             <p className="py-2">
               HTML, CSS, and JavaScript are the building blocks of the digital
               realm. HTML structures your content, CSS paints the canvas, and
@@ -200,10 +112,10 @@ const Frontend = () => {
             />
           </div>
           <div className="md:w-1/2 w-full md:pl-5 pl-0 self-center leading-relaxed">
-            <h1 className="text-4xl lg:text-3xl xl:text-4xl text-center capitalize text-[#f5f543] py-4">
+            <h4 className="text-4xl lg:text-3xl xl:text-4xl text-center capitalize text-[#f5f543] py-4">
               <span className="font-bold">JavaScript Frameworks:</span> React,
               Angular, NextJS, Gatsby
-            </h1>
+            </h4>
             <p className="py-2">
               JavaScript frameworks are the engines that power modern web
               applications. React, Angular, NextJS, and Gatsby offer dynamic
@@ -219,10 +131,10 @@ const Frontend = () => {
         </div>
         <div className="flex flex-wrap py-4">
           <div className="md:w-1/2 w-full md:pr-5 pl-0 self-center leading-relaxed">
-            <h1 className="text-4xl lg:text-3xl xl:text-4xl text-center capitalize text-[#f5f543] py-4">
+            <h4 className="text-4xl lg:text-3xl xl:text-4xl text-center capitalize text-[#f5f543] py-4">
               <span className="font-bold">UI Libraries:</span> jQuery,
               Bootstrap, Tailwind, Ant-Design
-            </h1>
+            </h4>
             <p className="py-2">
               UI libraries streamline development and ensure consistent designs.
               jQuery's simplicity aids in DOM manipulation, Bootstrap offers
@@ -250,9 +162,9 @@ const Frontend = () => {
             />
           </div>
           <div className="md:w-1/2 w-full md:pl-5 pl-0 self-center leading-relaxed">
-            <h1 className="text-4xl lg:text-3xl xl:text-4xl text-center capitalize text-[#f5f543] py-4">
+            <h4 className="text-4xl lg:text-3xl xl:text-4xl text-center capitalize text-[#f5f543] py-4">
               Empowering Your Business
-            </h1>
+            </h4>
             <p className="py-2">
               In the digital age, a strong online presence is paramount. A
               well-crafted frontend not only engages users but also drives

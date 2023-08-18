@@ -16,17 +16,17 @@ const ExperienceCard = (props) => {
           <div className="flex gap-3 md:flex-col-reverse items-center md:justify-center justify-between">
             <div className="md:text-center text-left p-3 align-top">
               {exp.Company.Website === "#" ? (
-                <h2 className="md:text-5xl text-3xl font-bold whitespace-nowrap">
+                <h3 className="md:text-5xl text-3xl font-bold whitespace-nowrap">
                   {exp.Company.Name}
-                </h2>
+                </h3>
               ) : (
                 <Link href={exp.Company.Website} target="_blank">
-                  <h2 className="md:text-5xl text-2xl font-bold whitespace-nowrap">
+                  <h3 className="md:text-5xl text-2xl font-bold whitespace-nowrap">
                     {exp.Company.Name}
-                  </h2>
+                  </h3>
                 </Link>
               )}
-              <h3 className="text-xl text-lime-400 uppercase">{exp.Role}</h3>
+              <h4 className="text-xl text-lime-400 uppercase">{exp.Role}</h4>
               <div className="text-base flex items-center md:justify-center justify-start gap-1">
                 <FaMapMarkerAlt />
                 {exp.Company.Location}
@@ -71,14 +71,14 @@ const ExperienceCard = (props) => {
             <div>{exp.Company.LogoIcon}</div>
             <div>
               {exp.Company.Website === "#" ? (
-                <h2 className="md:text-5xl text-3xl font-bold">
+                <h3 className="md:text-5xl text-3xl font-bold">
                   {exp.Company.Name}
-                </h2>
+                </h3>
               ) : (
                 <Link href={exp.Company.Website} target="_blank">
-                  <h2 className="md:text-5xl text-3xl font-bold">
+                  <h3 className="md:text-5xl text-3xl font-bold">
                     {exp.Company.Name}
-                  </h2>
+                  </h3>
                 </Link>
               )}
 
@@ -100,11 +100,11 @@ const ExperienceCard = (props) => {
                   <div className="flex justify-between items-center p-3">
                     <div className="">
                       <Link href={expAcc.ClientCompany.Website} target="_blank">
-                        <h2 className="text-2xl font-bold items-center font-inter">
+                        <h3 className="text-2xl font-bold items-center font-inter">
                           {expAcc.ClientCompany.Name}
-                        </h2>
+                        </h3>
                       </Link>
-                      <h3 className="text-xl text-lime-400">{expAcc.Role}</h3>
+                      <h4 className="text-xl text-lime-400">{expAcc.Role}</h4>
                       <div className="text-base flex items-center gap-1">
                         <FaMapMarkerAlt />
                         {expAcc.ClientCompany.Location}

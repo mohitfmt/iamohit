@@ -46,9 +46,9 @@ const ProjectCard = (props, selectedFilters) => {
             </div>
           </div>
           <div className="p-5 flex flex-col justify-between">
-            <h3 className="text-3xl lg:text-2xl xl:text-3xl capitalize text-[#f5f543] font-semibold">
+            <h4 className="text-3xl lg:text-2xl xl:text-3xl capitalize text-[#f5f543] font-semibold">
               {project.projectFullName}
-            </h3>
+            </h4>
             <p className="font-normal py-5">{project.description}</p>
           </div>
         </Link>

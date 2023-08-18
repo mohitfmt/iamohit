@@ -58,9 +58,9 @@ const Contact = () => {
             />
           </div>
           <div className="md:w-1/2 w-full md:pl-5 pl-0 self-center leading-relaxed">
-            <h1 className="text-4xl lg:text-3xl xl:text-4xl text-center capitalize text-[#f5f543] py-4 font-semibold">
+            <h3 className="text-4xl lg:text-3xl xl:text-4xl text-center capitalize text-[#f5f543] py-4 font-semibold">
               Let's Chat
-            </h1>
+            </h3>
             <p className="py-2">
               Hey there, I'm Mohit, a full stack wizard who adores creating
               magic through code with a passion for turning lines of code into
@@ -91,9 +91,9 @@ const Contact = () => {
         </div>
         <div className="flex flex-wrap py-5">
           <div className="md:w-1/2 w-full md:pr-5 pr-0 self-center leading-relaxed">
-            <h1 className="text-4xl lg:text-3xl xl:text-4xl text-center capitalize text-[#f5f543] py-4 font-semibold">
+            <h3 className="text-4xl lg:text-3xl xl:text-4xl text-center capitalize text-[#f5f543] py-4 font-semibold">
               Open to New Opportunities
-            </h1>
+            </h3>
             <p className="py-2">
               Beyond the digital fundamentals, I thrive on sculpting user
               interfaces that adapt seamlessly to various devices. From shaping
@@ -142,9 +142,9 @@ const Contact = () => {
             />
           </div>
           <div className="md:w-1/2 w-full md:pl-5 pl-0 self-center leading-relaxed">
-            <h1 className="text-4xl lg:text-3xl xl:text-4xl text-center capitalize text-[#f5f543] py-4 font-semibold">
+            <h3 className="text-4xl lg:text-3xl xl:text-4xl text-center capitalize text-[#f5f543] py-4 font-semibold">
               Rest Assured, Your Information is Safe
-            </h1>
+            </h3>
             <p className="py-2">
               Your privacy matters, and I'm committed to safeguarding your
               information. I promise to use your data solely for communication
@@ -169,9 +169,9 @@ const Contact = () => {
           </div>
         </div>
         <div className="flex flex-wrap py-5">
-          <h1 className="w-full text-4xl lg:text-3xl xl:text-4xl text-center capitalize text-[#f5f543] py-4 font-semibold">
+          <h3 className="w-full text-4xl lg:text-3xl xl:text-4xl text-center capitalize text-[#f5f543] py-4 font-semibold">
             Ready to connect?
-          </h1>
+          </h3>
           <div className="md:w-1/2 w-full flex justify-center items-center self-center">
             <p className="md:text-right text-left text-xl">
               Reach out to me directly at{" "}
