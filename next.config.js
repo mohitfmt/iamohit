@@ -6,7 +6,7 @@ const nextConfig = {
       headers: [
         {
           key: "X-Robots-Tag",
-          value: "index",
+          value: "index, follow",
         },
       ],
       source: "/:path*",
