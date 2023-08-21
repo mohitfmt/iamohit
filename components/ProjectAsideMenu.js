@@ -127,11 +127,26 @@ const ProjectAsideMenu = ({ selectedFilters, setSelectedFilters }) => {
     // console.log("skills", skills);
   }, [skills]);
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 700) {
+        setCollapsed(true);
+      } else {
+        setCollapsed(false);
+      }
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <nav
       className={`z-10 ${
-        collapsed ? "" : "w-64"
-      } sm:relative absolute w-20 h-max bg-[#212121] border-2 border-[#292929] border-solid rounded-lg shadow text-white transition-all duration-300 ease-in-out`}
+        collapsed ? "w-20" : "w-64"
+      }  w-20 h-max bg-[#212121] border-2 border-[#292929] border-solid rounded-lg shadow text-white transition-all duration-300 ease-in-out`}
     >
       <div className="flex justify-between p-2">
         {selected.length > 0 ? (

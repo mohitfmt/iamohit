@@ -40,7 +40,8 @@ const ProjectCard = (props, selectedFilters) => {
                 )}
 
                 <div className="flex justify-center items-center gap-2 text-xl">
-                  <GiDuration className="text-3xl" /> {project.duration} months
+                  <GiDuration className="text-3xl" />{" "}
+                  {Math.round(project.duration * 30)} days
                 </div>
               </div>
             </div>
