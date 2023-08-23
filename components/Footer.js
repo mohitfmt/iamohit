@@ -100,7 +100,7 @@ const Footer = () => {
         <Link
           rel="noopener noreferrer"
           target={"_blank"}
-          href="https://www.youtube.com/c/MohitShrivastavaMohit"
+          href="https://www.youtube.com/@iAMohitBytes"
         >
           <FaYoutube
             className="text-4xl"

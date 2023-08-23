@@ -26,7 +26,7 @@ const jsonLd = {
     "https://www.facebook.com/mohit.shrivastava.technocrat",
     "https://wa.link/yx7qep",
     "https://www.instagram.com/mohit5783/",
-    "https://www.youtube.com/c/MohitShrivastavaMohit",
+    "https://www.youtube.com/@iAMohitBytes",
     "https://www.pinterest.com/mohit5783",
   ],
 };
@@ -110,13 +110,11 @@ export default function RootLayout({ children }) {
       </body>
 
       <Script
-        type="text/partytown"
-        async
         defer
         fetchpriority="low"
         src="https://www.googletagmanager.com/gtag/js?id=G-LH3YGF0X59"
       />
-      <Script type="text/partytown" id="google-analytics">
+      <Script id="google-analytics">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
@@ -126,7 +124,6 @@ export default function RootLayout({ children }) {
         `}
       </Script>
       <Script
-        async
         defer
         fetchpriority="low"
         type="application/ld+json"
