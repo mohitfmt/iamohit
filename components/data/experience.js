@@ -6,6 +6,7 @@ import {
   IRISLogo,
   Kln,
   CustommediaLogo,
+  FMTLogo,
 } from "../Logos";
 
 export const ExperienceData = [
@@ -91,7 +92,7 @@ export const ExperienceData = [
     Company: {
       Name: "Custommedia",
       Location: "Kuala Lumpur, Malaysia",
-      LogoIcon: <CustommediaLogo className="h-16" />,
+      LogoIcon: <CustommediaLogo className="h-16 md:h-52" />,
       Website: "https://custommedia.com.my/",
     },
     Role: "System Technologist",
@@ -110,7 +111,7 @@ export const ExperienceData = [
     Company: {
       Name: "Kerry Logistics",
       Location: "Penang, Malaysia",
-      LogoIcon: <Kln className="w-16" />,
+      LogoIcon: <Kln className="w-16 md:w-72" />,
       Website: "https://www.kerrylogistics.com/",
     },
     Role: "Senior Software Engineer",
@@ -208,5 +209,24 @@ export const ExperienceData = [
         Projects: [0],
       },
     ],
+  },
+  {
+    expId: 8,
+    startDate: "2023-10-05T00:00:00.000Z",
+    endDate: "Present",
+    Achievements: [
+      "Upgraded the news web app from Next.js 12.3 to 14.1, improving performance by 20% and reducing load times by 30% through optimized code implementation.",
+      "Implemented JSON-LDs, Image optimization, Keywords, to enhance site visibility, resulting in a 25% increase in Google News and Google Discover indexing, boosting organic traffic and engagement.",
+      "Implemented an enhanced caching strategy with Cloudflare, resulting in a 70% reduction in server response times and a 30% improvement in website loading speed, leading to a smoother user experience.",
+    ],
+    Company: {
+      Name: "Free Malaysia Today",
+      Location: "Kuala Lumpur, Malaysia",
+      LogoIcon: <FMTLogo className="w-16 md:w-96" />,
+      Website: "https://www.freemalaysiatoday.com/",
+    },
+    Role: "Technology Head",
+    RoleDescription: "",
+    Projects: [9, 10], // Need to change it is copied from IRIS
   },
 ];

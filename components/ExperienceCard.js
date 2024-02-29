@@ -16,12 +16,12 @@ const ExperienceCard = (props) => {
           <div className="flex gap-3 md:flex-col-reverse items-center md:justify-center justify-between">
             <div className="md:text-center text-left p-3 align-top">
               {exp.Company.Website === "#" ? (
-                <h3 className="md:text-5xl text-3xl font-bold whitespace-nowrap">
+                <h3 className="md:text-5xl text-2xl font-bold md:whitespace-nowrap">
                   {exp.Company.Name}
                 </h3>
               ) : (
                 <Link href={exp.Company.Website} target="_blank">
-                  <h3 className="md:text-5xl text-2xl font-bold whitespace-nowrap">
+                  <h3 className="md:text-5xl text-2xl font-bold md:whitespace-nowrap">
                     {exp.Company.Name}
                   </h3>
                 </Link>
@@ -34,7 +34,12 @@ const ExperienceCard = (props) => {
               <div className="text-base font-mono text-gray-200">
                 {new Date(exp.startDate).toLocaleDateString("en-us", options) +
                   " - " +
-                  new Date(exp.endDate).toLocaleDateString("en-us", options)}
+                  (exp.endDate === "Present"
+                    ? "Till Date"
+                    : new Date(exp.endDate).toLocaleDateString(
+                        "en-us",
+                        options
+                      ))}
               </div>
               <div className="py-5 justify-center md:flex hidden">
                 <Link
@@ -89,7 +94,12 @@ const ExperienceCard = (props) => {
               <div className="text-base font-mono text-gray-200">
                 {new Date(exp.startDate).toLocaleDateString("en-us", options) +
                   " - " +
-                  new Date(exp.endDate).toLocaleDateString("en-us", options)}
+                  (exp.endDate === "Present"
+                    ? "Till Date"
+                    : new Date(exp.endDate).toLocaleDateString(
+                        "en-us",
+                        options
+                      ))}
               </div>
             </div>
           </div>
@@ -115,10 +125,12 @@ const ExperienceCard = (props) => {
                           options
                         ) +
                           " - " +
-                          new Date(exp.endDate).toLocaleDateString(
-                            "en-us",
-                            options
-                          )}
+                          (exp.endDate === "Present"
+                            ? "Till Date"
+                            : new Date(exp.endDate).toLocaleDateString(
+                                "en-us",
+                                options
+                              ))}
                       </div>
                     </div>
                     <div>{expAcc.ClientCompany.LogoIcon}</div>
