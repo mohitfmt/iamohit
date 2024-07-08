@@ -123,6 +123,7 @@ export const metadata = {
   description:
     "Unveiling A Gallery Of Cutting-Edge Endeavors That Define Tomorrow's Possibilities.",
 };
+
 const Projects = () => {
   return (
     <section>

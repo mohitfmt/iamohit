@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import "./globals.css";
 import { Inter, Handlee } from "next/font/google";
 import Footer from "@/components/Footer";
-import Script from "next/script";
+import { GoogleTagManager, GoogleAnalytics } from "@next/third-parties/google";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const handlee = Handlee({
@@ -23,7 +23,7 @@ const jsonLd = {
     "https://www.linkedin.com/in/mohit5783",
     "https://github.com/mohit5783/",
     "https://twitter.com/mohit5783",
-    "https://www.facebook.com/mohit.shrivastava.technocrat",
+    "https://www.facebook.com/iamohits/",
     "https://wa.link/yx7qep",
     "https://www.instagram.com/mohit5783/",
     "https://www.youtube.com/@iAMohitBytes",
@@ -71,11 +71,6 @@ export const metadata = {
     creatorId: "iamohit",
     images: ["/twitter-og.png"],
   },
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 2.1,
-  },
   verification: {
     google: "3kX8SgptSvdF5fGJMtyEQ7aCWMER-RPtF_qxMPnSBQk",
     yandex: "272368ba1073970f",
@@ -91,7 +86,6 @@ export const metadata = {
     { name: "Mohit" },
     { name: "Mohit Shrivastava", url: "https://iamohit.com" },
   ],
-  colorScheme: "dark",
   creator: "Mohit Shrivastava",
   publisher: "Mohit Shrivastava",
   formatDetection: {
@@ -99,6 +93,13 @@ export const metadata = {
     address: false,
     telephone: true,
   },
+};
+export const viewport = {
+  width: "device-width",
+  initialScale: 1.0,
+  minimumScale: 1.0,
+  maximumScale: 5.0,
+  themeColor: "#000000",
 };
 export default function RootLayout({ children }) {
   return (
@@ -108,22 +109,9 @@ export default function RootLayout({ children }) {
         <main className="w-full">{children}</main>
         <Footer />
       </body>
-
-      <Script
-        defer
-        fetchpriority="low"
-        src="https://www.googletagmanager.com/gtag/js?id=G-LH3YGF0X59"
-      />
-      <Script id="google-analytics">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
- 
-          gtag('config', 'G-LH3YGF0X59');
-        `}
-      </Script>
-      <Script
+      <GoogleAnalytics gaId="G-LH3YGF0X59" />
+      <GoogleTagManager gtmId="GT-M6QW547" />
+      <script
         defer
         fetchpriority="low"
         type="application/ld+json"

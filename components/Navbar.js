@@ -130,7 +130,7 @@ const Navbar = () => {
         <Link
           rel="noopener noreferrer"
           target={"_blank"}
-          href="https://www.facebook.com/mohit.shrivastava.technocrat"
+          href="https://www.facebook.com/iamohits/"
         >
           <FaFacebookF
             className="text-2xl md:text-3xl text-[#1877f2]"
