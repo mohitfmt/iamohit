@@ -30,9 +30,24 @@ import DashView from "../../public/projImages/DashView.webp";
 import mocifi from "../../public/projImages/mocifi.webp";
 import vps from "../../public/projImages/vps.webp";
 import virtualify from "../../public/projImages/virtualify.webp";
+import fmt from "../../public/projImages/fmt.webp";
 import dummy from "../../public/projImages/dummy.webp";
 
 export const ProjectData = [
+  {
+    projectId: 0,
+    url: "https://www.freemalaysiatoday.com/",
+    companyId: 8,
+    teamSize: 2,
+    duration: 12,
+    projectName: "FMT",
+    projImage: fmt,
+    projectFullName: "Free Malaysia Today",
+    techUsed: [
+      3, 4, 5, 14, 19, 21, 38, 39, 44, 48, 54, 56, 57, 61, 64, 68, 71, 72, 73,
+    ],
+    description: `Free Malaysia Today (FMT) is an independent, bilingual news online portal with content, in both English and Bahasa Malaysia (Malay), with a focus on Malaysian current affairs, published since 2009. It is one of Malaysia's most accessed news sites with monthly visits of 11.83 million.`,
+  },
   {
     projectId: 1,
     url: "https://ao.changiairport.com/af360/",

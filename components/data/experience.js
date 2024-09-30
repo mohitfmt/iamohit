@@ -215,9 +215,15 @@ export const ExperienceData = [
     startDate: "2023-10-05T00:00:00.000Z",
     endDate: "Present",
     Achievements: [
-      "Upgraded the news web app from Next.js 12.3 to 14.1, improving performance by 20% and reducing load times by 30% through optimized code implementation.",
-      "Implemented JSON-LDs, Image optimization, Keywords, to enhance site visibility, resulting in a 25% increase in Google News and Google Discover indexing, boosting organic traffic and engagement.",
+      "Upgraded the news web app from Next.js 12.3 to 14.1, improving performance by 40% and reducing load times by 60% through optimized code implementation.",
       "Implemented an enhanced caching strategy with Cloudflare, resulting in a 70% reduction in server response times and a 30% improvement in website loading speed, leading to a smoother user experience.",
+      "Achieved a 26.10% increase in page views for English Articles. Boosted active users by 40.39%.",
+      "Drove a remarkable 184.40% increase in page views for Lifestyle Content. Increased active users by 193.43%.",
+      "Facilitated significant double-digit growth for Business and Opinion Sections.",
+      "Improved performance on Google Discover, enhancing our online visibility. Accomplished growth despite a 0.90% decrease in published articles, showcasing efficiency and content effectiveness.",
+      "Streamlined IT operations, significantly reducing downtimes. Enabled teams to focus on content creation without technical interruptions.",
+      "Implemented AI-driven solutions to empower departments company-wide. Crafted tailored AI prompts, enhancing efficiency and keeping FMT at the forefront of technology.",
+      "With a proven track record of driving digital growth, enhancing operational efficiency, and fostering innovation, I bring a blend of technical expertise and strategic vision.",
     ],
     Company: {
       Name: "Free Malaysia Today",
@@ -225,8 +231,8 @@ export const ExperienceData = [
       LogoIcon: <FMTLogo className="w-16 md:w-96" />,
       Website: "https://www.freemalaysiatoday.com/",
     },
-    Role: "Technology Head",
+    Role: "Technology Lead",
     RoleDescription: "",
-    Projects: [9, 10], // Need to change it is copied from IRIS
+    Projects: [0], 
   },
 ];

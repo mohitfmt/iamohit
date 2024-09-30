@@ -1,8 +1,9 @@
 import Image from "next/image";
-import pp from "../../public/ProfilePic.webp";
+import pp from "../../public/NewProfilePic.webp";
 import gwl2000 from "../../public/gwalior-2000.webp";
 import prince from "../../public/princeofPersia.webp";
-import passionValues from "../../public/CoreValues.webp";
+// import passionValues from "../../public/CoreValues.webp";
+import passionValues from "../../public/AnotherProfilePic.webp";
 
 export const metadata = {
   keywords: [

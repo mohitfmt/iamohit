@@ -3,6 +3,7 @@ import "./globals.css";
 import { Inter, Handlee } from "next/font/google";
 import Footer from "@/components/Footer";
 import { GoogleTagManager, GoogleAnalytics } from "@next/third-parties/google";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const handlee = Handlee({
@@ -111,11 +112,11 @@ export default function RootLayout({ children }) {
       </body>
       <GoogleAnalytics gaId="G-LH3YGF0X59" />
       <GoogleTagManager gtmId="GT-M6QW547" />
-      <script
+      <Script
         defer
-        fetchpriority="low"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        id="json-ld"
       />
     </html>
   );
