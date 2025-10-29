@@ -5,7 +5,7 @@ import bePillar from "../../public/be-pillar.webp";
 import prog from "../../public/prog.webp";
 import ExNest from "../../public/ExNest.webp";
 import ms from "../../public/ms.webp";
-import efCore from "../../public/efCore.webp";
+// import efCore from "../../public/efCore.webp";
 import graphqlAppSync from "../../public/graphqlAppSync.webp";
 import integration from "../../public/integration.webp";
 import BusinessGrowth from "../../public/BusinessGrowth.webp";
@@ -155,11 +155,11 @@ const Backend = () => {
         </div>
         <div className="flex flex-wrap py-4">
           <div className="md:w-1/2 w-full flex justify-center items-center self-center">
-            <Image
+            {/* <Image
               src={efCore}
               alt="Entity Framework Core (EF Core)"
               style={{ maxWidth: "100%", height: "auto" }}
-            />
+            /> */}
           </div>
           <div className="md:w-1/2 w-full md:pl-5 pl-0 self-center leading-relaxed">
             <h4 className="text-4xl lg:text-3xl xl:text-4xl text-center capitalize text-[#f5f543] py-4">

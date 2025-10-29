@@ -266,21 +266,21 @@ export const metadata = {
     "SonarQube",
     "Figma",
     "ArcGIS",
-    "Microservices"
+    "Microservices",
   ],
   title: "Extensive Experience | Digital Journey Of An IT Innovator With Depth",
-  description: "Driving Technological Progress For Nearly Two Decades With A Crafting Excellence Of Tech Evolution"
+  description:
+    "Driving Technological Progress For Nearly Two Decades With A Crafting Excellence Of Tech Evolution",
 };
 
 const Experience = () => {
   return (
     <section>
       <ExpHero />
-      {ExperienceData.sort((a,b)=>new Date(b.startDate)- new Date(a.startDate)).map((exp, index) => (
-        <ExperienceCard
-          key={index}
-          ExpData={...exp}
-        />
+      {ExperienceData.sort(
+        (a, b) => new Date(b.startDate) - new Date(a.startDate)
+      ).map((exp, index) => (
+        <ExperienceCard key={index} ExpData={exp} />
       ))}
       <SkillsCards show="all" />
     </section>

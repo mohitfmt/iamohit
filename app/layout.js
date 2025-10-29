@@ -12,13 +12,34 @@ const handlee = Handlee({
   variable: "--font-handlee",
   display: "swap",
 });
+
+// ENHANCED JSON-LD - Added more professional context
 const jsonLd = {
   "@context": "http://schema.org/",
   "@type": "Person",
   name: "Mohit Shrivastava",
-  jobTitle: "Full Stack Engineer",
+  jobTitle: "Senior Full Stack Engineer", // Enhanced from "Full Stack Engineer"
+  description:
+    "Senior Full-Stack Engineer specializing in Next.js and scalable news platforms. Scaled FMT to 8.5M monthly users with 184% growth.", // NEW
   telephone: "(601) 8355-3290",
   url: "https://iamohit.com",
+  image: "https://iamohit.com/og.png", // NEW
+  knowsAbout: [
+    "Next.js",
+    "React",
+    "Node.js",
+    "Performance Optimization",
+    "Kubernetes",
+    "GCP",
+    "News Platforms",
+  ], // NEW
+  alumniOf: "Accenture", // NEW
+  worksFor: {
+    // NEW
+    "@type": "Organization",
+    name: "Free Malaysia Today",
+    url: "https://www.freemalaysiatoday.com",
+  },
   sameAs: [
     "https://stackoverflow.com/users/3796048/mohit-shrivastava",
     "https://www.linkedin.com/in/mohit5783",
@@ -31,12 +52,42 @@ const jsonLd = {
     "https://www.pinterest.com/mohit5783",
   ],
 };
+
+// ENHANCED METADATA - Enriched with more specific details
 export const metadata = {
   metadataBase: new URL("https://iamohit.com"),
+  title: {
+    default:
+      "Mohit Shrivastava | Senior Full-Stack Engineer | Next.js & Performance Specialist",
+    template: "%s | Mohit Shrivastava",
+  },
+  description:
+    "Senior Full-Stack Engineer specializing in Next.js and scalable news platforms. Scaled FMT to 8.5M monthly users with 184% growth and 60% faster load times. 18 years experience across 7 industries.",
+  keywords: [
+    // Original broad keywords
+    "Full Stack Engineer",
+    "Web 3.0",
+    "Blockchain",
+    "Frontend Developer",
+    "Backend Developer",
+    // NEW: Specific high-value keywords
+    "Next.js Expert",
+    "Next.js Performance Optimization",
+    "React Developer Malaysia",
+    "News Platform Development",
+    "Scalability Engineer",
+    "GCP Kubernetes",
+    "WordPress to Next.js Migration",
+    "High Traffic Website Optimization",
+    "8.5M Users Platform",
+    "Malaysia Full Stack Developer",
+    "Kuala Lumpur Developer",
+  ],
   openGraph: {
-    title: "iAMohit | Mohit Shrivastava's Web 3.0 & Full Stack Portfolio",
+    title:
+      "Mohit Shrivastava | Senior Full-Stack Engineer | Scaled FMT to 8.5M Users",
     description:
-      "Welcome to Mohit's Portfolio! an Innovative Technocrat with Full Stack Excellence! Craft Engaging Frontends, Embrace Blockchain Innovations, Architect Backends with Precision.",
+      "Senior Full-Stack Engineer specializing in Next.js and scalable news platforms. 184% growth, 60% faster load times. 18 years experience.",
     url: "https://iamohit.com",
     siteName: "iamohit.com",
     images: [
@@ -44,7 +95,7 @@ export const metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "OpenGraph Image for Mohit",
+        alt: "Mohit Shrivastava - Senior Full-Stack Engineer specializing in scalable news platforms",
       },
     ],
     locale: "en_US",
@@ -64,9 +115,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "iAMohit",
+    title: "Mohit Shrivastava | Senior Full-Stack Engineer",
     description:
-      "Welcome to Mohit's Portfolio! an Innovative Technocrat with Full Stack Excellence! Craft Engaging Frontends, Embrace Blockchain Innovations, Architect Backends with Precision.",
+      "Scaled FMT to 8.5M monthly users with 184% growth. Specializing in Next.js, performance optimization, and scalable news platforms.",
     siteId: "iamohit",
     creator: "@mohit5783",
     creatorId: "iamohit",
@@ -94,7 +145,11 @@ export const metadata = {
     address: false,
     telephone: true,
   },
+  // NEW: Additional metadata for better SEO
+  category: "Technology",
+  classification: "Web Development Portfolio",
 };
+
 export const viewport = {
   width: "device-width",
   initialScale: 1.0,
@@ -102,6 +157,7 @@ export const viewport = {
   maximumScale: 5.0,
   themeColor: "#000000",
 };
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">

@@ -39,8 +39,8 @@ import {
   SiJquery,
   SiJsdelivr,
   SiKubernetes,
-  SiMicrosoftaccess,
-  SiMicrosoftsqlserver,
+  // SiMicrosoftaccess,
+  // SiMicrosoftsqlserver,
   SiMongodb,
   SiMui,
   SiMysql,
@@ -442,16 +442,16 @@ export const AllSkills = [
         name: "MySQL",
         icon: <SiMysql size="100%" className="w-8" />,
       },
-      {
-        skillsId: 65,
-        name: "MS Access",
-        icon: <SiMicrosoftaccess size="100%" className="w-8" />,
-      },
-      {
-        skillsId: 66,
-        name: "SQL Server",
-        icon: <SiMicrosoftsqlserver size="100%" className="w-8" />,
-      },
+      // {
+      //   skillsId: 65,
+      //   name: "MS Access",
+      //   icon: <SiMicrosoftaccess size="100%" className="w-8" />,
+      // },
+      // {
+      //   skillsId: 66,
+      //   name: "SQL Server",
+      //   icon: <SiMicrosoftsqlserver size="100%" className="w-8" />,
+      // },
       {
         skillsId: 67,
         name: "Oracle",
