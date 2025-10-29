@@ -3,6 +3,7 @@ import MetricsBar from "@/components/homepage/MetricsBar";
 import FeaturedWork from "@/components/homepage/FeaturedWork";
 import CoreSkills from "@/components/homepage/CoreSkills";
 import SocialProof from "@/components/homepage/SocialProof";
+import WhyWorkWithMe from "@/components/homepage/WhyWorkWithMe";
 
 export const metadata = {
   title:
@@ -36,6 +37,7 @@ export default function Home() {
       <FeaturedWork />
       <CoreSkills />
       <SocialProof />
+      <WhyWorkWithMe />
     </>
   );
 }

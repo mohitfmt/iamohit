@@ -141,14 +141,14 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="w-full bg-gradient-to-b from-transparent to-black/30 mt-20">
+    <footer className="w-full bg-linear-to-b from-transparent to-black/30 mt-20">
       {/* Animated divider */}
       <motion.div
         variants={dividerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="h-[1px] bg-gradient-to-r from-transparent via-[#f5f543] to-transparent origin-center"
+        className="h-px bg-linear-to-r from-transparent via-[#f5f543] to-transparent origin-center"
       />
 
       <motion.div
@@ -232,7 +232,7 @@ const Footer = () => {
             <h3 className="text-xl font-semibold text-white mb-4">
               Notable Work
             </h3>
-            <div className="bg-gradient-to-br from-[#f5f543]/10 to-transparent border border-[#f5f543]/20 rounded-lg p-4 space-y-2">
+            <div className="bg-linear-to-br from-[#f5f543]/10 to-transparent border border-[#f5f543]/20 rounded-lg p-4 space-y-2">
               <div className="text-3xl font-bold text-[#f5f543]">8.5M+</div>
               <div className="text-sm text-gray-300">
                 Monthly users served at Free Malaysia Today

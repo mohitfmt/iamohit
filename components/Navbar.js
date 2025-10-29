@@ -239,7 +239,7 @@ const Navbar = () => {
           initial={{ scaleX: 0 }}
           animate={{ scaleX: scrolled ? 1 : 0 }}
           transition={{ duration: 0.3 }}
-          className="h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent"
+          className="h-px bg-linear-to-r from-transparent via-white/20 to-transparent"
         />
       </motion.header>
 
@@ -268,7 +268,7 @@ const Navbar = () => {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="absolute right-0 top-0 bottom-0 w-[80%] max-w-sm bg-gradient-to-br from-gray-900 to-black border-l border-white/10 p-8 overflow-y-auto"
+              className="absolute right-0 top-0 bottom-0 w-[80%] max-w-sm bg-linear-to-br from-gray-900 to-black border-l border-white/10 p-8 overflow-y-auto"
             >
               {/* Logo in mobile menu */}
               <div className="mb-12 mt-2">

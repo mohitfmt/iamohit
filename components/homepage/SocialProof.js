@@ -190,7 +190,7 @@ export default function SocialProof() {
 
         {/* Final CTA - Clean and Classy */}
         <motion.div
-          className="mt-16 text-center bg-gradient-to-br from-[#1a1a1a] via-[#151515] to-[#0a0a0a] border border-[#292929] rounded-2xl p-12"
+          className="mt-16 text-center bg-linear-to-br from-[#1a1a1a] via-[#151515] to-[#0a0a0a] border border-[#292929] rounded-2xl p-12"
           variants={ctaVariants}
           initial="hidden"
           whileInView="visible"
