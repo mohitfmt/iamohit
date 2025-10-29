@@ -3,286 +3,125 @@ import SkillsCards from "@/components/SkillsCards";
 import { ExperienceData } from "@/components/data/experience";
 import dynamic from "next/dynamic";
 
+// Dynamically import components for better performance
 const ExpHero = dynamic(() => import("@/components/Heros/ExpHero"), {
   loading: () => (
-    <p className="h-[900px] justify-center items-center flex">Loading...</p>
+    <p className="h-screen justify-center items-center flex">Loading...</p>
   ),
 });
+
+const ImpactMetrics = dynamic(
+  () => import("@/components/experience/ImpactMetrics"),
+  {
+    loading: () => <div className="h-96"></div>,
+  }
+);
+
+const CareerTimeline = dynamic(
+  () => import("@/components/experience/CareerTimeline"),
+  {
+    loading: () => <div className="h-96"></div>,
+  }
+);
+
+const TechEvolution = dynamic(
+  () => import("@/components/experience/TechEvolution"),
+  {
+    loading: () => <div className="h-96"></div>,
+  }
+);
+
+const FinalCTA = dynamic(() => import("@/components/experience/FinalCTA"), {
+  loading: () => <div className="h-96"></div>,
+});
+
+// Enhanced metadata with focused keywords
 export const metadata = {
   keywords: [
-    "Digital Experience",
-    "IT Innovator",
-    "Technology Evolution",
-    "Angular Framework",
-    "Angular 14",
-    "PayCard WebUI",
-    "PayBoon Application",
-    "Delivery Management Quality Improvement",
-    "Angular Projects",
-    "Project Efficiency",
-    "High-Quality Solutions",
-    "German Car Company",
-    "3D Virtual World",
-    "React",
-    "Babylon",
-    "Microservices",
-    "Virtual Career Fair",
-    "Interactive eBrochure",
-    "WebAR",
-    "Digital Twins",
-    "Blockchain ETH NFTs",
-    "E-Wallet Integration",
-    "WebAR",
-    "AR Apps",
-    "Gamified Experiences",
-    "Aircraft Flow 360",
-    "AWS Amplify",
-    "Real-Time Visibility",
-    "Latency in Flights",
-    "Advanced Marketing eXperiment Platform",
-    "Seamless Self-Service Platform",
-    "Ant-Design",
-    "Staff Roster Scheduling",
-    "React",
-    "Redux",
-    "Ant Design",
-    "Babel",
-    "Express",
-    "Senior Engineer",
-    "Legacy Projects",
-    "Front-End Technologies",
-    "Angular",
-    "React",
-    "C#",
-    "ASP.Net Core",
-    "SQL Server",
-    "Active Directory Authentication",
-    "Web APIs",
-    "Backend Operations",
-    "ASP.Net Web API",
-    "Entity Framework",
-    "Razor Pages",
-    "Bootstrap",
-    "Insurance Client",
-    "Legacy Modules",
-    "Senior Software Engineer",
-    ".Net",
-    "WPF",
-    "WCF",
-    "Performance Optimization",
-    "KWMS Customizations",
-    "Legacy Application",
-    "Technical Improvement",
-    "Team Efficiency",
-    "IoT Middleware",
-    "Microsoft .Net",
-    "C#",
-    "Angular",
-    "Smart-Object Connectors",
-    "Real-Time Execution",
-    "Monitoring",
-    "IoT Conference",
-    "Customized GUI",
-    "Xamarin",
-    "Effort Estimates",
-    "Implementation",
-    "Development",
-    "SEO",
-    "Positive Coding Skills",
-    "Software Engineer",
-    "Gis Based Software",
-    "Land Records Department",
-    "Kiosk for Karnataka Land Records",
-    "Lead/Mentor",
-    "Knowledge Sharing",
-    "Web Developer",
-    "Enterprise System",
-    "Payment Gateways APIs",
-    "PHP",
-    "SalesForce Integration",
-    "Wireframes",
-    "Mockups",
-    "IoT",
-    "GeoMapTech",
-    "Gwalior",
-    "India",
-    "Communication",
-    "Stakeholder Management",
-    "Architecture",
-    "XAML UI Components",
-    "SQL Tables",
-    "Architectural Reorganization",
-    "Optimization",
-    "Application Performance",
-    "Hands-On Support",
-    "Continuous Growth",
-    "Knowledge Sharing Environment",
-    "System Technologist",
-    "Self-Learning",
-    "Continuous Improvement",
-    "Business Value",
-    "System Interfaces",
-    "Smart-Object Connectors",
-    "Efficiency",
-    "Scalability",
-    "Stability",
-    "Agile Methodologies",
-    "Angular Frontend",
-    ".Net Web APIs Backend",
-    "Debugging",
-    "Optimization Skills",
-    "VNS Pvt. Ltd.",
-    "Web Developer",
-    "New Delhi",
-    "India",
-    "Enterprise System",
-    "Payment Gateways APIs",
-    "PHP",
-    "SalesForce Integration",
-    "Wireframes",
-    "Mockups",
-    "SEO",
-    "Coding Skills",
-    "Positive Professional Approach",
-    "Software Engineer",
-    "Gis Based Software",
-    "Land Records Department",
-    "Kiosk for Karnataka Land Records",
-    "Reverse-Engineered Legacy Modules",
-    "Effective Components Interoperability",
-    "Code Maintainability",
-    "Software for News Channel",
-    "Remote Program Scheduling",
-    "Channel Logos",
-    "System Technologist",
-    "Self-Learning",
-    "Continuous Improvement",
-    "Business Value",
-    "System Interfaces",
-    "Smart-Object Connectors",
-    "Efficiency",
-    "Scalability",
-    "Stability",
-    "IoT Middleware",
-    "Microsoft .Net",
-    "C#",
-    "Angular",
-    "Real-Time Execution",
-    "Monitoring",
-    "IoT Conference",
-    "Customized GUI",
-    "Xamarin",
-    "Effort Estimates",
-    "Implementation",
-    "Software Engineer",
-    "RTO Automation System",
-    "Visual Basic",
-    "Edify Software",
-    "School Software",
-    "Coding Skills",
-    "Top Management",
-    "Teachers",
-    "Parents/Guardians",
-    "SMS Facility",
-    "News Channel Software",
-    "Fully Functional News Channel",
-    "Versatile Skillset Showcase",
-    "Web 3.0",
-    "Solidity",
-    "Web3.js",
-    "Hardhat",
-    "Ethers.js",
-    "Metamask",
-    "OpenZeppelin",
-    "Three.js",
-    "Languages",
-    "JavaScript",
-    "TypeScript",
-    "HTML",
-    "CSS",
-    "C# / C-Sharp",
-    "ASP.Net",
-    "DotNet Core",
-    "PHP",
-    "WPF / XAML",
-    "Visual Basic 6.0",
-    "Databases",
-    "MySQL",
-    "MS Access",
-    "SQL Server",
-    "Oracle",
-    "MongoDB",
-    "PostgreSQL",
-    "DynamoDB",
-    "Firebase",
-    "XML",
-    "JSON",
-    "Backend",
-    "NodeJS",
-    "ExpressJS",
-    "GraphQL",
-    "NestJS",
-    "AppSync",
-    "Entity Framework",
-    "ASP.Net Web API",
-    "SOAP API",
-    "AD Auth",
-    "Nebular Auth",
-    "WCF",
-    "Frontend",
-    "Bootstrap",
-    "Ant Design",
-    "Tailwind CSS",
-    "NextJS",
-    "React",
-    "Angular",
-    "AWS-Amplify",
-    "Gatsby",
-    "React Redux",
-    "Redux Reducer",
-    "Redux Saga",
-    "Babel",
-    "Craco",
-    "Webpack",
-    "Material UI",
-    "ASP Razor Pages",
-    "Nebular Theme",
-    "jQuery",
-    "DevOps & Tools",
-    "Confluence",
-    "Docker",
-    "Kubernetes",
-    "Salesforce",
-    "AJAX",
-    "MapObjects",
-    "AWS",
-    "GCP",
-    "Jenkins",
-    "Git",
-    "GitLab",
-    "Bitbucket",
-    "JIRA",
-    "Trello",
-    "SonarQube",
-    "Figma",
-    "ArcGIS",
-    "Microservices",
+    "Senior Full Stack Engineer Malaysia",
+    "Next.js Expert Kuala Lumpur",
+    "React Performance Specialist",
+    "News Platform Developer",
+    "18 Years Experience Developer",
+    "Scalability Architect",
+    "GCP Cloud Run Expert",
+    "Kubernetes Developer Malaysia",
+    "Enterprise Solutions Architect",
+    "Technology Lead Malaysia",
+    "Full Stack Team Lead",
+    "Performance Optimization Expert",
   ],
-  title: "Extensive Experience | Digital Journey Of An IT Innovator With Depth",
+  title:
+    "18+ Years Experience | Built Systems Serving 8.5M+ Users | Mohit Shrivastava",
   description:
-    "Driving Technological Progress For Nearly Two Decades With A Crafting Excellence Of Tech Evolution",
+    "Senior Full-Stack Engineer with 18+ years building scalable platforms. Led FMT to 8.5M users with 184% growth & 60% faster load times. Next.js, React, GCP, Kubernetes expert. Top 3% StackOverflow.",
+  openGraph: {
+    title:
+      "18+ Years Experience | Systems Serving Millions | Mohit Shrivastava",
+    description:
+      "From Visual Basic (2006) to Next.js (2025). Scaled FMT to 8.5M users. 150+ projects. Top 3% StackOverflow.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "18+ Years Experience | Mohit Shrivastava",
+    description:
+      "Senior Full-Stack Engineer | 8.5M users | 184% growth | Next.js expert",
+  },
 };
 
 const Experience = () => {
   return (
     <section>
+      {/* 1. Enhanced Hero Section */}
       <ExpHero />
-      {ExperienceData.sort(
-        (a, b) => new Date(b.startDate) - new Date(a.startDate)
-      ).map((exp, index) => (
-        <ExperienceCard key={index} ExpData={exp} />
-      ))}
-      <SkillsCards show="all" />
+
+      {/* 2. Impact Metrics Bar (NEW) */}
+      <ImpactMetrics />
+
+      {/* 3. Career Timeline Overview (NEW) */}
+      <CareerTimeline />
+
+      {/* 4. Technology Evolution (NEW) */}
+      <TechEvolution />
+
+      {/* 5. Detailed Experience Cards (Enhanced with animations) */}
+      <div className="bg-linear-to-b from-[#121212] to-[#1a1a1a] py-10">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              Detailed <span className="text-[#f5f543]">Work Experience</span>
+            </h2>
+            <p className="text-xl text-gray-400">
+              Deep dive into my achievements at each company
+            </p>
+          </div>
+
+          {ExperienceData.sort(
+            (a, b) => new Date(b.startDate) - new Date(a.startDate)
+          ).map((exp, index) => (
+            <ExperienceCard key={index} ExpData={exp} />
+          ))}
+        </div>
+      </div>
+
+      {/* 6. Skills Showcase (Reorganized) */}
+      <div className="bg-[#121212] py-16">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              Technical <span className="text-[#f5f543]">Skills</span>
+            </h2>
+            <p className="text-xl text-gray-400">
+              Technologies I've mastered over 18 years
+            </p>
+          </div>
+          <SkillsCards show="all" />
+        </div>
+      </div>
+
+      {/* 7. Final CTA Section (NEW) */}
+      <FinalCTA />
     </section>
   );
 };

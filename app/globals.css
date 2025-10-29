@@ -67,3 +67,75 @@ body {
   text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
     -1px 1px 0 #000, 1px 1px 0 #000;
 }
+
+/* ============================================
+   ABOUT PAGE - CSS ADDITIONS
+   Add these to your app/globals.css
+   ============================================ */
+
+/* Accessibility: Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Smooth scrolling for browsers that support it */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Optional: Add these utility classes for enhanced effects */
+
+/* Glow effect for yellow accents */
+.glow-yellow {
+  box-shadow: 0 0 20px rgba(245, 245, 67, 0.3);
+}
+
+.glow-yellow:hover {
+  box-shadow: 0 0 30px rgba(245, 245, 67, 0.5);
+}
+
+/* Gradient text effect (if needed) */
+.gradient-text {
+  background: linear-gradient(135deg, #f5f543 0%, #f5d543 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Loading skeleton animation (optional for lazy loading) */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.skeleton {
+  animation: shimmer 2s infinite linear;
+  background: linear-gradient(to right, #212121 4%, #292929 25%, #212121 36%);
+  background-size: 1000px 100%;
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid #f5f543;
+  outline-offset: 2px;
+}
+
+/* Better default button focus */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #f5f543;
+  outline-offset: 4px;
+}

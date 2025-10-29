@@ -92,7 +92,7 @@ export const ExperienceData = [
     Company: {
       Name: "Custommedia",
       Location: "Kuala Lumpur, Malaysia",
-      LogoIcon: <CustommediaLogo className="h-16 md:h-52" />,
+      LogoIcon: <CustommediaLogo className="" />,
       Website: "https://custommedia.com.my/",
     },
     Role: "System Technologist",
@@ -233,6 +233,6 @@ export const ExperienceData = [
     },
     Role: "Technology Lead",
     RoleDescription: "",
-    Projects: [0], 
+    Projects: [0],
   },
 ];

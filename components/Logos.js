@@ -300,7 +300,7 @@ export const Kln = (props) => (
   </svg>
 );
 export const CustommediaLogo = (props) => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 178 682" {...props}>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 682 682" {...props}>
     <style>{".s0{fill:#ffcfd6}.s1{fill:#d80b21}.s2{fill:#eb727e}"}</style>
     <g id="Layer 1">
       <path
