@@ -20,12 +20,12 @@ const Hero = () => {
         <div className="w-full gap-3 justify-center flex flex-wrap py-10 text-center">
           <a
             target="_blank"
-            href="/Mohit-Full-Stack-Lead.pdf"
+            href="/Mohit_Shrivastava_CV.pdf"
             download={true}
             rel="nofollow"
             className="flex font-inter items-center bg-lime-400 text-black p-2.5 px-6 rounded-lg text-lg font-semibold hover:bg-black hover:text-white border border-solid border-transparent hover:border-lime-400"
           >
-            Download Resume
+            Download CV
             <FaRegFilePdf className="ml-2" />
           </a>
           <Link

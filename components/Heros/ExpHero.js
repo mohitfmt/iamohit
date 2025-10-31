@@ -225,11 +225,11 @@ const ExpHero = () => {
 
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link
-                href="/contact"
+                href="/Mohit_Shrivastava_CV.pdf"
                 className="flex items-center gap-2 bg-transparent text-white border-2 border-white px-8 py-4 rounded-lg text-lg font-bold hover:bg-white hover:text-[#121212] transition-all duration-300"
               >
                 <HiDownload className="text-xl" />
-                Download Resume
+                Download CV
               </Link>
             </motion.div>
           </motion.div>

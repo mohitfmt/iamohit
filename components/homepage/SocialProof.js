@@ -245,7 +245,7 @@ export default function SocialProof() {
 
             {/* Download CV Button */}
             <motion.a
-              href="/resume.pdf"
+              href="/Mohit_Shrivastava_CV.pdf"
               download
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-transparent border-2 border-[#f5f543] text-[#f5f543] font-semibold rounded-lg hover:bg-[#f5f543] hover:text-black transition-all duration-200"
               whileHover={{ scale: 1.05 }}

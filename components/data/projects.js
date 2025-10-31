@@ -163,7 +163,7 @@ export const ProjectData = [
     Typescript-based framework NestJS. Each services has own purpose and single responsibility.`,
   },
   {
-    projectId: 13,
+    projectId: 131,
     url: "https://iamohit.netlify.app/",
     companyId: 0,
     teamSize: 1,

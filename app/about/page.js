@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import {
   FcGraduationCap,
@@ -22,26 +22,8 @@ import {
   FaStar,
   FaTrophy,
 } from "react-icons/fa";
-import pp from "../../public/NewProfilePic.webp";
+import pp from "../../public/NewProfilePic-Face.webp";
 import passionValues from "../../public/AnotherProfilePic.webp";
-
-// export const metadata = {
-//   keywords: [
-//     "About Mohit Shrivastava",
-//     "Senior Full-Stack Engineer",
-//     "Life Journey",
-//     "Gwalior to Malaysia",
-//     "Developer Story",
-//     "From 64% to 8.5M Users",
-//     "Tech Leader Malaysia",
-//     "Personal Growth Story",
-//     "Inspiring Developer Journey",
-//   ],
-//   title:
-//     "About Mohit Shrivastava | From 64% to Leading Platforms Serving 8.5M Users",
-//   description:
-//     "From a below-average student in Gwalior who scored 64% to leading technology for 8.5M users in Malaysia. A personal journey of transformation, courage, and living king size.",
-// };
 
 const About = () => {
   const YrsOfExp = new Date().getFullYear() - 2006;
@@ -89,84 +71,81 @@ const About = () => {
       icon: <FcLightAtTheEndOfTunnel size="50" />,
       tagline: "64% changed everything",
       story:
-        "Parents wanted me to do BBA at Jiwaji University. They asked me to fill the form. I thought I wouldn't get selected with my marks. Somehow, 64% was good enough - I got the seat. That's when I collected the courage: 'I don't want theoretical studies. I'm not good at that. Give me computers, or I'll work at the convenience store.' After a few rounds of discussion, they agreed.",
+        "Parents wanted me to do BBA at Jiwaji University. I convinced them: Let me do BCA (computers). They said yes. I scored 64% in 12th boards - when everyone expected <50%. That number became my badge. Proof that I could do hard things.",
       highlights: [
-        "Got BBA seat with 64% (unexpectedly!)",
-        "Had the courage conversation with parents",
-        '"Give me computers or I\'ll run the mart"',
-        "They agreed - life changed forever",
-      ],
-      color: "from-yellow-500/20 to-orange-500/20",
-      isHighlight: true,
-    },
-    {
-      id: 4,
-      phase: "The Transformation",
-      years: "2000-2003",
-      location: "Gwalior",
-      icon: <FcIdea size="50" />,
-      tagline: "From nobody to THE guy",
-      story:
-        "Aptech HDSE and Manipal Academy BIT. My life transformed. My personality changed. I was no longer that 'stupid fellow' nobody cared about. For the first time, I was KNOWN for studies. People came to ME to clear their doubts. Even teachers asked MY advice. The biggest win? Teachers worked 2 weeks on a number-to-words algorithm. I solved it in 3 hours. This success felt bigger than getting an offer from Google.",
-      highlights: [
-        "Aptech HDSE + Manipal Academy BIT",
-        "Mentor: Mr. Vishal Kaul",
-        "First time known for STUDIES!",
-        "Teachers asking MY advice",
-        "**3 hours vs their 2 weeks** - legendary!",
+        "Parents wanted BBA, I chose BCA",
+        "Scored 64% (expected <50%!)",
+        "First time exceeding expectations",
+        "Computers became my identity",
       ],
       color: "from-green-500/20 to-emerald-500/20",
       isHighlight: true,
-      quote: "This success is even bigger than getting an offer from Google.",
+      quote: "64% was my first proof that I could do hard things.",
+    },
+    {
+      id: 4,
+      phase: "College Life",
+      years: "2000-2003",
+      location: "Gwalior",
+      icon: <FcIdea size="50" />,
+      tagline: "Prince of Persia to Visual Basic",
+      story:
+        "BCA at LNCT. Hostel life. Playing Prince of Persia on friend's computer all day. First Visual Basic classes. Built my first CRUD app - felt like magic! Still friends with that group (Sunil, Ajeet, Vikas, Shekhar, Jatin). We're still on WhatsApp!",
+      highlights: [
+        "BCA at LNCT, Gwalior",
+        "Hostel life & Prince of Persia marathons",
+        "First Visual Basic CRUD app",
+        "Lifelong friends (still WhatsApp daily!)",
+      ],
+      color: "from-cyan-500/20 to-blue-500/20",
     },
     {
       id: 5,
-      phase: "Kerala Breakthrough",
-      years: "2003-2006",
-      location: "Kerala beaches",
-      icon: <FaTrophy size="50" />,
-      tagline: "13 days on the beach",
+      phase: "First Real Job",
+      years: "2006-2012",
+      location: "Ujjain → Indore",
+      icon: <FcBriefcase size="50" />,
+      tagline: "VNS Microsystems & growth",
       story:
-        "MCA from Sikkim Manipal. Then came the Kerala Land Records project. A team of Visual C++ experts from Chennai and Kerala had worked MONTHS on it - still couldn't solve it. I flew to Kerala (my first beach visit!), got the requirements, sat on the beaches for 13 days and nights, and finished it with a great solution. At the success party, a drunk consultant announced: 'Shame on you guys... we have to call a north Indian to fix what south guys couldn't!'",
+        "Started at VNS Microsystems. Visual Basic → PHP → MySQL. Built tools for 500+ businesses across India. Learned to SOLVE PROBLEMS, not just write code. Met my wife here. Got married in 2009. Daughter arrived. This was the foundation.",
       highlights: [
-        "MCA from Sikkim Manipal University",
-        "Visual C++ experts: Months ❌",
-        "Me on Kerala beaches: 13 days ✅",
-        "First beach visit = First major breakthrough",
-        '"North Indian fixed what south couldn\'t!"',
+        "VNS Microsystems (6 years)",
+        "Visual Basic → PHP journey",
+        "500+ business applications",
+        "Got married (2009), daughter born",
+        "Foundation of problem-solving",
       ],
-      color: "from-cyan-500/20 to-blue-500/20",
+      color: "from-purple-500/20 to-pink-500/20",
       isHighlight: true,
-      quote:
-        "Sat on beaches for 13 days and nights. Solved what experts couldn't in months.",
+      quote: "I learned to solve problems, not just write code.",
     },
     {
       id: 6,
-      phase: "Building Reputation",
-      years: "2006-2012",
-      location: "Gwalior, India",
-      icon: <FcBriefcase size="50" />,
-      tagline: "Visual Basic to GIS",
+      phase: "The Big Break",
+      years: "2012-2018",
+      location: "Accenture",
+      icon: <FcGlobe size="50" />,
+      tagline: "Fortune 100 clients",
       story:
-        "Apark Softwares, then VNS Microsystems. Building projects, building reputation. Got married in December 2009 - arranged marriage, she's from Gwalior too. Life was settling into a rhythm. Little did I know, an international adventure was just around the corner.",
+        "Accenture happened. Leading teams for Fortune 100 clients worth $100B+. Changi Airport, Kerry Logistics, IRIS Corporation. 7 industries. Enterprise scale. This was when I realized: I can play at the highest level.",
       highlights: [
-        "Apark Softwares (2006-2008)",
-        "VNS Microsystems (2008-2010)",
-        "Married in Dec 2009 (Gwalior girl!)",
-        "Building expertise in Visual Basic & GIS",
-        "Getting ready for the next big leap",
+        "Led teams at Accenture",
+        "Fortune 100 clients ($100B+ worth)",
+        "<strong>Changi Airport 360° project</strong>",
+        "7 industries, enterprise scale",
+        "Learned leadership & architecture",
       ],
-      color: "from-purple-500/20 to-pink-500/20",
+      color: "from-orange-500/20 to-red-500/20",
     },
     {
       id: 7,
-      phase: "The Malaysian Adventure",
+      phase: "Moving to Malaysia",
       years: "April 2012",
       location: "Kuala Lumpur",
-      icon: <FcGlobe size="50" />,
-      tagline: "First flight ever - international!",
+      icon: <FcLike size="50" />,
+      tagline: "First international flight",
       story:
-        "Got a job offer in Malaysia. First flight EVER - and it was international! And sponsored! Moved to Kuala Lumpur in April 2012. The best part? When my mother came to visit - it was HER first international flight too. She passed away in 2017, but I'm grateful I fulfilled that dream for her. I don't miss India much, but I do miss friends and samosas. Discovered gepuk though - amazing Malaysian food!",
+        "Got my first job offer abroad. First flight ever = international & company-sponsored! Mother's first international flight was to visit me. She passed in 2017, but I fulfilled her dream. I don't miss India much, but I do miss friends and samosas. Discovered gepuk though - amazing Malaysian food!",
       highlights: [
         "April 2012: First job offer abroad",
         "First flight ever = International & sponsored!",
@@ -297,8 +276,7 @@ const HeroSection = () => {
             to leading technology for millions in Malaysia
           </p>
           <p className="text-xl md:text-2xl text-gray-400 mt-6">
-            This is my story. Not just career milestones, but life phases that
-            shaped who I am.
+            This is my story.
           </p>
         </motion.div>
       </div>
@@ -345,10 +323,18 @@ const ClientOnlyParticles = () => {
   );
 };
 
-// Life Journey Timeline Component
+// Life Journey Timeline Component - ENHANCED WITH PROGRESSIVE LINE DRAWING
 const LifeJourneyTimeline = ({ phases }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  // Progressive line drawing based on scroll
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+
+  const lineHeight = useTransform(scrollYProgress, [0, 0.9], ["0%", "100%"]);
 
   return (
     <section
@@ -373,18 +359,19 @@ const LifeJourneyTimeline = ({ phases }) => {
 
         {/* Timeline */}
         <div className="relative">
-          {/* Vertical line */}
-          <motion.div
-            className="absolute left-8 md:left-1/2 top-0 bottom-0 w-1 bg-linear-to-b from-[#f5f543] via-[#f5f543] to-transparent"
-            initial={{ height: 0 }}
-            animate={isInView ? { height: "100%" } : {}}
-            transition={{ duration: 2, ease: "easeOut" }}
-          />
+          {/* Vertical line - ENHANCED: Progressive drawing animation */}
+          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-1 bg-transparent">
+            <motion.div
+              className="w-full bg-linear-to-b from-[#f5f543] via-[#f5f543] to-transparent"
+              style={{ height: lineHeight }}
+              transition={{ duration: 0.1 }}
+            />
+          </div>
 
-          {/* Phase cards */}
+          {/* Timeline phases */}
           <div className="space-y-16">
             {phases.map((phase, index) => (
-              <PhaseCard
+              <TimelinePhase
                 key={phase.id}
                 phase={phase}
                 index={index}
@@ -398,147 +385,168 @@ const LifeJourneyTimeline = ({ phases }) => {
   );
 };
 
-// Individual Phase Card
-const PhaseCard = ({ phase, index, isInView }) => {
+// Timeline Phase Component - ENHANCED WITH REFINED STAGGER TIMING
+const TimelinePhase = ({ phase, index, isInView }) => {
   const isLeft = index % 2 === 0;
+
+  // Enhanced stagger timing with cubic-bezier easing
+  const baseDelay = index * 0.12; // Slightly tighter stagger
+  const customEasing = [0.25, 0.46, 0.45, 0.94]; // Smooth cubic-bezier
 
   return (
     <motion.div
-      className={`relative flex items-start ${
+      className={`relative flex items-center ${
         isLeft ? "md:flex-row" : "md:flex-row-reverse"
       } flex-col`}
-      initial={{ opacity: 0, x: isLeft ? -50 : 50 }}
-      animate={isInView ? { opacity: 1, x: 0 } : {}}
-      transition={{ duration: 0.6, delay: index * 0.15 }}
+      initial={{ opacity: 0 }}
+      animate={isInView ? { opacity: 1 } : {}}
+      transition={{ duration: 0.4, delay: baseDelay, ease: customEasing }}
     >
       {/* Timeline dot */}
       <motion.div
-        className="absolute left-8 md:left-1/2 w-6 h-6 bg-[#f5f543] rounded-full transform -translate-x-1/2 border-4 border-[#121212] z-10 flex items-center justify-center"
+        className="absolute left-8 md:left-1/2 w-6 h-6 bg-[#f5f543] rounded-full border-4 border-[#121212] z-10 transform -translate-x-1/2"
         initial={{ scale: 0 }}
         animate={isInView ? { scale: 1 } : {}}
-        transition={{ duration: 0.3, delay: index * 0.15 + 0.3 }}
-      >
-        {phase.isHighlight && (
-          <motion.div
-            className="absolute w-12 h-12 bg-[#f5f543] rounded-full opacity-20"
-            animate={{ scale: [1, 1.5, 1], opacity: [0.2, 0, 0.2] }}
-            transition={{ duration: 2, repeat: Infinity }}
-          />
-        )}
-      </motion.div>
+        transition={{
+          duration: 0.4,
+          delay: baseDelay + 0.2,
+          type: "spring",
+          stiffness: 200,
+        }}
+      />
 
       {/* Content card */}
       <motion.div
-        className={`w-full md:w-5/12 ml-16 md:ml-0 ${
-          isLeft ? "md:mr-auto md:pr-16" : "md:ml-auto md:pl-16"
-        }`}
-        whileHover={{
-          scale: 1.02,
-          boxShadow: phase.isHighlight
-            ? "0 20px 60px rgba(245, 245, 67, 0.25)"
-            : "0 10px 40px rgba(245, 245, 67, 0.15)",
+        className={`w-full md:w-[calc(50%-4rem)] ${
+          isLeft ? "md:pr-16" : "md:pl-16"
+        } pl-16 md:pl-0`}
+        initial={{ opacity: 0, x: isLeft ? -30 : 30, y: 20 }}
+        animate={isInView ? { opacity: 1, x: 0, y: 0 } : {}}
+        transition={{
+          duration: 0.6,
+          delay: baseDelay + 0.1,
+          ease: customEasing,
         }}
-        transition={{ duration: 0.3 }}
       >
-        <div
-          className={`
-          bg-linear-to-br ${phase.color}
-          backdrop-blur-sm
-          border-2 ${
-            phase.isHighlight ? "border-[#f5f543]" : "border-[#292929]"
-          }
-          rounded-2xl p-8 
-          hover:border-[#f5f543] 
-          transition-all duration-300
-          ${phase.isHighlight ? "shadow-2xl" : ""}
-        `}
-        >
-          {/* Icon & Years */}
-          <div className="flex items-center gap-4 mb-4">
-            <motion.div
-              initial={{ scale: 0, rotate: -180 }}
-              animate={isInView ? { scale: 1, rotate: 0 } : {}}
-              transition={{
-                duration: 0.5,
-                delay: index * 0.15 + 0.4,
-                type: "spring",
-              }}
+        <div className="relative">
+          <motion.div
+            whileHover={{
+              scale: 1.02,
+              boxShadow: phase.isHighlight
+                ? "0 20px 60px rgba(245, 245, 67, 0.25)"
+                : "0 10px 40px rgba(245, 245, 67, 0.15)",
+            }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+          >
+            <div
+              className={`
+              bg-linear-to-br ${phase.color}
+              backdrop-blur-sm
+              border-2 ${
+                phase.isHighlight ? "border-[#f5f543]" : "border-[#292929]"
+              }
+              rounded-2xl p-8 
+              hover:border-[#f5f543] 
+              transition-all duration-300
+              ${phase.isHighlight ? "shadow-2xl" : ""}
+            `}
             >
-              {phase.icon}
-            </motion.div>
-            <div>
-              <div className="inline-block bg-[#f5f543] text-[#121212] px-4 py-1 rounded-full text-sm font-bold mb-2">
-                {phase.years}
-              </div>
-              <h3 className="text-3xl font-bold text-white">{phase.phase}</h3>
-              <p className="text-[#f5f543] font-semibold text-lg">
-                {phase.tagline}
-              </p>
-              <div className="flex items-center text-gray-400 text-sm mt-1">
-                <FaMapMarkerAlt className="mr-1" />
-                {phase.location}
-              </div>
-            </div>
-          </div>
-
-          {/* Story */}
-          <p className="text-gray-300 text-lg leading-relaxed mb-4">
-            {phase.story}
-          </p>
-
-          {/* Quote */}
-          {phase.quote && (
-            <motion.div
-              className="bg-[#1a1a1a] border-l-4 border-[#f5f543] p-4 rounded-r-lg mb-4"
-              initial={{ opacity: 0, x: -20 }}
-              animate={isInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ delay: index * 0.15 + 0.6 }}
-            >
-              <p className="text-white italic text-lg">"{phase.quote}"</p>
-            </motion.div>
-          )}
-
-          {/* Highlights */}
-          <div className="space-y-2">
-            <h4 className="text-sm font-semibold text-gray-400 uppercase mb-2">
-              Highlights
-            </h4>
-            <ul className="space-y-2">
-              {phase.highlights.map((highlight, i) => (
-                <motion.li
-                  key={i}
-                  className="text-gray-300 flex items-start"
-                  initial={{ opacity: 0, x: -10 }}
-                  animate={isInView ? { opacity: 1, x: 0 } : {}}
-                  transition={{ delay: index * 0.15 + 0.5 + i * 0.1 }}
+              {/* Icon & Years */}
+              <div className="flex items-center gap-4 mb-4">
+                <motion.div
+                  initial={{ scale: 0, rotate: -180 }}
+                  animate={isInView ? { scale: 1, rotate: 0 } : {}}
+                  transition={{
+                    duration: 0.5,
+                    delay: baseDelay + 0.3,
+                    type: "spring",
+                  }}
                 >
-                  <span className="text-[#f5f543] mr-2 mt-1">▸</span>
-                  <span dangerouslySetInnerHTML={{ __html: highlight }} />
-                </motion.li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Highlight badge */}
-          {phase.isHighlight && (
-            <motion.div
-              className="absolute -top-3 -right-3"
-              animate={{ rotate: [0, 5, -5, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            >
-              <div className="bg-[#f5f543] text-[#121212] px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1">
-                <FaStar size={12} />
-                KEY MOMENT
+                  {phase.icon}
+                </motion.div>
+                <div>
+                  <div className="inline-block bg-[#f5f543] text-[#121212] px-4 py-1 rounded-full text-sm font-bold mb-2">
+                    {phase.years}
+                  </div>
+                  <h3 className="text-3xl font-bold text-white">
+                    {phase.phase}
+                  </h3>
+                  <p className="text-[#f5f543] font-semibold text-lg">
+                    {phase.tagline}
+                  </p>
+                  <div className="flex items-center text-gray-400 text-sm mt-1">
+                    <FaMapMarkerAlt className="mr-1" />
+                    {phase.location}
+                  </div>
+                </div>
               </div>
-            </motion.div>
-          )}
+
+              {/* Story */}
+              <p className="text-gray-300 text-lg leading-relaxed mb-4">
+                {phase.story}
+              </p>
+
+              {/* Quote */}
+              {phase.quote && (
+                <motion.div
+                  className="bg-[#1a1a1a] border-l-4 border-[#f5f543] p-4 rounded-r-lg mb-4"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={isInView ? { opacity: 1, x: 0 } : {}}
+                  transition={{
+                    delay: baseDelay + 0.5,
+                    ease: customEasing,
+                  }}
+                >
+                  <p className="text-white italic text-lg">"{phase.quote}"</p>
+                </motion.div>
+              )}
+
+              {/* Highlights */}
+              <div className="space-y-2">
+                <h4 className="text-sm font-semibold text-gray-400 uppercase mb-2">
+                  Highlights
+                </h4>
+                <ul className="space-y-2">
+                  {phase.highlights.map((highlight, i) => (
+                    <motion.li
+                      key={i}
+                      className="text-gray-300 flex items-start"
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={isInView ? { opacity: 1, x: 0 } : {}}
+                      transition={{
+                        delay: baseDelay + 0.4 + i * 0.08,
+                        ease: customEasing,
+                      }}
+                    >
+                      <span className="text-[#f5f543] mr-2 mt-1">▸</span>
+                      <span dangerouslySetInnerHTML={{ __html: highlight }} />
+                    </motion.li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Highlight badge */}
+              {phase.isHighlight && (
+                <motion.div
+                  className="absolute -top-3 -right-3"
+                  animate={{ rotate: [0, 5, -5, 0] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                >
+                  <div className="bg-[#f5f543] text-[#121212] px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1">
+                    <FaStar size={12} />
+                    KEY MOMENT
+                  </div>
+                </motion.div>
+              )}
+            </div>
+          </motion.div>
         </div>
       </motion.div>
     </motion.div>
   );
 };
 
-// What Drives Me Component
+// What Drives Me Component - ENHANCED WITH SUBTLE 3D HOVER
 const WhatDrivesMe = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -594,7 +602,7 @@ const WhatDrivesMe = () => {
             hidden: { opacity: 0 },
             visible: {
               opacity: 1,
-              transition: { staggerChildren: 0.1 },
+              transition: { staggerChildren: 0.12 }, // Refined stagger
             },
           }}
           initial="hidden"
@@ -609,7 +617,17 @@ const WhatDrivesMe = () => {
               }}
               whileHover={{
                 scale: 1.03,
+                rotateY: 2, // Subtle 3D tilt
+                rotateX: -2, // Subtle 3D tilt
                 boxShadow: "0 10px 40px rgba(245, 245, 67, 0.2)",
+                transition: {
+                  duration: 0.3,
+                  ease: [0.25, 0.46, 0.45, 0.94],
+                },
+              }}
+              style={{
+                perspective: "1000px", // Enable 3D space
+                transformStyle: "preserve-3d",
               }}
               className="bg-[#212121] border-2 border-[#292929] rounded-xl p-8 hover:border-[#f5f543] transition-all duration-300"
             >
@@ -618,7 +636,7 @@ const WhatDrivesMe = () => {
                 animate={isInView ? { scale: 1 } : {}}
                 transition={{
                   duration: 0.5,
-                  delay: index * 0.1 + 0.3,
+                  delay: index * 0.12 + 0.3,
                   type: "spring",
                 }}
                 className="mb-4"
@@ -677,7 +695,7 @@ const StatsGrid = ({ YrsOfExp }) => {
             hidden: { opacity: 0 },
             visible: {
               opacity: 1,
-              transition: { staggerChildren: 0.1 },
+              transition: { staggerChildren: 0.08 }, // Refined stagger
             },
           }}
           initial="hidden"
@@ -717,7 +735,11 @@ const StatCard = ({ stat, index, isInView }) => {
         className="text-4xl md:text-5xl font-bold text-white mb-2 flex items-center justify-center"
         initial={{ scale: 0.5 }}
         animate={isInView ? { scale: 1 } : {}}
-        transition={{ duration: 0.5, delay: index * 0.1 }}
+        transition={{
+          duration: 0.5,
+          delay: index * 0.08,
+          ease: [0.25, 0.46, 0.45, 0.94],
+        }}
       >
         {stat.value < 100 ? count.toFixed(stat.suffix === "M" ? 1 : 0) : count}
         {stat.suffix && (
@@ -785,25 +807,27 @@ const WhatImLookingFor = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="bg-linear-to-br from-[#212121] to-[#1a1a1a] border-2 border-[#f5f543] rounded-2xl p-8 md:p-12 shadow-2xl"
+          className="bg-[#212121] border-2 border-[#292929] rounded-2xl p-8 md:p-12"
         >
           <div className="grid md:grid-cols-2 gap-8">
             <div>
               <h3 className="text-2xl font-bold text-[#f5f543] mb-4 flex items-center">
-                <span className="text-3xl mr-2">✓</span> Dream Role
+                <span className="text-3xl mr-2">✓</span> Looking For
               </h3>
               <ul className="space-y-3">
                 <li className="flex items-start text-gray-300">
                   <span className="text-[#f5f543] mr-2 mt-1">▸</span>
-                  <span>News/media tech company in Malaysia</span>
+                  <span>
+                    News/media technology company in Malaysia (or visa sponsor)
+                  </span>
                 </li>
                 <li className="flex items-start text-gray-300">
                   <span className="text-[#f5f543] mr-2 mt-1">▸</span>
-                  <span>Senior Engineer or Tech Lead</span>
+                  <span>Senior Engineer or Technical Lead role</span>
                 </li>
                 <li className="flex items-start text-gray-300">
                   <span className="text-[#f5f543] mr-2 mt-1">▸</span>
-                  <span>Team environment (done being solo!)</span>
+                  <span>Team environment (tired of being solo superhero!)</span>
                 </li>
                 <li className="flex items-start text-gray-300">
                   <span className="text-[#f5f543] mr-2 mt-1">▸</span>

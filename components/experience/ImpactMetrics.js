@@ -3,17 +3,10 @@
 import { motion, useMotionValue, useSpring, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
 import {
-  HiUsers,
-  HiTrendingUp,
-  HiLightningBolt,
-  HiCheckCircle,
-} from "react-icons/hi";
-import {
   FaProjectDiagram,
   FaHandshake,
   FaClock,
   FaTrophy,
-  FaBolt,
 } from "react-icons/fa";
 
 // Animated Counter Component
@@ -51,75 +44,35 @@ export default function ImpactMetrics() {
 
   const metrics = [
     {
-      icon: <HiUsers className="w-12 h-12" />,
-      value: "8.5",
-      suffix: "M+",
-      label: "Monthly Users",
-      sublabel: "Served at FMT",
-      color: "from-[#f5f543] to-yellow-300",
-    },
-    {
-      icon: <HiTrendingUp className="w-12 h-12" />,
-      value: "184",
-      suffix: "%",
-      label: "Traffic Growth",
-      sublabel: "In 4 years at FMT",
-      color: "from-green-400 to-emerald-500",
-    },
-    {
-      icon: <HiLightningBolt className="w-12 h-12" />,
-      value: "75",
-      suffix: "%",
-      label: "Faster Load Times",
-      sublabel: "5.2s → 1.3s",
-      color: "from-blue-400 to-cyan-500",
-    },
-    {
-      icon: <HiCheckCircle className="w-12 h-12" />,
-      value: "100",
-      suffix: "%",
-      label: "Uptime",
-      sublabel: "Even during migrations",
-      color: "from-purple-400 to-pink-500",
-    },
-    // {
-    //   icon: <FaBolt className="w-12 h-12" />,
-    //   value: "22",
-    //   suffix: "K",
-    //   label: "Concurrent Users",
-    //   sublabel: "Handled without hitch",
-    //   color: "from-red-400 to-pink-500",
-    // },
-    {
-      icon: <FaProjectDiagram className="w-12 h-12" />,
-      value: "150",
-      suffix: "+",
-      label: "Projects",
-      sublabel: "Delivered",
-      color: "from-orange-400 to-red-500",
-    },
-    {
-      icon: <FaHandshake className="w-12 h-12" />,
-      value: "35",
-      suffix: "+",
-      label: "Satisfied Clients",
-      sublabel: "Across 7 industries",
-      color: "from-teal-400 to-green-500",
-    },
-    {
       icon: <FaClock className="w-12 h-12" />,
       value: "18",
       suffix: "+",
       label: "Years Experience",
-      sublabel: "Production code",
+      sublabel: "Production code since 2006",
       color: "from-indigo-400 to-blue-500",
+    },
+    {
+      icon: <FaHandshake className="w-12 h-12" />,
+      value: "8",
+      suffix: "",
+      label: "Companies",
+      sublabel: "Malaysia & India",
+      color: "from-purple-400 to-pink-500",
+    },
+    {
+      icon: <FaProjectDiagram className="w-12 h-12" />,
+      value: "150",
+      suffix: "+",
+      label: "Projects Delivered",
+      sublabel: "Across 7 industries",
+      color: "from-orange-400 to-red-500",
     },
     {
       icon: <FaTrophy className="w-12 h-12" />,
       value: "3",
       suffix: "%",
       label: "Top StackOverflow",
-      sublabel: "14K+ reputation",
+      sublabel: "14,111 reputation",
       color: "from-[#f5f543] to-orange-400",
     },
   ];
@@ -171,12 +124,11 @@ export default function ImpactMetrics() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            My Professional <span className="text-[#f5f543]">Impact</span> in
-            Numbers
+            Career <span className="text-[#f5f543]">Overview</span>
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Proven track record of delivering measurable results across 150+
-            projects, serving millions of users, and driving business growth
+            18+ years of building scalable systems across diverse industries,
+            from Visual Basic (2006) to Next.js (2025)
           </p>
         </motion.div>
 
@@ -247,7 +199,8 @@ export default function ImpactMetrics() {
           className="text-center mt-12"
         >
           <p className="text-gray-400 text-lg">
-            💪 Building systems that serve millions, one line of code at a time
+            💪 From Fortune 100 enterprises to news media platforms, building
+            systems that serve millions
           </p>
         </motion.div>
       </div>

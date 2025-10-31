@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { HiArrowRight, HiMail, HiChevronDown } from "react-icons/hi";
 import { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 
 export default function HeroSection() {
   const canvasRef = useRef(null);
@@ -121,8 +122,45 @@ export default function HeroSection() {
     });
   };
 
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const fadeInUpVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: [0.22, 1, 0.36, 1],
+      },
+    },
+  };
+
+  const metricsVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: (custom) => ({
+      opacity: 1,
+      scale: 1,
+      transition: {
+        delay: custom * 0.1 + 0.5,
+        duration: 0.5,
+        ease: [0.22, 1, 0.36, 1],
+      },
+    }),
+  };
+
   return (
-    <section className="relative min-h-[85vh] md:min-h-[90vh] flex items-center justify-center bg-gradient-to-b from-[#121212] to-[#1a1a1a] px-4 pt-20 md:pt-4 overflow-hidden">
+    <section className="relative min-h-[85vh] md:min-h-[90vh] flex items-center justify-center bg-linear-to-b from-[#121212] to-[#1a1a1a] px-4 pt-20 md:pt-4 overflow-hidden">
       {/* Animated Background Canvas */}
       <canvas
         ref={canvasRef}
@@ -130,149 +168,173 @@ export default function HeroSection() {
         style={{ opacity: 0.4 }}
       />
 
-      <div className="max-w-5xl mx-auto text-center relative z-10">
+      <motion.div
+        className="max-w-5xl mx-auto text-center relative z-10"
+        initial="hidden"
+        animate="visible"
+        variants={containerVariants}
+      >
         {/* Main Headline */}
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 md:mb-6 leading-tight animate-fadeInUp">
+        <motion.h1
+          className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 md:mb-6 leading-tight"
+          variants={fadeInUpVariants}
+        >
           I Build News Platforms
           <br />
           <span className="text-[#f5f543]">That Serve Millions</span>
-        </h1>
+        </motion.h1>
 
-        {/* Subheadline */}
-        <p className="text-lg md:text-xl lg:text-2xl text-gray-300 mb-6 md:mb-8 max-w-3xl mx-auto leading-relaxed animate-fadeInUp animation-delay-200">
-          Senior Full-Stack Engineer specializing in Next.js and performance
-          optimization. Scaled FMT to{" "}
+        {/* Subheadline - KEEP headline metrics here */}
+        <motion.p
+          className="text-lg md:text-xl lg:text-2xl text-gray-300 mb-6 md:mb-8 max-w-3xl mx-auto leading-relaxed"
+          variants={fadeInUpVariants}
+        >
+          Head of IT at Free Malaysia Today. Turned around a failing platform:
+          recovered from{" "}
+          <span className="text-white font-semibold">31% traffic decline</span>{" "}
+          to{" "}
           <span className="text-white font-semibold">8.5M monthly users</span>{" "}
-          with <span className="text-white font-semibold">184% growth</span> and{" "}
-          <span className="text-white font-semibold">60% faster</span> load
-          times.
-        </p>
+          with <span className="text-white font-semibold">184% growth</span>.
+        </motion.p>
 
-        {/* Key Metrics - Prominent Display */}
-        <div className="flex flex-wrap justify-center gap-4 md:gap-8 mb-6 md:mb-8 animate-fadeInUp animation-delay-400">
-          <div className="flex items-center gap-2 text-gray-300">
-            <span className="text-2xl md:text-3xl font-bold text-[#f5f543]">
-              8.5M
-            </span>
-            <span className="text-sm md:text-base">monthly users</span>
-          </div>
-          <div className="flex items-center gap-2 text-gray-300">
-            <span className="text-2xl md:text-3xl font-bold text-[#f5f543]">
-              184%
-            </span>
-            <span className="text-sm md:text-base">growth</span>
-          </div>
-          <div className="flex items-center gap-2 text-gray-300">
-            <span className="text-2xl md:text-3xl font-bold text-[#f5f543]">
-              60%
-            </span>
-            <span className="text-sm md:text-base">faster</span>
-          </div>
-        </div>
+        {/* Key Metrics - ONLY show primary headline numbers */}
+        <motion.div
+          className="flex flex-wrap justify-center gap-4 md:gap-8 mb-6 md:mb-8"
+          variants={containerVariants}
+        >
+          {[
+            { value: "8.5M", label: "monthly users", delay: 0 },
+            { value: "184%", label: "growth achieved", delay: 1 },
+            { value: "75%", label: "faster load time", delay: 2 },
+          ].map((metric, index) => (
+            <motion.div
+              key={metric.label}
+              className="flex items-center gap-2 text-gray-300"
+              custom={metric.delay}
+              variants={metricsVariants}
+              whileHover={{
+                scale: 1.1,
+                transition: { duration: 0.2 },
+              }}
+            >
+              <span className="text-2xl md:text-3xl font-bold text-[#f5f543]">
+                {metric.value}
+              </span>
+              <span className="text-sm md:text-base">{metric.label}</span>
+            </motion.div>
+          ))}
+        </motion.div>
 
         {/* Secondary info */}
-        <p className="text-sm md:text-lg text-gray-400 mb-8 md:mb-10 animate-fadeInUp animation-delay-600">
+        <motion.p
+          className="text-sm md:text-lg text-gray-400 mb-8 md:mb-10"
+          variants={fadeInUpVariants}
+        >
           18 years building systems across 7 industries • Top 3% on
           StackOverflow • Based in Kuala Lumpur
-        </p>
+        </motion.p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 animate-fadeInUp animation-delay-800">
-          <Link
-            href="/projects"
-            className="group inline-flex items-center px-8 py-4 bg-[#f5f543] text-black font-semibold rounded-lg hover:bg-[#e5e533] transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+        <motion.div
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8"
+          variants={fadeInUpVariants}
+        >
+          <motion.div
+            whileHover={{ scale: 1.05, y: -2 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: "spring", stiffness: 400, damping: 17 }}
           >
-            View My Work
-            <HiArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-          </Link>
-          <Link
-            href="/contact"
-            className="inline-flex items-center px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-black transition-all duration-200"
+            <Link
+              href="/projects"
+              className="group inline-flex items-center px-8 py-4 bg-[#f5f543] text-black font-semibold rounded-lg hover:bg-[#e5e533] transition-colors duration-200 shadow-lg"
+            >
+              View My Work
+              <HiArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </motion.div>
+
+          <motion.div
+            whileHover={{ scale: 1.05, y: -2 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: "spring", stiffness: 400, damping: 17 }}
           >
-            <HiMail className="mr-2" />
-            Let's Talk
-          </Link>
-        </div>
+            <Link
+              href="/contact"
+              className="inline-flex items-center px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-black transition-all duration-200"
+            >
+              <HiMail className="mr-2" />
+              Let's Talk
+            </Link>
+          </motion.div>
+        </motion.div>
 
         {/* Quick Links */}
-        <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm text-gray-400 animate-fadeInUp animation-delay-1000">
-          <a
+        <motion.div
+          className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm text-gray-400"
+          variants={fadeInUpVariants}
+        >
+          <motion.a
             href="https://github.com/mohit5783"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-[#f5f543] transition-colors"
+            whileHover={{ y: -2 }}
           >
             GitHub
-          </a>
+          </motion.a>
           <span className="hidden md:inline">•</span>
-          <a
-            href="https://linkedin.com/in/mohit-shrivastava"
+          <motion.a
+            href="https://linkedin.com/in/mohit5783"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-[#f5f543] transition-colors"
+            whileHover={{ y: -2 }}
           >
             LinkedIn
-          </a>
+          </motion.a>
           <span className="hidden md:inline">•</span>
-          <a
-            href="https://stackoverflow.com/users/your-id"
+          <motion.a
+            href="https://stackoverflow.com/users/3796048/mohit-shrivastava"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-[#f5f543] transition-colors"
+            whileHover={{ y: -2 }}
           >
             StackOverflow
-          </a>
-        </div>
-      </div>
+          </motion.a>
+        </motion.div>
+      </motion.div>
 
-      {/* Scroll Indicator - Now Clickable */}
-      <div
+      {/* Scroll Indicator - Animated */}
+      <motion.div
         onClick={handleScrollClick}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-10"
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 cursor-pointer"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{
+          opacity: 1,
+          y: 0,
+          transition: {
+            delay: 1.2,
+            duration: 0.6,
+          },
+        }}
+        whileHover={{ scale: 1.1 }}
       >
-        <div className="flex flex-col items-center gap-2 text-gray-400 cursor-pointer hover:text-[#f5f543] transition-colors">
+        <motion.div
+          className="flex flex-col items-center gap-2 text-gray-400 hover:text-[#f5f543] transition-colors"
+          animate={{
+            y: [0, 10, 0],
+          }}
+          transition={{
+            duration: 1.5,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        >
           <span className="text-xs uppercase tracking-wider">Scroll</span>
           <HiChevronDown className="text-2xl" />
-        </div>
-      </div>
-
-      <style jsx>{`
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        .animate-fadeInUp {
-          animation: fadeInUp 0.8s ease-out forwards;
-          opacity: 0;
-        }
-
-        .animation-delay-200 {
-          animation-delay: 0.2s;
-        }
-
-        .animation-delay-400 {
-          animation-delay: 0.4s;
-        }
-
-        .animation-delay-600 {
-          animation-delay: 0.6s;
-        }
-
-        .animation-delay-800 {
-          animation-delay: 0.8s;
-        }
-
-        .animation-delay-1000 {
-          animation-delay: 1s;
-        }
-      `}</style>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }

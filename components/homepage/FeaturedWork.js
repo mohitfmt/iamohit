@@ -26,7 +26,7 @@ export default function FeaturedWork() {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: [0.22, 1, 0.36, 1], // Custom easing for smooth motion
+        ease: [0.22, 1, 0.36, 1],
       },
     },
   };
@@ -88,7 +88,7 @@ export default function FeaturedWork() {
             className="text-xl text-gray-400"
             variants={fadeInUpVariants}
           >
-            Projects that made a real impact
+            Crisis recovery to industry-leading platform
           </motion.p>
         </motion.div>
 
@@ -113,54 +113,68 @@ export default function FeaturedWork() {
             >
               <Image
                 src={fmtFeaturedImage}
-                alt="Free Malaysia Today"
-                height={400}
-                width={600}
+                alt="Free Malaysia Today - News Platform Transformation"
                 className="w-full h-full object-cover"
+                priority
               />
+              <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent" />
             </motion.div>
 
-            {/* Project Details */}
+            {/* Content with stagger animations */}
             <motion.div
               className="p-8 flex flex-col justify-center"
               variants={containerVariants}
             >
-              <motion.div
-                className="inline-block px-3 py-1 bg-[#f5f543] text-black text-sm font-semibold rounded-full mb-4 w-fit"
-                variants={fadeInVariants}
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.2 }}
-              >
-                Featured Project
+              {/* Title */}
+              <motion.div className="mb-2" variants={fadeInUpVariants}>
+                <span className="text-sm text-[#f5f543] font-semibold tracking-wide uppercase">
+                  Platform Transformation
+                </span>
               </motion.div>
 
               <motion.h3
-                className="text-3xl font-bold text-white mb-4"
+                className="text-3xl md:text-4xl font-bold text-white mb-4"
                 variants={fadeInUpVariants}
               >
                 Free Malaysia Today
               </motion.h3>
 
               <motion.p
-                className="text-gray-300 text-lg mb-6 leading-relaxed"
+                className="text-gray-300 mb-6 leading-relaxed"
                 variants={fadeInUpVariants}
               >
-                Transformed a struggling WordPress site into a Next.js
-                powerhouse serving 8.5M monthly readers. Achieved 184% traffic
-                growth while reducing load times by 60%. Zero downtime migration
-                of 500K+ articles.
+                Solo development of V3 platform in 4 months. Inherited a failing
+                WordPress site with 31% traffic decline, database at 100% load,
+                and sections disappearing during spikes. Rebuilt from ground up
+                with Next.js, achieving stability and unprecedented growth.
               </motion.p>
 
-              {/* Key Metrics with stagger animation */}
+              {/* DIFFERENT Metrics - Focus on technical and business achievements */}
               <motion.div
                 className="grid grid-cols-2 gap-4 mb-6"
                 variants={containerVariants}
               >
                 {[
-                  { value: "3M → 8.5M", label: "Monthly Users", delay: 0 },
-                  { value: "5.2s → 1.3s", label: "Load Time", delay: 1 },
-                  { value: "+184%", label: "Pageviews", delay: 2 },
-                  { value: "Zero", label: "Downtime", delay: 3 },
+                  {
+                    value: "5.2s → 1.3s",
+                    label: "Load Time (75% faster)",
+                    delay: 0,
+                  },
+                  {
+                    value: "0 → 6K",
+                    label: "Google News Subscribers",
+                    delay: 1,
+                  },
+                  {
+                    value: "RM 60K → 15K",
+                    label: "Monthly Infrastructure Cost",
+                    delay: 2,
+                  },
+                  {
+                    value: "All Green",
+                    label: "Core Web Vitals",
+                    delay: 3,
+                  },
                 ].map((metric, index) => (
                   <motion.div
                     key={metric.label}
@@ -173,12 +187,54 @@ export default function FeaturedWork() {
                       transition: { duration: 0.2 },
                     }}
                   >
-                    <div className="text-2xl font-bold text-[#f5f543]">
+                    <div className="text-xl md:text-2xl font-bold text-[#f5f543] mb-1">
                       {metric.value}
                     </div>
-                    <div className="text-sm text-gray-400">{metric.label}</div>
+                    <div className="text-xs text-gray-400 leading-tight">
+                      {metric.label}
+                    </div>
                   </motion.div>
                 ))}
+              </motion.div>
+
+              {/* Achievement Highlights */}
+              <motion.div
+                className="bg-[#0a0a0a] p-4 rounded-lg border border-[#292929] mb-6"
+                variants={fadeInUpVariants}
+              >
+                <div className="text-sm text-gray-400 mb-2">
+                  Key Achievements
+                </div>
+                <ul className="space-y-2 text-sm text-gray-300">
+                  <motion.li
+                    className="flex items-start"
+                    whileHover={{ x: 5, color: "#f5f543" }}
+                  >
+                    <span className="text-[#f5f543] mr-2">✓</span>
+                    Became Google News Publisher with 6K subscribers from zero
+                  </motion.li>
+                  <motion.li
+                    className="flex items-start"
+                    whileHover={{ x: 5, color: "#f5f543" }}
+                  >
+                    <span className="text-[#f5f543] mr-2">✓</span>
+                    Reduced infrastructure costs by 75% (RM 540K annual savings)
+                  </motion.li>
+                  <motion.li
+                    className="flex items-start"
+                    whileHover={{ x: 5, color: "#f5f543" }}
+                  >
+                    <span className="text-[#f5f543] mr-2">✓</span>
+                    Database efficiency improved 70% (100% load → 30%)
+                  </motion.li>
+                  <motion.li
+                    className="flex items-start"
+                    whileHover={{ x: 5, color: "#f5f543" }}
+                  >
+                    <span className="text-[#f5f543] mr-2">✓</span>
+                    100% uptime maintained during zero-downtime migrations
+                  </motion.li>
+                </ul>
               </motion.div>
 
               {/* Tech Stack with cascade animation */}
@@ -189,12 +245,14 @@ export default function FeaturedWork() {
                   variants={containerVariants}
                 >
                   {[
-                    "Next.js",
-                    "Google Cloud Platform",
+                    "Next.js 14",
+                    "React 18",
+                    "GCP Cloud Run",
+                    "Kubernetes",
                     "CloudSQL",
-                    "LRU Cache",
-                    "Cloudflare",
-                    "WordPress",
+                    "Redis Cache",
+                    "Cloudflare CDN",
+                    "WordPress API",
                     "GraphQL",
                   ].map((tech, index) => (
                     <motion.span
@@ -246,185 +304,24 @@ export default function FeaturedWork() {
           </div>
         </motion.div>
 
-        {/* Other Featured Projects Grid */}
+        {/* Additional Projects Preview */}
         <motion.div
-          className="grid md:grid-cols-2 gap-8"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          variants={containerVariants}
-        >
-          {/* Project 2: Accenture */}
-          <motion.div
-            className="bg-[#1a1a1a] rounded-xl p-6 border border-[#292929] group"
-            variants={fadeInUpVariants}
-            whileHover={{
-              y: -8,
-              borderColor: "#f5f543",
-              transition: { duration: 0.3, ease: "easeOut" },
-            }}
-          >
-            <motion.div
-              className="relative h-48 bg-[#0a0a0a] rounded-lg mb-4 flex items-center justify-center overflow-hidden"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3 }}
-            >
-              <motion.div
-                className="text-4xl"
-                animate={{
-                  rotate: [0, 5, -5, 0],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              >
-                🌍
-              </motion.div>
-            </motion.div>
-            <h3 className="text-2xl font-bold text-white mb-3">
-              3D Virtual World Platform
-            </h3>
-            <p className="text-gray-300 mb-4">
-              Enterprise Three.js platform for Fortune 100 clients. Supported
-              50K+ concurrent users with interactive 3D environments.
-            </p>
-            <div className="flex flex-wrap gap-2 mb-4">
-              {["Three.js", "React", "WebGL", "MongoDB"].map((tech, index) => (
-                <motion.span
-                  key={tech}
-                  className="px-2 py-1 bg-[#292929] text-gray-400 text-xs rounded"
-                  initial={{ opacity: 0, x: -10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.05, duration: 0.3 }}
-                  whileHover={{
-                    backgroundColor: "#f5f543",
-                    color: "#000000",
-                    scale: 1.05,
-                    transition: { duration: 0.2 },
-                  }}
-                >
-                  {tech}
-                </motion.span>
-              ))}
-            </div>
-            <Link
-              href="/projects"
-              className="text-[#f5f543] font-semibold inline-flex items-center group/link"
-            >
-              <motion.span
-                whileHover={{ x: -3 }}
-                transition={{ duration: 0.2 }}
-              >
-                Learn More
-              </motion.span>
-              <motion.span whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
-                {" "}
-                →
-              </motion.span>
-            </Link>
-          </motion.div>
-
-          {/* Project 3: Changi Airport */}
-          <motion.div
-            className="bg-[#1a1a1a] rounded-xl p-6 border border-[#292929] group"
-            variants={fadeInUpVariants}
-            whileHover={{
-              y: -8,
-              borderColor: "#f5f543",
-              transition: { duration: 0.3, ease: "easeOut" },
-            }}
-          >
-            <motion.div
-              className="relative h-48 bg-[#0a0a0a] rounded-lg mb-4 flex items-center justify-center overflow-hidden"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3 }}
-            >
-              <motion.div
-                className="text-4xl"
-                animate={{
-                  x: [-5, 5, -5],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              >
-                ✈️
-              </motion.div>
-            </motion.div>
-            <h3 className="text-2xl font-bold text-white mb-3">
-              Aircraft Flow 360
-            </h3>
-            <p className="text-gray-300 mb-4">
-              Real-time flight delay visualization system for Changi Airport.
-              Proactively identified bottlenecks in aircraft turnaround.
-            </p>
-            <div className="flex flex-wrap gap-2 mb-4">
-              {["React", "AWS Amplify", "Real-time Data"].map((tech, index) => (
-                <motion.span
-                  key={tech}
-                  className="px-2 py-1 bg-[#292929] text-gray-400 text-xs rounded"
-                  initial={{ opacity: 0, x: -10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.05, duration: 0.3 }}
-                  whileHover={{
-                    backgroundColor: "#f5f543",
-                    color: "#000000",
-                    scale: 1.05,
-                    transition: { duration: 0.2 },
-                  }}
-                >
-                  {tech}
-                </motion.span>
-              ))}
-            </div>
-            <Link
-              href="/projects"
-              className="text-[#f5f543] font-semibold inline-flex items-center group/link"
-            >
-              <motion.span
-                whileHover={{ x: -3 }}
-                transition={{ duration: 0.2 }}
-              >
-                Learn More
-              </motion.span>
-              <motion.span whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
-                {" "}
-                →
-              </motion.span>
-            </Link>
-          </motion.div>
-        </motion.div>
-
-        {/* View All Projects CTA */}
-        <motion.div
-          className="text-center mt-12"
-          initial={{ opacity: 0, y: 30 }}
+          className="text-center"
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          transition={{ delay: 0.3, duration: 0.6 }}
         >
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
+          <p className="text-gray-400 mb-4">
+            Curious about my other work? 150+ projects delivered over 18 years
+          </p>
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Link
               href="/projects"
-              className="inline-flex items-center px-8 py-4 bg-transparent border-2 border-[#f5f543] text-[#f5f543] font-semibold rounded-lg hover:bg-[#f5f543] hover:text-black transition-all duration-200"
+              className="inline-flex items-center px-6 py-3 bg-[#1a1a1a] border border-[#292929] text-white rounded-lg hover:border-[#f5f543] hover:text-[#f5f543] transition-all group"
             >
-              View All 29 Projects
-              <motion.span
-                animate={{ x: [0, 5, 0] }}
-                transition={{
-                  duration: 1.5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              >
-                <HiArrowRight className="ml-2" />
-              </motion.span>
+              View All Projects
+              <HiArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
             </Link>
           </motion.div>
         </motion.div>

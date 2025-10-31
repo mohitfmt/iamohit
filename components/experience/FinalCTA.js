@@ -30,7 +30,7 @@ export default function FinalCTA() {
   };
 
   return (
-    <section className="py-20 px-6 bg-gradient-to-b from-[#121212] via-[#1a1a1a] to-[#121212] relative overflow-hidden">
+    <section className="py-20 px-6 bg-linear-to-b from-[#121212] via-[#1a1a1a] to-[#121212] relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-1/4 w-96 h-96 bg-[#f5f543] rounded-full blur-3xl"></div>
@@ -47,7 +47,7 @@ export default function FinalCTA() {
         {/* Main CTA Card */}
         <motion.div
           variants={itemVariants}
-          className="bg-gradient-to-br from-[#212121] to-[#1a1a1a] border-2 border-[#f5f543] rounded-3xl p-12 text-center relative overflow-hidden"
+          className="bg-linear-to-br from-[#212121] to-[#1a1a1a] border-2 border-[#f5f543] rounded-3xl p-12 text-center relative overflow-hidden"
         >
           {/* Animated background pattern */}
           <motion.div
@@ -91,8 +91,8 @@ export default function FinalCTA() {
               variants={itemVariants}
               className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto"
             >
-              I'm open to senior engineering and technical leadership opportunities.
-              Let's build something amazing together.
+              I'm open to senior engineering and technical leadership
+              opportunities. Let's build something amazing together.
             </motion.p>
 
             {/* Primary CTAs */}
@@ -100,7 +100,10 @@ export default function FinalCTA() {
               variants={itemVariants}
               className="flex flex-wrap gap-4 justify-center mb-8"
             >
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 <Link
                   href="/projects"
                   className="flex items-center gap-2 bg-[#f5f543] text-[#121212] px-8 py-4 rounded-xl text-lg font-bold hover:bg-[#f5f543]/90 transition-all duration-300 shadow-lg shadow-[#f5f543]/20"
@@ -110,7 +113,10 @@ export default function FinalCTA() {
                 </Link>
               </motion.div>
 
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 <Link
                   href="/contact"
                   className="flex items-center gap-2 bg-white text-[#121212] px-8 py-4 rounded-xl text-lg font-bold hover:bg-gray-200 transition-all duration-300 shadow-lg"
@@ -120,15 +126,18 @@ export default function FinalCTA() {
                 </Link>
               </motion.div>
 
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 <a
-                  href="/resume.pdf"
+                  href="/Mohit_Shrivastava_CV.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 bg-transparent text-white border-2 border-white px-8 py-4 rounded-xl text-lg font-bold hover:bg-white hover:text-[#121212] transition-all duration-300"
                 >
                   <HiDownload className="text-xl" />
-                  Download Resume
+                  Download CV
                 </a>
               </motion.div>
             </motion.div>
@@ -136,7 +145,7 @@ export default function FinalCTA() {
             {/* Divider */}
             <motion.div
               variants={itemVariants}
-              className="w-24 h-1 bg-gradient-to-r from-transparent via-[#f5f543] to-transparent mx-auto my-8"
+              className="w-24 h-1 bg-linear-to-r from-transparent via-[#f5f543] to-transparent mx-auto my-8"
             ></motion.div>
 
             {/* Quick Contact Options */}
@@ -206,10 +215,7 @@ export default function FinalCTA() {
         </motion.div>
 
         {/* Availability Status */}
-        <motion.div
-          variants={itemVariants}
-          className="mt-8 text-center"
-        >
+        <motion.div variants={itemVariants} className="mt-8 text-center">
           <div className="inline-flex items-center gap-2 bg-[#212121] border-2 border-[#292929] px-6 py-3 rounded-full">
             <motion.div
               animate={{ scale: [1, 1.2, 1], opacity: [1, 0.5, 1] }}
@@ -223,12 +229,10 @@ export default function FinalCTA() {
         </motion.div>
 
         {/* Bottom tagline */}
-        <motion.div
-          variants={itemVariants}
-          className="text-center mt-8"
-        >
+        <motion.div variants={itemVariants} className="text-center mt-8">
           <p className="text-gray-500 text-lg">
-            Based in <span className="text-[#f5f543]">Kuala Lumpur, Malaysia</span> 🇲🇾
+            Based in{" "}
+            <span className="text-[#f5f543]">Kuala Lumpur, Malaysia</span> 🇲🇾
           </p>
           <p className="text-gray-500 text-sm mt-2">
             Open to remote, hybrid, or on-site opportunities

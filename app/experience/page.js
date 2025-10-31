@@ -17,6 +17,13 @@ const ImpactMetrics = dynamic(
   }
 );
 
+const CompleteFMTStory = dynamic(
+  () => import("@/components/experience/CompleteFMTStory"),
+  {
+    loading: () => <div className="h-96"></div>,
+  }
+);
+
 const CareerTimeline = dynamic(
   () => import("@/components/experience/CareerTimeline"),
   {
@@ -50,6 +57,8 @@ export const metadata = {
     "Technology Lead Malaysia",
     "Full Stack Team Lead",
     "Performance Optimization Expert",
+    "FMT Developer",
+    "Head of IT Malaysia",
   ],
   title:
     "18+ Years Experience | Built Systems Serving 8.5M+ Users | Mohit Shrivastava",
@@ -76,16 +85,19 @@ const Experience = () => {
       {/* 1. Enhanced Hero Section */}
       <ExpHero />
 
-      {/* 2. Impact Metrics Bar (NEW) */}
+      {/* 2. Impact Metrics - Career Breadth (NO FMT-specific stats) */}
       <ImpactMetrics />
 
-      {/* 3. Career Timeline Overview (NEW) */}
+      {/* 3. Complete FMT Story (NEW - The Complete Turnaround Story) */}
+      <CompleteFMTStory />
+
+      {/* 4. Career Timeline Overview */}
       <CareerTimeline />
 
-      {/* 4. Technology Evolution (NEW) */}
+      {/* 5. Technology Evolution */}
       <TechEvolution />
 
-      {/* 5. Detailed Experience Cards (Enhanced with animations) */}
+      {/* 6. Detailed Experience Cards (Enhanced with animations) */}
       <div className="bg-linear-to-b from-[#121212] to-[#1a1a1a] py-10">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
@@ -105,7 +117,7 @@ const Experience = () => {
         </div>
       </div>
 
-      {/* 6. Skills Showcase (Reorganized) */}
+      {/* 7. Skills Showcase (Reorganized) */}
       <div className="bg-[#121212] py-16">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
@@ -120,7 +132,7 @@ const Experience = () => {
         </div>
       </div>
 
-      {/* 7. Final CTA Section (NEW) */}
+      {/* 8. Final CTA Section */}
       <FinalCTA />
     </section>
   );
