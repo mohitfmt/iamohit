@@ -55,6 +55,7 @@ import {
   SiSalesforce,
   SiSolidity,
   SiSonarqube,
+  SiSqlite,
   SiTrello,
   SiWeb3Dotjs,
   SiWebauthn,
@@ -73,6 +74,7 @@ import {
   TbMapPinCode,
   TbRazorElectric,
   TbServerBolt,
+  TbSql,
 } from "react-icons/tb";
 import { MetaMaskIcon } from "../Logos";
 import { MdReduceCapacity } from "react-icons/md";
@@ -173,8 +175,6 @@ export const AllSkills = [
         icon: <SiJquery size="100%" className="w-8" />,
       },
     ],
-    url: "/frontend",
-    displayName: "Frontend Insights",
   },
   {
     techName: "Backend",
@@ -235,8 +235,6 @@ export const AllSkills = [
         icon: <TbServerBolt size="100%" className="w-8" />,
       },
     ],
-    url: "/backend",
-    displayName: "Backend Insights",
   },
   {
     techName: "Web 3.0",
@@ -277,8 +275,6 @@ export const AllSkills = [
         icon: <TbBrandThreejs size="100%" className="w-8" />,
       },
     ],
-    url: "/web3",
-    displayName: "Web 3.0 Insights",
   },
   {
     techName: "DevOps & Tools",
@@ -442,16 +438,16 @@ export const AllSkills = [
         name: "MySQL",
         icon: <SiMysql size="100%" className="w-8" />,
       },
-      // {
-      //   skillsId: 65,
-      //   name: "MS Access",
-      //   icon: <SiMicrosoftaccess size="100%" className="w-8" />,
-      // },
-      // {
-      //   skillsId: 66,
-      //   name: "SQL Server",
-      //   icon: <SiMicrosoftsqlserver size="100%" className="w-8" />,
-      // },
+      {
+        skillsId: 65,
+        name: "MS Access",
+        icon: <TbSql size="100%" className="w-8" />,
+      },
+      {
+        skillsId: 66,
+        name: "SQL Server",
+        icon: <SiSqlite size="100%" className="w-8" />,
+      },
       {
         skillsId: 67,
         name: "Oracle",

@@ -33,14 +33,6 @@ const SkillsCards = () => {
                   </li>
                 ))}
               </ul>
-              <div className="mt-auto pb-5 justify-center flex">
-                <Link
-                  href={skill.url}
-                  className="flex items-center bg-white text-black p-2.5 px-6 rounded-lg text-lg font-semibold hover:bg-black hover:text-white border border-solid hover:border-white"
-                >
-                  {skill.displayName}
-                </Link>
-              </div>
             </div>
           </div>
         ))}
