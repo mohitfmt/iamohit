@@ -1,9 +1,6 @@
 import { getPostBySlug, getAllPostSlugs } from "@/lib/blog";
-import { serialize } from "next-mdx-remote/serialize";
 import { notFound } from "next/navigation";
 import BlogPostClient from "./BlogPostClient";
-import rehypeHighlight from "rehype-highlight";
-import remarkGfm from "remark-gfm";
 
 export async function generateStaticParams() {
   const slugs = getAllPostSlugs();
@@ -13,7 +10,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }) {
-  const post = getPostBySlug(params.slug);
+  const resolvedParams = await params;
+  const post = getPostBySlug(resolvedParams.slug);
 
   if (!post) {
     return {
@@ -37,18 +35,13 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function BlogPostPage({ params }) {
-  const post = getPostBySlug(params.slug);
+  const resolvedParams = await params;
+  const post = getPostBySlug(resolvedParams.slug);
 
   if (!post) {
     notFound();
   }
 
-  const mdxSource = await serialize(post.content, {
-    mdxOptions: {
-      remarkPlugins: [remarkGfm],
-      rehypePlugins: [rehypeHighlight],
-    },
-  });
-
-  return <BlogPostClient post={post} mdxSource={mdxSource} />;
+  // Pass the raw post with content string to client component
+  return <BlogPostClient post={post} />;
 }

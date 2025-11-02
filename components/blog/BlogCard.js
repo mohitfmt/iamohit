@@ -55,7 +55,7 @@ const BlogCard = ({
       <Link href={`/blog/${slug}`} className="block">
         <div className="bg-linear-to-br from-gray-900 to-black border border-gray-800 rounded-2xl overflow-hidden hover:border-[#f5f543]/50 transition-all duration-300 h-full">
           {/* Image */}
-          <div className="relative h-56 overflow-hidden bg-gray-800">
+          <div className="relative h-64 overflow-hidden bg-gray-800">
             <motion.div variants={imageVariants} whileHover="hover">
               <Image
                 src={image}

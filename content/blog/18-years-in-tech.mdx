@@ -1,0 +1,659 @@
+---
+title: "18 Years in Tech: From Visual Basic to Scaling 8.5M Users"
+slug: "18-years-in-tech"
+date: "2025-11-03"
+description: "A brutally honest reflection on 18 years of software engineering: from scoring 64% in Gwalior to becoming a Top 3% StackOverflow contributor. The technologies changed, the fundamentals didn't."
+tags:
+  [
+    "Career",
+    "Personal",
+    "Journey",
+    "Lessons Learned",
+    "Next.js",
+    "Web Development",
+  ]
+image: "/blog/18-years-in-tech.webp"
+readTime: "15 min"
+author: "Mohit Shrivastava"
+published: true
+---
+
+## Gwalior, 2000: The 64% That Changed Everything
+
+It's 2000. I'm sitting in my room in Gwalior, Madhya Pradesh, holding my 12th board exam results. **64%.**
+
+My parents wanted me to study business administration. Everyone expected me to score less than 50%. But I had other plans. I wanted computers.
+
+That 64% wasn't just a grade—it was proof that I'm built for solving hard problems, not following easy paths.
+
+**Twenty-five years later, I'm writing this from Kuala Lumpur, where I scaled a news platform from 3M to 8.5M monthly users (+184% growth), became a Top 3% StackOverflow contributor, and survived every major technology shift from Visual Basic 6.0 to Kubernetes.**
+
+This is that story.
+
+---
+
+## Phase 1: Desktop Era (2006-2010) — Learning to Build Things
+
+### Visual Basic 6.0: Where It All Started
+
+My first professional project wasn't glamorous. It was a desktop application built in Visual Basic 6.0 for VNS Microsystems.
+
+**What I learned:**
+
+- How to translate business requirements into working software
+- The satisfaction of watching users actually use what you built
+- That code quality matters more than clever tricks
+
+**First major lesson:** Users don't care about your technology choices. They care if it solves their problem.
+
+### The .NET Transition
+
+Around 2008, the industry moved to .NET Framework. I moved with it.
+
+**Key decision:** Learn fundamentals, not just frameworks.
+
+While everyone was memorizing APIs, I focused on:
+
+- Object-oriented principles
+- Database design (SQL Server)
+- Understanding the compilation process
+- How memory management actually works
+
+**Result:** When .NET 2.0 → 3.5 → 4.0 happened, I adapted faster than most. Frameworks change. Fundamentals don't.
+
+---
+
+## Phase 2: Web 2.0 Era (2010-2018) — The PHP/MySQL Years
+
+### The WordPress Goldmine
+
+Around 2012, I discovered WordPress development. It was booming in India.
+
+**Projects I built:**
+
+- Corporate websites for local businesses
+- E-commerce stores with WooCommerce
+- Custom plugins for specific client needs
+- Theme customizations
+
+**What this phase taught me:**
+
+- **Performance matters.** A slow site loses customers.
+- **Security is non-negotiable.** I learned this the hard way after a client site got hacked.
+- **User experience beats technical perfection.** A fast, ugly site beats a slow, beautiful one.
+
+### jQuery: The JavaScript Awakening
+
+Before React, there was jQuery. And honestly? It was magical.
+
+```javascript
+// This felt like superpowers in 2013
+$(".button").click(function () {
+  $(".modal").fadeIn();
+});
+```
+
+**Critical realization:** JavaScript wasn't just for form validation anymore. It was becoming the future of web development.
+
+### The AJAX Revolution
+
+When I built my first single-page application using jQuery + AJAX in 2014, it felt revolutionary.
+
+**Problem I solved:** A client wanted a product catalog that updated without page refreshes.
+
+**Solution:** AJAX calls to PHP backend, dynamic DOM manipulation.
+
+**User feedback:** "This feels like magic!"
+
+**My internal thought:** "If they think this is magic, wait until they see what's coming next..."
+
+---
+
+## Phase 3: Modern Cloud Era (2018-2025) — Everything Changes
+
+### React: The Paradigm Shift
+
+2018 was my year of unlearning.
+
+**Old mindset (jQuery):** Manipulate the DOM directly.  
+**New mindset (React):** Describe what you want, let React figure out the DOM.
+
+**First impression:** "This is unnecessarily complex."  
+**After 6 months:** "I can never go back."
+
+### Node.js: JavaScript Everywhere
+
+Learning Node.js felt like unlocking a new superpower.
+
+**Suddenly I could:**
+
+- Build APIs in JavaScript
+- Use the same language for frontend and backend
+- Share code between client and server
+- Process data asynchronously at scale
+
+**First major Node.js project:** A real-time analytics dashboard for an e-commerce client.
+
+**Challenge:** 50,000+ concurrent connections.  
+**Solution:** WebSockets, Redis pub/sub, horizontal scaling.  
+**Result:** It worked. Beautifully.
+
+### Next.js: Where I Found My Home
+
+2019: I discovered Next.js. It felt like React's missing pieces.
+
+**What clicked:**
+
+- Server-side rendering out of the box
+- File-based routing (brilliant!)
+- API routes (backend + frontend in one repo)
+- Image optimization
+- Performance by default
+
+**Current reality:** I've built 10+ production applications with Next.js. It's my go-to for anything web-related.
+
+---
+
+## Phase 4: The Cloud Native Journey (2020-2025)
+
+### Google Cloud Platform: From VPS to Cloud
+
+**Before GCP:** Shared hosting → VPS → Dedicated servers  
+**After GCP:** Cloud Run, Cloud Functions, Cloud SQL, Cloud Build
+
+**What changed:**
+
+- Infrastructure as code (Terraform)
+- Automated deployments
+- Global distribution by default
+- Pay for what you use
+
+### Docker & Kubernetes: The Learning Curve
+
+**Week 1 of Kubernetes:** "This is overcomplicated."  
+**Week 4 of Kubernetes:** "Okay, I see why this exists."  
+**Month 3 of Kubernetes:** "How did I live without this?"
+
+**Real-world use case at FMT:**
+
+- WordPress + MySQL on Kubernetes
+- 1 writer replica, 3 reader replicas
+- Auto-scaling during traffic spikes
+- Zero downtime deployments
+
+**Result:** Handled 260,000+ daily pageviews with 99.9% uptime.
+
+---
+
+## Phase 5: Web3 Exploration (2021-2023) — The Detour
+
+### Smart Contracts & Solidity
+
+In 2021, everyone was talking about Web3. I had to explore it.
+
+**What I built:**
+
+- NFT minting platforms
+- Smart contracts for token transfers
+- Blockchain explorers
+- Integration with MetaMask
+
+**What I learned:**
+
+- Blockchain has legitimate use cases
+- Most Web3 projects were vaporware
+- The technology is fascinating
+- The hype was exhausting
+
+**Decision:** Stayed at the edges, didn't go all-in.
+
+**Why?** My gut said: "This isn't mature enough yet. Real problems need solving now, not in Web3's eventual future."
+
+**Current take:** Web3 has potential. But most users still need fast, reliable Web2 applications.
+
+---
+
+## Phase 6: News/Media Mastery (2021-Present) — Finding My Niche
+
+### Free Malaysia Today: The 184% Growth Story
+
+**October 2021:** Joined FMT as Technology Lead.
+
+**The situation:**
+
+- ~3M monthly users
+- Older WordPress setup
+- Limited performance optimization
+- Solo operation (just me)
+
+**The challenge:** Scale this platform while maintaining editorial workflow, integrating complex ad systems, and surviving breaking news traffic spikes.
+
+### The Transformation Journey
+
+**October 2024 → April 2025: The Big Migration**
+
+**From:**
+
+- Next.js 12 (Pages Router)
+- Monolithic WordPress
+- Basic caching
+- Manual deployments
+
+**To:**
+
+- Next.js 14.1 with ISR (Incremental Static Regeneration)
+- Headless WordPress via GraphQL
+- SmartCache system (my custom LRU cache with dependency tracking)
+- Kubernetes-orchestrated infrastructure
+- Cloudflare CDN with aggressive caching
+- Zero downtime launch on April 18, 2025
+
+**The Numbers:**
+
+- **Traffic growth:** 3M → 8.5M monthly users (+184%)
+- **Load time reduction:** 60% faster
+- **Uptime:** 99.9%
+- **Memory optimization:** 100% usage → 15% (saved the containers from crashing)
+- **Cache hit rate:** 85-90%
+- **Database optimization:** Query response time reduced from 800ms → 120ms
+
+### The SmartCache Crisis & Solution
+
+**The problem (February 2025):**
+
+- Memory usage hitting 100%
+- Containers crashing during peak traffic
+- 600,000+ posts overwhelming the cache
+- Stale content showing to users
+
+**The solution I built:**
+
+```javascript
+// SmartNewsCache system with dependency tracking
+// Every GraphQL query includes databaseId for surgical invalidation
+// Size-based eviction (not just count)
+// WebSub integration for real-time updates
+```
+
+**Result:** Memory dropped from 100% to 15%. Zero cache-related crashes since.
+
+**What made this work:** Bias to action. I didn't wait for perfect requirements. I studied the problem, designed a solution, implemented it over a weekend, and deployed it Monday morning.
+
+### What Watching Traffic Grow Feels Like
+
+Here's something I've never admitted publicly: **It gives me immense pleasure when I see the traffic rise with each news story.**
+
+**Why news/media is special:**
+
+- You publish an article → Traffic spikes within minutes
+- Breaking news → Watch real-time analytics explode
+- SEO improvements → See organic search climb daily
+- Performance optimization → Users stick around longer
+
+**It's addictive.** Like watching your code compile successfully, but it happens 24/7.
+
+---
+
+## The Constants: What Hasn't Changed in 18 Years
+
+### 1. Good Code Is Still Good Code
+
+Whether it's Visual Basic, PHP, or TypeScript:
+
+- **Readable > Clever**
+- **Working > Perfect**
+- **Maintainable > Optimized** (unless you're at scale)
+- **Simple > Complex** (until simplicity breaks)
+
+### 2. Users Don't Care About Your Stack
+
+**Users care about:**
+
+- Does it work?
+- Is it fast?
+- Does it solve my problem?
+
+**Users don't care about:**
+
+- Your TypeScript configuration
+- Your CI/CD pipeline
+- Your microservices architecture
+- Your clever abstraction
+
+### 3. Documentation Is Still Everyone's Weakness
+
+**Truth:** Most developers (including me) hate writing documentation.
+
+**Reality:** Future-you will hate past-you for not documenting that complex logic.
+
+**Solution:** Write docs like you're explaining it to yourself in 6 months. Because you will be.
+
+### 4. The Fundamentals Never Go Out of Style
+
+After 18 years and 20+ technology shifts, here's what still matters:
+
+- **Algorithms & Data Structures** (LRU cache saved my job in 2025)
+- **Database Design** (MySQL replica strategy scaled FMT)
+- **HTTP & REST** (every new framework reinvents this)
+- **Git** (learned in 2010, still using it daily)
+- **Problem Solving** (the meta-skill that transcends all tech)
+
+### 5. Continuous Learning Isn't Optional
+
+**2006:** Visual Basic 6.0  
+**2010:** PHP, jQuery  
+**2015:** React, Node.js  
+**2020:** Kubernetes, GCP  
+**2025:** Still learning (currently: Native Android, just because)
+
+**At 40 years old, I'm learning Android development despite having zero need for it.** Why? Because learning keeps you relevant. Comfort kills careers.
+
+---
+
+## The Unexpected Lessons
+
+### Lesson #1: Being Solo Taught Me Accountability
+
+**4 years at FMT as the only technical person taught me:**
+
+- **Ownership:** If it breaks, I fix it. No blaming teammates.
+- **Prioritization:** Can't do everything, must choose wisely.
+- **Documentation:** Future-me needs to understand today's decisions.
+- **Automated testing:** No QA team means I ship my own bugs.
+
+**But also:**
+
+- **Loneliness:** No one to brainstorm with.
+- **Decision fatigue:** Every technical choice is mine alone.
+- **Burnout risk:** No backup when you're sick.
+
+**Current realization:** After 4 years solo, I'm ready for a team. Collaboration sounds exciting again.
+
+### Lesson #2: StackOverflow Made Me Better
+
+**Top 3% contributor (14,111 reputation).** Not because I'm smarter than others, but because:
+
+**Teaching forces clarity.**
+
+When you answer someone's question, you can't hand-wave. You must:
+
+- Understand the problem deeply
+- Explain it simply
+- Provide working code
+- Anticipate edge cases
+
+**Result:** Answering 694 questions made me a better engineer than reading 1,000 tutorials.
+
+### Lesson #3: Metrics Drive Decisions
+
+**Everything I've built has numbers attached:**
+
+- 184% traffic growth
+- 60% load time reduction
+- 85-90% cache hit rate
+- 99.9% uptime
+
+**Why?** Because "I improved performance" means nothing. But "I reduced load time by 60%" is quantifiable. Measurable. Provable.
+
+**In interviews, in promotions, in salary negotiations—numbers win.**
+
+### Lesson #4: Technology Choices Are Bets, Not Marriages
+
+**Bad mindset:** "I'm a PHP developer."  
+**Good mindset:** "I solve problems. Currently using PHP."
+
+**Outcome:**
+
+- When PHP wasn't cutting it → Learned Node.js
+- When jQuery got tedious → Switched to React
+- When servers were expensive → Moved to serverless
+
+**Career advice:** Fall in love with problems, not tools.
+
+### Lesson #5: Side Interests Make You More Interesting
+
+**Plot twist:** I teach Vedic astrology on weekends.
+
+**Wait, what?**
+
+Yes. When I'm not optimizing Next.js builds or configuring Kubernetes, I teach systematic astrological chart reading.
+
+**Why mention this?**
+
+Because it's taught me:
+
+- **Pattern recognition** (useful in debugging)
+- **Systematic thinking** (useful in architecture design)
+- **Teaching skills** (useful in code reviews)
+- **Humility** (there's always more to learn)
+
+**Plus:** In technical interviews, everyone has Next.js on their resume. Not everyone teaches ancient astronomy systems.
+
+**Life lesson:** Your quirks make you memorable. Don't hide them.
+
+---
+
+## The Hard Truths (Things I Wish Someone Told 20-Year-Old Me)
+
+### 1. Impostor Syndrome Never Fully Goes Away
+
+**18 years in, Top 3% StackOverflow, scaled platforms to millions of users.**
+
+**And still:** Every time I join a new codebase, there's a voice saying _"Everyone here is smarter than you."_
+
+**Truth:** That voice lies. But also, it keeps you humble. Double-edged sword.
+
+### 2. Your First Job's Technology Doesn't Define Your Career
+
+**Started with Visual Basic 6.0 in 2006.** If I'd believed "I'm a VB developer forever," I'd be unemployable by 2015.
+
+**The industry moves fast.** Your first tech stack is training wheels. Learn the bike, then let go.
+
+### 3. Salary Negotiations Get Easier With Proof
+
+**Early career:** "I'm worth RM X because... I need it?"  
+**Mid career:** "I'm worth RM X because I scaled Y to Z users with A% improvement."
+
+**Data wins.** Build portfolio evidence, not just years of experience.
+
+### 4. Corporate Politics Exist Everywhere
+
+**Wish it weren't true.** But even in tech-first companies, politics happen.
+
+**My approach:** Stay brutally honest, do great work, document everything.
+
+**Result:** Mixed. Honesty sometimes costs you. But sleeping well at night is priceless.
+
+### 5. Work-Life Balance Is Real (I Learned This Late)
+
+**20s:** Worked 80-hour weeks. Thought sleep was for the weak.  
+**30s:** Burnout. Health issues. Realized I'm not a machine.  
+**40s:** Work smart, not just hard. Sustainable pace beats sprints.
+
+**Current philosophy:** 40-hour productive weeks > 80-hour exhausted weeks.
+
+---
+
+## What I'd Tell 20-Year-Old Mohit
+
+### Learn TypeScript Earlier
+
+**Seriously.** I added TypeScript to FMT in 2024. Should've been 2020.
+
+**Why it matters:** Type safety catches 70% of bugs before production. Time saved debugging > time spent writing types.
+
+### Start Writing Technical Blogs Sooner
+
+**Regret:** I waited until 2025 to start blogging consistently.
+
+**Lost opportunity:** 15 years of experience could've been 100+ blog posts, establishing thought leadership.
+
+**Advice:** Document your learning journey. Your "today obvious" is someone's "tomorrow revelation."
+
+### Contribute to Open Source More
+
+**StackOverflow is great.** But OSS contributions show:
+
+- You can work in teams
+- You understand large codebases
+- You write production-quality code
+
+**Current plan:** Start contributing to Next.js, Kubernetes docs, or React ecosystem.
+
+### Build a Portfolio From Day One
+
+**Reality:** My portfolio went live in 2024. Should've started in 2010.
+
+**Why?** GitHub stars and testimonials compound over time.
+
+**Lesson:** Your work has value. Showcase it.
+
+### Ask for Help Earlier
+
+**Stubborn truth:** I always try to solve everything alone first.
+
+**Result:** Wasted weeks on problems that someone else solved in 10 minutes.
+
+**New approach:** Google for 30 minutes. If stuck, ask in Slack/Discord/StackOverflow. Ego isn't worth the time loss.
+
+---
+
+## Where I Am Today (November 2025)
+
+### The Numbers
+
+- **Age:** 40 years old
+- **Experience:** 18+ years professional
+- **Current role:** Technology Lead at Free Malaysia Today
+- **Location:** Kuala Lumpur, Malaysia
+- **StackOverflow:** Top 3% (14,111 reputation, 694 answers)
+- **Scaled:** 3M → 8.5M users (+184%)
+- **Technologies:** Next.js, React, Node.js, TypeScript, GCP, Kubernetes, MySQL, Redis, Docker
+
+### What I'm Looking For Next
+
+**After 4 years as a solo operator, I want collaboration.**
+
+**Ideal role:**
+
+- Senior full-stack engineer or tech lead
+- News/media platform (passionate about this domain)
+- Team environment (tired of being a solo superhero)
+- Challenging scale problems (traffic growth is my drug)
+- Malaysia-based (family stability)
+
+**What I bring:**
+
+- Proven track record (184% growth, Top 3% StackOverflow)
+- Next.js & performance optimization specialist
+- Solo-built platforms serving millions
+- 18 years of continuous technology evolution
+- Bias to action, metrics-driven, brutally honest
+
+**What I need:**
+
+- Clear requirements (I thrive with autonomy after that)
+- Results-driven culture (not politics-heavy)
+- Challenging problems (easy is boring)
+- Competitive compensation (value alignment)
+
+---
+
+## Final Thoughts: The 18-Year Meta-Lesson
+
+**Here's what 18 years taught me that no bootcamp or tutorial ever could:**
+
+### Technology is just the tool. Problem-solving is the craft.
+
+- Visual Basic → PHP → React → Next.js
+- All just tools
+- The craft is understanding:
+  - What problem needs solving?
+  - Who experiences this problem?
+  - What's the simplest solution?
+  - How do we measure success?
+
+### Your career is a marathon, not a sprint.
+
+- Sprint: Work 80 hours/week for 2 years, burn out
+- Marathon: Work sustainable pace for 18 years, still going strong
+
+### Keep learning, or become obsolete.
+
+- The technology you know today will be legacy in 5 years
+- The fundamentals you learn today are forever
+- Balance both
+
+### Document everything.
+
+- Your future self will thank you
+- Your teammates will thank you
+- Your interviewers will thank you
+- Your blog readers will thank you
+
+### Find what makes you excited to open your laptop.
+
+**For me:** Watching traffic grow with each news story.
+
+**For you:** Could be anything. Find it. Double down on it.
+
+---
+
+## Thank You, Gwalior 2000
+
+That 64% in my 12th board exam was the first proof that I could solve hard problems.
+
+**18 years later, I'm still proving it.**
+
+- To myself
+- To my employers
+- To my users (8.5M of them)
+- To anyone who doubted that a kid from Gwalior could scale platforms and compete globally
+
+**The technologies changed.**
+
+Visual Basic → PHP → React → Next.js → Kubernetes → ?
+
+**The fundamentals didn't.**
+
+Problem-solving. Continuous learning. Bias to action. Metrics-driven decisions. Brutal honesty.
+
+**And the journey continues.**
+
+At 40, I'm learning Android development. Not because I need to. Because I can. Because learning is what keeps you alive in this industry.
+
+**Here's to the next 18 years.**
+
+---
+
+## Let's Connect
+
+**Want to discuss Next.js scaling, performance optimization, or news/media platforms?**
+
+I'm available for:
+
+- Technical consulting
+- Full-time opportunities (Malaysia-based)
+- Coffee chats about architecture decisions
+- Brutally honest resume/portfolio reviews
+
+**Find me:**
+
+- Portfolio: [iamohit.com](https://iamohit.com)
+- LinkedIn: [Connect with me](https://linkedin.com/in/iamohit)
+- StackOverflow: [Top 3% contributor](https://stackoverflow.com/users/[your-id])
+- GitHub: [Check out my code](https://github.com/[your-username])
+
+**Or just:**
+
+- [Schedule a call](/contact)
+- Drop me an email
+- Comment below
+
+**P.S.** If you're a hiring manager looking for a senior full-stack engineer who can scale platforms, optimize performance, and survive alone on a desert island with just a laptop and GCP credentials—let's talk.
+
+**P.P.S.** Yes, I really do teach Vedic astrology. No, it doesn't involve crystals or fortune-telling. It's mathematical astronomy + pattern recognition. Think of it as debugging the cosmos.
+
+---
+
+_Found this useful? Share it with someone starting their tech journey. Or someone 18 years in and wondering if it's just them. Spoiler: It's not just you._

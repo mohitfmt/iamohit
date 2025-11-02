@@ -1,20 +1,23 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { MDXRemote } from "next-mdx-remote";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import rehypeHighlight from "rehype-highlight";
 import {
   FiCalendar,
   FiClock,
   FiArrowLeft,
-  FiShare2,
   FiTwitter,
   FiLinkedin,
 } from "react-icons/fi";
 
-const MDXComponents = {
-  h1: (props) => (
+// Custom components for ReactMarkdown with framer-motion animations
+const MarkdownComponents = {
+  h1: ({ node, ...props }) => (
     <motion.h1
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -23,7 +26,7 @@ const MDXComponents = {
       {...props}
     />
   ),
-  h2: (props) => (
+  h2: ({ node, ...props }) => (
     <motion.h2
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -32,7 +35,7 @@ const MDXComponents = {
       {...props}
     />
   ),
-  h3: (props) => (
+  h3: ({ node, ...props }) => (
     <motion.h3
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -41,40 +44,39 @@ const MDXComponents = {
       {...props}
     />
   ),
-  p: (props) => (
-    <motion.p
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
-      className="text-gray-300 leading-relaxed mb-6 text-lg"
+  p: ({ node, ...props }) => (
+    <p className="text-gray-300 leading-relaxed mb-6 text-lg" {...props} />
+  ),
+  ul: ({ node, ...props }) => (
+    <ul
+      className="list-disc list-inside space-y-2 mb-6 text-gray-300 ml-4"
       {...props}
     />
   ),
-  ul: (props) => (
-    <motion.ul
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
-      className="list-disc list-inside space-y-2 mb-6 text-gray-300"
+  ol: ({ node, ...props }) => (
+    <ol
+      className="list-decimal list-inside space-y-2 mb-6 text-gray-300 ml-4"
       {...props}
     />
   ),
-  ol: (props) => (
-    <motion.ol
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
-      className="list-decimal list-inside space-y-2 mb-6 text-gray-300"
-      {...props}
-    />
-  ),
-  code: (props) => (
-    <code
-      className="bg-gray-900 px-2 py-1 rounded text-[#f5f543] font-mono text-sm"
-      {...props}
-    />
-  ),
-  pre: (props) => (
+  code: ({ node, inline, className, children, ...props }) => {
+    if (inline) {
+      return (
+        <code
+          className="bg-gray-900 px-2 py-1 rounded text-[#f5f543] font-mono text-sm"
+          {...props}
+        >
+          {children}
+        </code>
+      );
+    }
+    return (
+      <code className={className} {...props}>
+        {children}
+      </code>
+    );
+  },
+  pre: ({ node, ...props }) => (
     <motion.pre
       initial={{ opacity: 0, x: -20 }}
       whileInView={{ opacity: 1, x: 0 }}
@@ -83,7 +85,7 @@ const MDXComponents = {
       {...props}
     />
   ),
-  blockquote: (props) => (
+  blockquote: ({ node, ...props }) => (
     <motion.blockquote
       initial={{ opacity: 0, x: -20 }}
       whileInView={{ opacity: 1, x: 0 }}
@@ -92,8 +94,8 @@ const MDXComponents = {
       {...props}
     />
   ),
-  a: (props) => (
-    <motion.a
+  a: ({ node, ...props }) => (
+    <a
       className="text-[#f5f543] hover:underline transition-all"
       target="_blank"
       rel="noopener noreferrer"
@@ -102,9 +104,15 @@ const MDXComponents = {
   ),
 };
 
-export default function BlogPostClient({ post, mdxSource }) {
-  const shareUrl = typeof window !== "undefined" ? window.location.href : "";
+export default function BlogPostClient({ post }) {
+  // Fix hydration error by using state + useEffect
+  const [shareUrl, setShareUrl] = useState("");
   const shareText = post.title;
+
+  useEffect(() => {
+    // Set share URL only on client side after mount
+    setShareUrl(window.location.href);
+  }, []);
 
   const heroVariants = {
     hidden: { opacity: 0, scale: 0.95 },
@@ -115,18 +123,9 @@ export default function BlogPostClient({ post, mdxSource }) {
     },
   };
 
-  const contentVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5, delay: 0.2 },
-    },
-  };
-
   return (
     <div className="min-h-screen pt-32 pb-20">
-      <div className="container mx-auto max-w-4xl px-6">
+      <div className="container mx-auto px-6">
         {/* Back Button */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
@@ -144,7 +143,7 @@ export default function BlogPostClient({ post, mdxSource }) {
         </motion.div>
 
         {/* Article Header */}
-        <div
+        <motion.div
           variants={heroVariants}
           initial="hidden"
           animate="visible"
@@ -192,26 +191,30 @@ export default function BlogPostClient({ post, mdxSource }) {
             </div>
             <div className="ml-auto flex items-center gap-3">
               <span className="text-gray-600">Share:</span>
-              <a
-                href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
-                  shareText
-                )}&url=${encodeURIComponent(shareUrl)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-[#1DA1F2] transition-colors"
-              >
-                <FiTwitter size={20} />
-              </a>
-              <a
-                href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
-                  shareUrl
-                )}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-[#0077b5] transition-colors"
-              >
-                <FiLinkedin size={20} />
-              </a>
+              {shareUrl && (
+                <>
+                  <Link
+                    href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
+                      shareText
+                    )}&url=${encodeURIComponent(shareUrl)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-[#1DA1F2] transition-colors"
+                  >
+                    <FiTwitter size={20} />
+                  </Link>
+                  <Link
+                    href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
+                      shareUrl
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-[#0077b5] transition-colors"
+                  >
+                    <FiLinkedin size={20} />
+                  </Link>
+                </>
+              )}
             </div>
           </div>
 
@@ -221,28 +224,23 @@ export default function BlogPostClient({ post, mdxSource }) {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="relative h-96 rounded-2xl overflow-hidden border border-gray-800"
+              className="relative h-96 xl:h-[768] rounded-2xl overflow-hidden border border-gray-800"
             >
-              <Image
-                src={post.image}
-                alt={post.title}
-                fill
-                className="object-cover"
-                priority
-              />
+              <Image src={post.image} alt={post.title} fill priority />
             </motion.div>
           )}
-        </div>
+        </motion.div>
 
-        {/* Article Content */}
-        <motion.article
-          variants={contentVariants}
-          initial="hidden"
-          animate="visible"
-          className="prose prose-invert prose-lg max-w-none"
-        >
-          <MDXRemote {...mdxSource} components={MDXComponents} />
-        </motion.article>
+        {/* Article Content - Using ReactMarkdown instead of MDXRemote */}
+        <article className="prose prose-invert prose-lg max-w-none">
+          <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
+            rehypePlugins={[rehypeHighlight]}
+            components={MarkdownComponents}
+          >
+            {post.content}
+          </ReactMarkdown>
+        </article>
 
         {/* Author Bio */}
         <motion.div

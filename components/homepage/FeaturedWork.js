@@ -282,7 +282,7 @@ export default function FeaturedWork() {
               {/* CTA with hover animation */}
               <motion.div variants={fadeInUpVariants}>
                 <Link
-                  href="/projects"
+                  href="/blog/how-i-scaled-fmt"
                   className="inline-flex items-center text-[#f5f543] font-semibold group/link"
                 >
                   <motion.span

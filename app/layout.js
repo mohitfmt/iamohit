@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import "./globals.css";
+import "highlight.js/styles/github-dark.min.css";
 import { Inter, Handlee } from "next/font/google";
 import Footer from "@/components/Footer";
 import { GoogleTagManager, GoogleAnalytics } from "@next/third-parties/google";

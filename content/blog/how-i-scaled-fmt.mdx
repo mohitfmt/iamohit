@@ -1,0 +1,287 @@
+---
+title: "From Crisis to 8.5M Users: The News Platform Story Nobody Tells You"
+date: "2025-11-05"
+description: "The blunt, field-tested playbook for turning a struggling news site into a fast, scalable, lower-cost platform—why App Router wasn’t it, how Pages Router + ISR won, and what actually moved the numbers."
+tags: ["Next.js", "Performance", "Scalability", "Case Study", "Real Talk"]
+image: "/blog/fmt-crisis-to-hero.webp"
+readTime: "14 min"
+featured: true
+---
+
+There’s a moment in every platform’s life when the dashboard starts whispering things the boardroom can’t hear yet.
+
+For Free Malaysia Today (FMT), that whisper started in **Feb–Mar 2023**: traffic getting sticky in the wrong places, pages slow to breathe, a codebase that had more plot twists than a soap opera. A search for a fixer had been running for a year.
+
+**October 2023:** they found me.
+**November 2023:** I joined.
+**March 6, 2024:** I shipped **V3**.
+
+And then—eight months later—I tore it down and rebuilt it **again**.
+
+Not because people were complaining. Because they weren’t.
+
+Because “works” isn’t the same as “right.”
+
+---
+
+## The Inheritance (V2): When “Pages Router” Means “Pages Roulette”
+
+Let’s name it: **V2**. Technically “Pages Router,” practically “mystery novel.” Architecture without a map, patterns without pattern. It served content, yes—but fixing it would’ve taken longer than rebuilding.
+
+So I did what any choosy engineer with a ticking clock does: **kept the vendor on life support** to keep V2 standing while I rebuilt **V3** from scratch.
+
+**Why not just tidy V2?** Because sometimes the fastest path forward is past the rubble, not through it.
+
+---
+
+## V3 (Mar 6, 2024): The App Router Bet
+
+I went all-in on the buzz: **Next.js App Router**. It promised modern patterns and pretty performance graphs. For a while, we got them.
+
+- The site **picked up**.
+- Editors were **happier**.
+- Users felt the **speed**.
+
+Eight to nine months in, the whisper came back.
+
+### The Problems You Only See If You Stare at Logs
+
+App Router’s SPA-style navigation is fantastic for apps. For news? It quietly rearranges your furniture.
+
+1. **Ad targeting drifted.**
+   User jumps from Business → Lifestyle. The page shell stays; the **ad params don’t refresh**. Wrong ads, real money.
+
+2. **SEO metadata went stale mid-session.**
+   Title, description, JSON-LD, keywords—**not reliably refreshed** on client transitions. Crawlers get yesterday’s label on today’s jar.
+
+3. **Analytics didn’t tell the truth.**
+   Pageviews/time-on-page depend on **real navigations**. SPA transitions blur counting. Editorial decisions drift.
+
+4. **CDN friction.**
+   The App Router + **Cloudflare “Cache Everything”** dance kept stepping on toes. Invalidation got fussy.
+
+None of this sets off alarms on Day 1. On Day 240, it becomes your future.
+
+So I did the unpopular thing: I rebuilt **again**—this time to what actually fits a **news platform**.
+
+---
+
+## V4 (April 2025): Pages Router + ISR, Done Like You Mean It
+
+> Tools don’t win. Fit does.
+
+I moved FMT to **Next.js Pages Router + ISR**—not because “Pages is better,” but because **news needs fully refreshed pages**:
+
+- **True navigations** → ad params reset correctly
+- **Server-rendered metadata** → search engines index what readers see
+- **Reliable analytics** → editors get reality, not vibes
+- **Clean CDN edges** → Cloudflare behaves like a performance team, not a referee
+
+And then I solved the unglamorous parts—the ones that actually move graphs.
+
+### 1) Invalidate Cache Like a Surgeon, Not a Meteor
+
+Most teams still reach for `cache.clear()`. That’s not invalidation; it’s arson.
+
+We built **dependency-aware** invalidation with an **LRU cache**—no Redis, no ceremony:
+
+```javascript
+// When caching a category page, embed its dependencies
+cache.set(`category/business`, {
+  data,
+  deps: ["post:12345", "post:12346", "post:12347"],
+});
+
+// On content change, invalidate only dependents
+function onContentChange(id) {
+  cache.invalidateWhere((entry) => entry.deps.includes(`post:${id}`));
+}
+```
+
+**Result:** updates land fast without stampeding origin or flushing the universe.
+
+### 2) ISR That Respects Reality
+
+Static where it’s safe, fresh where it matters:
+
+```javascript
+// pages/article/[slug].js
+export async function getStaticProps({ params }) {
+  const article = await fetchArticle(params.slug);
+  return {
+    props: { article },
+    revalidate: 60, // refresh on demand after a minute
+  };
+}
+```
+
+- **Server HTML** for crawlers and ad stacks
+- **Predictable freshness** for editors
+- **No SPA illusions** for analytics
+
+### 3) Real-Time, But Prioritized (Because Not All Updates Are Noble)
+
+WebSub (PubSubHubbub) pipes content events into **priority queues**:
+
+```javascript
+const PRIORITY = {
+  CRITICAL: { concurrency: 10 }, // Homepage
+  HIGH: { concurrency: 5 }, // Sections
+  MEDIUM: { concurrency: 20 }, // Articles
+  LOW: { concurrency: 3 }, // Archives
+};
+```
+
+The homepage shouldn’t wait politely behind a 2019 archive tweak.
+
+### 4) Cloudflare: Cache HTML, Purge Precisely
+
+We went all-edge:
+
+- **Cache HTML** (not just assets)
+- **Purge by URL/tag**, not “purge everything”
+- Let the edge do the heavy lifting; let origin breathe
+
+This is where the cost line starts behaving.
+
+### 5) Database: Boring Moves That Overperform
+
+- Prune ancient **revisions** (keep a few first + last; drop the noise)
+- Add **indexes** for what you actually query
+- Move 80% reads to **replicas**; keep writes single and safe
+
+You don’t need a new data religion. You need good housekeeping.
+
+---
+
+## What Changed (V2 → V4)
+
+Let’s talk outcomes, not adjectives.
+
+- **Monthly users:** **3M → 8.5M** (**+184%**)
+- **Avg. load time:** **5.2s → 1.3s** (−75%)
+- **Organic share:** **40% → 68%**
+- **Recirculation:** **1% → 23%** (users stopped bouncing and started browsing)
+- **Cloud spend:** **$45–60K → $12–15K** (v4 is where the drop happens; **v3 was still pricey**)
+- **Uptime across migrations:** **99.9%**
+- **Content at scale:** 200+ articles/day; updates in **<2 minutes**; viral bursts to **14k+ concurrent** without drama
+
+The headline isn’t “we used X.”
+It’s “we matched the job to the tool and trimmed everything that didn’t help.”
+
+---
+
+## “But Wasn’t V2 Also Pages Router?”
+
+Yes. **V2 used the same tool I chose for V4.**
+The difference is the gap between “has a piano” and “plays it.”
+
+- V2: Pages Router **without** architecture
+- V4: Pages Router **with** ISR, dependency-aware caching, real-time priorities, and a CDN strategy that behaves
+
+**Same label, different craft.**
+
+---
+
+## The Steal-This Part: What Actually Works for News Sites
+
+If you only copy five things, copy these:
+
+1. **Choose the framework for the behavior you need.**
+
+   - News/content: **Pages Router + ISR** (server HTML, true navigations)
+   - App-like dashboards: **App Router** (SPAs shine there)
+
+2. **Never nuke caches.**
+   Track dependencies; invalidate surgically. Your origin will thank you.
+
+3. **Prioritize freshness by audience impact.**
+   Homepage/sections first, then the long tail.
+
+4. **Cache HTML at the edge.**
+   Purge URLs/tags, not the universe. Let Cloudflare earn its keep.
+
+5. **Do the boring database work early.**
+   Prune revisions, add the obvious indexes, read-replicate. It’s 80/20 that feels like magic.
+
+---
+
+## Two Rebuilds, Zero Drama
+
+Could I have coasted on V3? Absolutely. Everyone was happy.
+
+But future problems rarely arrive with a siren. They arrive as small mismatches—ad params that don’t refresh, meta tags that lie to crawlers, analytics that quietly drift. If you ship for a living, you hear them early.
+
+So I rebuilt again—not loudly, not to make a point—just to make the platform **right**.
+
+---
+
+## The Minimal Code That Paid Rent
+
+A few tiny patterns did a lot of work.
+
+**Dependency-aware invalidation**
+
+```javascript
+function dependsOn(entry, id) {
+  return entry.deps?.includes(id);
+}
+
+export function invalidateBy(ids = []) {
+  for (const key of cache.keys()) {
+    const entry = cache.get(key);
+    if (ids.some((id) => dependsOn(entry, id))) cache.delete(key);
+  }
+}
+```
+
+**ISR with clear expectations**
+
+```javascript
+export async function getStaticProps({ params }) {
+  const article = await fetchArticle(params.slug);
+  return { props: { article }, revalidate: 60 };
+}
+```
+
+**Priority queues (shape, not ceremony)**
+
+```javascript
+queue.add({ kind: "homepage", id }, { priority: "CRITICAL" });
+queue.add({ kind: "section", id }, { priority: "HIGH" });
+queue.add({ kind: "post", id }, { priority: "MEDIUM" });
+```
+
+Small pieces. Big leverage.
+
+---
+
+## What This Proves (Quietly)
+
+- **Fit beats fashion.** App Router is brilliant—for apps. We’re a news site.
+- **Operational taste matters.** Knowing when “fast enough” isn’t honest.
+- **Craft compounds.** CDN, ISR, caching, indexes—each is modest; together they’re a new curve.
+
+If you want fanfare, ship a redesign.
+If you want results, ship foundations.
+
+---
+
+## Footnotes for the Curious
+
+- **Pages Router deployment:** **April 2025** (V4)
+- **App Router run:** ~8–9 months (V3)
+- **Ad/SEO/analytics drift:** all traced to SPA-style transitions
+- **Cache:** custom **LRU** (no Redis)
+- **Edge:** Cloudflare “Cache Everything,” purge by tag/URL
+- **Content scale:** hundreds of thousands of items; **100K+** migrated through the new path with zero data loss
+
+---
+
+If you’re wrestling with a high-traffic news or content platform and the graphs won’t listen, I’m happy to compare notes on what’s signal and what’s noise. The playbook above is open book—and battle-tested.
+
+[View My Other Work](/projects) · [Let’s Talk](/contact)
+
+---
+
+_All metrics and statistics in this article are from real production systems serving 8.5M+ monthly users. Because if you can't measure it, you can't improve it._
