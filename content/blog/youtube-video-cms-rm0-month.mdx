@@ -1,0 +1,412 @@
+---
+title: "I Turned YouTube Into Our Video CMS. It Now Runs for RM0/Month."
+date: "2025-11-06"
+description: "How I built a production-grade YouTube-native Video CMS that manages 33K videos, handles 2M+ daily views, updates in real time, and costs RM0/month—replacing a RM500K/year enterprise stack with smart engineering."
+tags:
+  [
+    "YouTube API",
+    "Next.js",
+    "WebSub",
+    "Case Study",
+    "Engineering",
+    "Scalability",
+    "Cloudflare",
+    "MongoDB",
+    "Performance",
+  ]
+image: "/blog/youtube-video-cms-rm0-month.webp"
+readTime: "15 min"
+featured: true
+---
+
+I built a full-scale **YouTube-native Video CMS** that now manages **33,000+ videos**, handles **2 million+ daily video views**, and costs **RM 0/month** to run.  
+Yes, zero.
+
+I built it inside FMT's infrastructure from scratch, over **four weeks**, using the same stack we already trusted for our main site — Next.js, MongoDB, Cloudflare, and a lot of caffeine.
+
+This isn't a startup pitch or a product launch.  
+It's just me explaining how I looked at a RM500K/year problem, shrugged, and thought:
+
+> "Wait… haven't we already _built_ the world's best video CDN? It's called YouTube."
+
+---
+
+## The RM500K Problem
+
+When you run a newsroom that publishes **30–45 videos a day**, you quickly realize that "enterprise" video CMS vendors don't sell software — they sell anxiety insurance.
+
+Every pitch starts the same way: "You need enterprise-grade video delivery with real-time analytics." Then you get the quote and realize that _"enterprise-grade"_ actually means _"your finance team will hate you."_
+
+| Vendor     | Monthly Cost (MYR) | What You Actually Get                         |
+| ---------- | ------------------ | --------------------------------------------- |
+| Brightcove | RM 32K–48K         | Great marketing features, none built for news |
+| JW Player  | RM 30K–40K         | Decent player, same pricing model             |
+| Wistia     | RM 20K+            | Focused on marketing, not publishing          |
+| **Total**  | **≈ RM 500K/year** | And you still manage 90% manually             |
+
+The fun part?  
+Out of their 100+ features, you'll use about **15**. The rest exist so they can justify the invoice.
+
+That's when I realized:  
+**YouTube already solves the hard parts.**  
+Unlimited storage, transcoding, analytics, CDN, global playback.  
+All I needed was the **CMS layer.**
+
+---
+
+## The Features Nobody Asked For (But Vendors Make You Pay For)
+
+Every enterprise CMS bundle looks impressive until you start unchecking the boxes you'll never touch.
+
+| Typical Features        | Do We Need It?           | Why Not?                    |
+| ----------------------- | ------------------------ | --------------------------- |
+| Live streaming studio   | ❌ No                    | YouTube Live exists         |
+| DRM-protected embeds    | ❌ No                    | News is meant to be shared  |
+| White-label mobile apps | ❌ No                    | Maintenance nightmare       |
+| Custom analytics        | ❌ No                    | YouTube Analytics is better |
+| CDN bandwidth tracking  | ❌ No                    | YouTube's CDN is unlimited  |
+| SEO tools               | ❌ No                    | I built better ones         |
+| Storage quotas          | ✅ Only if you like pain | Pay per GB forever          |
+
+What we _actually_ needed:
+
+- A reliable dashboard that shows real-time stats
+- Real-time video sync when content publishes
+- Regional content intelligence for Southeast Asia
+- SEO and structured data baked in
+- Admin tools for emergencies
+
+All of which YouTube's infrastructure provides — just not through a pretty admin interface.  
+So I built the interface.
+
+---
+
+## The Realization: YouTube as the Database
+
+Most people treat YouTube as an output channel. I treated it as **the database**.
+
+That one decision flipped everything.
+
+- YouTube API = Source of truth
+- MongoDB = Cached mirror for fast reads
+- Next.js ISR = Dynamic freshness with static speed
+- Cloudflare = Global edge delivery
+- WebSub (PubSubHubbub) = Real-time updates
+
+Result: new videos appear on our site **within 30 seconds** of being published on YouTube.  
+No polling. No quota spam. No cron jobs waking up every five minutes.
+
+---
+
+## The Architecture: Elegant, Fast, and (Almost) Boring
+
+I didn't reinvent the wheel. I just made it spin smoother.
+
+```
+YouTube Data API → MongoDB (metadata cache)
+        ↓
+Next.js ISR → Cloudflare CDN
+        ↓
+   2M+ daily video views
+```
+
+Simple architecture scales better than clever architecture.
+
+I chose **Next.js ISR** because it's the sweet spot between static and dynamic — it lets pages regenerate in the background while serving cached versions instantly. Even during viral spikes, users don't wait.
+
+**MongoDB** made sense because our schema evolves daily — playlists, metadata, tags, experiment fields. SQL would've drowned in migrations.
+
+And then came **WebSub** — the real hero of this story.
+
+---
+
+## The 3 AM WebSub Discovery
+
+I spent three weeks building a polling system that checked for updates every 5 minutes. It worked beautifully — until one Friday, when breaking news hit, we uploaded 60 videos in a day… and exhausted the YouTube API quota before lunch.
+
+Cue the 3 AM debug session.  
+I was staring at YouTube's docs, fifth reread, when one sentence clicked:
+
+> "YouTube supports PubSubHubbub for push-based notifications."
+
+Wait.  
+YouTube would _tell me_ when videos update?
+
+I implemented it over a weekend. The next Monday:
+
+- Quota dropped **80%**
+- Update latency fell to **30 seconds**
+- And I slept like a human again
+
+That was the moment I realized — engineering isn't about writing code; it's about **deleting cron jobs**.
+
+---
+
+## The Dashboard: More Than Pretty Charts
+
+![FMT Video CMS Dashboard](/blog/YouTubeVideoCMS/fmt-video-cms-dashboard.webp)
+
+This is where it gets fun.  
+The dashboard isn't just an admin panel; it's a **mission control center** for video operations.
+
+- **Total videos:** 33K+
+- **Videos this week:** publishing velocity
+- **Active playlists:** health monitoring
+- **Cache hit rate:** 97%
+
+When management asks, "How many videos did we publish last week?" — I don't query databases anymore. I just point at the graph.
+
+---
+
+## Light and Dark (Because News Never Sleeps)
+
+![Dashboard Dark Mode](/blog/YouTubeVideoCMS/fmt-video-cms-dark.webp)
+_Dark theme for the 2 AM breaking-news team._
+
+![Dashboard Light Mode](/blog/YouTubeVideoCMS/fmt-video-cms-light.webp)
+_Light theme for 10 AM editorial reviews._
+
+I added both because newsrooms don't run on business hours — they run on adrenaline, caffeine, and push notifications.
+
+---
+
+## Content Intelligence: When the CMS Starts Giving Ideas
+
+But a pretty dashboard is useless if it can't help you make decisions.
+
+That's why I built **Content Intelligence** — a module that taps into Google Trends across Malaysia, Singapore, Indonesia, and Thailand.
+
+![Trending Topics Screenshot](/blog/YouTubeVideoCMS/fmt-video-cms-trends.webp)
+
+It flags trending topics that **we haven't covered yet** and suggests video ideas with "opportunity scores."
+
+Example:
+
+- "Johor Water Crisis" trending → alert pops up → editorial jumps in
+- The next day, the video hits top 5 across channels
+
+The system learned to act like a junior producer with zero ego and 100% uptime.
+
+---
+
+## SEO & Structured Data: Built Right In
+
+This CMS wasn't just about publishing videos. It had to **make them discoverable**.
+
+Every video page automatically generates:
+
+- **Open Graph metadata** for social sharing
+- **YouTube-linked schema.org JSON-LD** for rich snippets
+- **Canonical and alternate URLs** for proper indexing
+- **Auto-revalidating sitemaps** that update in real-time
+
+Google loves consistency. This setup gives every video equal SEO weight as a native article — and it works.
+
+FMT's video pages now appear in **Google Discover**, **Top Stories**, and **YouTube SERP carousels** simultaneously. That's a trifecta most publishers pay extra for.
+
+---
+
+## Playlist Management That Actually Works
+
+Playlists are the backbone of our YouTube structure. But YouTube's own interface makes managing 100+ of them painful.
+
+My CMS turned that chaos into order:
+
+- Real-time playlist sync from YouTube
+- Automatic drift detection (catches when counts mismatch)
+- Weekly verification before quota reset
+- Human-readable analytics per playlist
+
+Before this, a single playlist audit could take hours. Now it's **10 minutes and one button.**
+
+---
+
+## The Admin "Oh-Shit" Tools: Production-Grade Crisis Management
+
+I learned the hard way that **real systems break in the least convenient ways possible.**
+
+### 1. The Cache Disaster
+
+One night, a deleted video kept showing up on the site. CDN cache hadn't purged. Users complained. Editors panicked.
+
+The problem? Multi-layer caching:
+
+- Cloudflare edge cache (15 min TTL)
+- ISR page cache (1 hour revalidation)
+- LRU memory cache (5 min)
+- MongoDB still had the record
+
+Clearing one layer wasn't enough. The video kept reappearing like a bad penny.
+
+Next morning: I built a **"Clear Everything"** button that purges Cloudflare, ISR, MongoDB, and in-memory caches **in one go**. It blocks until every layer confirms purge.
+
+Now it's my most-used feature — and my favorite insurance policy.
+
+### 2. The Purge Protocol
+
+9:15 PM on a Tuesday. Legal team Slack message:
+
+> "That video from this morning — we need it gone. NOW."
+
+The video had already been cached across Cloudflare's edge network, sitting in ISR pages, embedded in sitemaps, indexed by search engines. Deleting from YouTube wasn't enough.
+
+I built the **Purge tool** that night. One click initiates:
+
+1. Remove from MongoDB (all collections)
+2. Remove from playlist associations
+3. Purge Cloudflare cache (via API)
+4. Clear ISR cache for video page
+5. Revalidate homepage and playlists
+6. Update sitemap
+7. Log everything with admin name, timestamp, reason
+
+**Cannot be undone.** By design — forces careful consideration before clicking.
+
+Used it three times in the first month. Compliance without chaos.
+
+### 3. The Sync Emergency
+
+When automation fails (and it does), there's a manual **"Pull All Videos"** command.
+
+It processes all 100+ playlists systematically:
+
+- Shows real-time progress
+- Deduplication protection (can't run twice simultaneously)
+- Detailed logging (playlists synced, videos added/updated, errors)
+- Takes 10 minutes for full sync
+
+Because sometimes, you need to hit refresh on life.
+
+Each of these tools was built out of **pain** — and used out of **peace of mind**.
+
+---
+
+## How It Handles 2M+ Daily Views
+
+The system survives traffic storms because it respects one rule:
+
+> "Every request should hit cache."
+
+### The 5-Layer Cache Strategy
+
+- **Layer 1:** Browser cache (5 min)
+- **Layer 2:** Cloudflare edge cache (15 min)
+- **Layer 3:** Next.js ISR static regeneration (1 hour)
+- **Layer 4:** LRU in-memory cache (5 min)
+- **Layer 5:** MongoDB fallback (only on cache miss)
+
+Result: **97% cache hit rate.**  
+MongoDB barely breaks a sweat.
+
+When a video goes viral (like our Anwar or Messi clips), Cloudflare absorbs the hit. Our origin servers don't even flinch.
+
+---
+
+## The Features That Matter (And the Ones We Skipped)
+
+| Metric            | Traditional CMS | YouTube-Native CMS |
+| ----------------- | --------------- | ------------------ |
+| Monthly Cost      | RM 34K–50K      | RM 0               |
+| Annual Cost       | RM 500K         | RM 0               |
+| Storage Limit     | Metered         | Unlimited          |
+| Bandwidth         | Pay per GB      | Unlimited          |
+| Page Load Time    | 3–5s            | <2s                |
+| Cache Hit Rate    | 80%             | 97%                |
+| Update Latency    | 15–30 mins      | 30 seconds         |
+| Daily Video Views | N/A             | 2M+                |
+
+You don't need "AI-powered dashboards" or "video engagement funnels."  
+You need fewer moving parts and one system you can trust to stay up when the story breaks.
+
+---
+
+## Lessons I'd Tell My Past Self
+
+### Read the Docs (Then Read Them Again)
+
+WebSub wasn't magic; it was buried in a sentence I skimmed three times.  
+The fifth time I read it, I found a weekend's worth of work that replaced three weeks of code.
+
+Lesson: Documentation fatigue is real, but so is missing the one feature that changes everything.
+
+### Build Tools Before Features
+
+I built the "Oh-Shit" buttons _after_ disasters struck. If I had done it earlier, I'd have saved many heartbeats and coffees.
+
+When you're building production systems, operational tooling isn't a "nice to have" — it's the difference between sleeping and staring at Slack at 3 AM.
+
+### Profile, Don't Guess
+
+I once spent two weeks optimizing thumbnails. Pre-fetch, lazy load, WebP conversion, blur placeholders — the works. Gained **0.3 seconds**.
+
+Then I looked at MongoDB queries. No indexes on frequently queried fields. Added indexes in **30 minutes**. Gained **2.5 seconds**.
+
+Lesson: Your intuition about bottlenecks is probably wrong. Profile first. Optimize second.
+
+### Context Beats Complexity
+
+Global Google Trends looked fancy but was useless for Malaysian editors. Suggested topics like "Taylor Swift tour" and "US elections."
+
+Once I added **regional intelligence** (Malaysia, Singapore, Indonesia, Thailand), engagement doubled overnight. Editors started using it daily.
+
+Lesson: Build for your specific context, not generic use cases. Localization isn't optional — it's the whole point.
+
+---
+
+## What I'd Build Differently Today
+
+If I started this project again tomorrow, I'd:
+
+1. **Build the "Oh-Shit" buttons first** — disaster recovery before features. The Purge tool and Clear Caches should've existed on day one.
+
+2. **Start with WebSub** — no polling phase at all. Why waste three weeks when the answer is in the docs?
+
+3. **Add more regional intelligence APIs** — maybe TikTok trends, Reddit signals, Instagram hashtags. Content intelligence is too valuable to limit to one source.
+
+4. **Log everything from day one** — debugging is 10x easier when you have forensics. I added comprehensive logging after the second crisis. Should've been there from the start.
+
+5. **Write the "How to Steal This" guide while building** — documentation debt is real. Writing it all down months later meant I'd forgotten the small decisions that mattered.
+
+But honestly? The current system works so well that "v2" keeps getting delayed. When something just works, you leave it alone.
+
+---
+
+## How to Steal This (Ethically)
+
+You don't need to rebuild YouTube.  
+You just need to respect what it already gives you.
+
+Start simple:
+
+1. **Treat YouTube as your database** — one-way sync from YouTube → your system
+2. **Use WebSub for updates** — push beats poll every time
+3. **Cache smartly** — multiple layers, surgical invalidation
+4. **Build admin tools early** — you'll need them sooner than you think
+5. **Layer automation only where needed** — don't over-engineer
+
+The best engineering often looks boring — until it saves you RM500K a year.
+
+---
+
+## If You're Reading This as a Hiring Manager…
+
+You don't need another SaaS subscription.  
+You need **people who can engineer their way out of expensive problems.**
+
+That's what this CMS represents — not a product, but a mindset:  
+designing for performance, sustainability, and reality.
+
+This system proves that:
+
+- Small teams can build enterprise-grade infrastructure
+- Smart architecture beats expensive vendors
+- Open platforms (YouTube) can outperform proprietary solutions
+- Frugality and innovation aren't mutually exclusive
+
+**Live system:** [freemalaysiatoday.com/videos](https://www.freemalaysiatoday.com/videos)  
+**LinkedIn:** [linkedin.com/in/mohit5783](https://www.linkedin.com/in/mohit5783)  
+**Email:** mohit5783@gmail.com
+
+---
+
+_Written by Mohit Shrivastava — Head of IT at Free Malaysia Today. Building systems that serve millions, one API call at a time._
