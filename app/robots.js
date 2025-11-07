@@ -3,6 +3,7 @@ const robots = () => {
     rules: {
       userAgent: "*",
       allow: "/",
+      disallow: ["/api/", "/_next/", "/admin/"],
     },
     sitemap: "https://iamohit.com/sitemap.xml",
   };
