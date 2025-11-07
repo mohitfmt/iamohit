@@ -66,7 +66,7 @@ const AvailabilityStatus = () => {
                 className="w-full h-auto"
               />
               {/* Overlay gradient */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-lime-400/20 to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-tr from-lime-400/20 to-transparent" />
             </div>
           </motion.div>
 
@@ -101,7 +101,7 @@ const AvailabilityStatus = () => {
                     variants={itemVariants}
                     className="flex items-start gap-3 text-gray-300"
                   >
-                    <HiCheckCircle className="text-lime-400 text-2xl flex-shrink-0 mt-0.5" />
+                    <HiCheckCircle className="text-lime-400 text-2xl shrink-0 mt-0.5" />
                     <span className="text-lg">{item}</span>
                   </motion.li>
                 ))}
@@ -120,7 +120,7 @@ const AvailabilityStatus = () => {
                     variants={itemVariants}
                     className="flex items-start gap-3 text-gray-400"
                   >
-                    <HiXCircle className="text-gray-600 text-2xl flex-shrink-0 mt-0.5" />
+                    <HiXCircle className="text-gray-600 text-2xl shrink-0 mt-0.5" />
                     <span className="text-base">{item}</span>
                   </motion.li>
                 ))}

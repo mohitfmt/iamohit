@@ -3,7 +3,13 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { FiClock, FiBriefcase, FiMapPin, FiAward, FiShield } from "react-icons/fi";
+import {
+  FiClock,
+  FiBriefcase,
+  FiMapPin,
+  FiAward,
+  FiShield,
+} from "react-icons/fi";
 import { SiStackoverflow } from "react-icons/si";
 
 const TrustSignals = () => {
@@ -68,7 +74,7 @@ const TrustSignals = () => {
                 className="w-full h-auto"
               />
               {/* Overlay gradient */}
-              <div className="absolute inset-0 bg-gradient-to-bl from-lime-400/20 to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-bl from-lime-400/20 to-transparent" />
             </div>
           </motion.div>
 
@@ -136,7 +142,7 @@ const TrustSignals = () => {
               >
                 <motion.div
                   whileHover={{ scale: 1.02, y: -5 }}
-                  className="bg-gradient-to-r from-orange-500/10 to-orange-600/10 border-2 border-orange-500/50 rounded-xl p-6 hover:border-orange-500 transition-all duration-300 shadow-lg hover:shadow-orange-500/20"
+                  className="bg-linear-to-r from-orange-500/10 to-orange-600/10 border-2 border-orange-500/50 rounded-xl p-6 hover:border-orange-500 transition-all duration-300 shadow-lg hover:shadow-orange-500/20"
                 >
                   <div className="flex items-center gap-4">
                     <SiStackoverflow className="text-5xl text-orange-500" />
